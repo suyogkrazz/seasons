@@ -47,14 +47,14 @@
 	      <img src="<?php echo base_url("images/HD-Widescreen-Wallpapers-5.jpg") ?>" alt="...">
 	      <div class="carousel-caption">
 	       		<h3 class="topic1">HELLO WE'RE FROST</h3>
-	    		<p>FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO & MOBILE APPLICATIONS</p>
+	    		<p class="topic2">FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO & MOBILE APPLICATIONS</p>
 	      </div>
 	    </div>
 	    <div class="item">
 	      <img src="<?php echo base_url("images/slider-bg2.jpg") ?>" alt="...">
 	      <div class="carousel-caption">
-	         	<h3>HELLO WE'RE FROST</h3>
-	    		<p>FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO & MOBILE APPLICATIONS</p>
+	         	<h3 class="topic1">HELLO WE'RE FROST</h3>
+	    		<p class="topic2">FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO & MOBILE APPLICATIONS</p>
 	      </div>
 	    </div>
 	    
@@ -67,6 +67,24 @@
 	  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
 	    <span class="glyphicon glyphicon-chevron-right"></span>
 	  </a>
+	</div>
+	<div class="catagories-wrapper">
+		<div class="row">
+			<div class="col-md-2"><div class="costum"><a href="javascript:void(0);">Hotel(16)</a></div></div>
+			<div class="col-md-2"><div class="costum"><a href="javascript:void(0);">School(10)</a></div></div>
+			<div class="col-md-2"><div class="costum"><a href="javascript:void(0);">Shop(4)</a></div></div>
+			<div class="col-md-2"><div class="costum"><a href="javascript:void(0);">Radi0(13)</a></div></div>
+			<div class="col-md-2"><div class="costum"><a href="javascript:void(0);">Computer(9)</a></div></div>
+			<div class="col-md-2"><div class="costum"><a href="javascript:void(0);">Motels(23)</a></div></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"><div class="costum"><a href="javascript:void(0);">Push me!</a></div></div>
+			<div class="col-md-2"><div class="costum"><a href="javascript:void(0);">Push me!</a></div></div>
+			<div class="col-md-2"><div class="costum"><a href="javascript:void(0);">Push me!</a></div></div>
+			<div class="col-md-2"><div class="costum"><a href="javascript:void(0);">Push me!</a></div></div>
+			<div class="col-md-2"><div class="costum"><a href="javascript:void(0);">Push me!</a></div></div>
+			<div class="col-md-2"><div class="costum"><a href="javascript:void(0);">Push me!</a></div></div>
+		</div>
 	</div>
 	<div class="ads">
 		<img src="<?php echo base_url("images/bdxuixdd.png") ?>">
@@ -85,15 +103,15 @@
 	    <div class="item active">
 	      <img src="<?php echo base_url("images/hd-wallpaper-widescreen-underwater.jpg") ?>" alt="...">
 	      <div class="carousel-caption">
-	       		<h3>HELLO WE'RE FROST</h3>
-	    		<p>FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO & MOBILE APPLICATIONS</p>
+	       		<h3 class="topic1">HELLO WE'RE FROST</h3>
+	    		<p class="topic2">FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO & MOBILE APPLICATIONS</p>
 	      </div>
 	    </div>
 	    <div class="item">
 	      <img src="<?php echo base_url("images/slider-bg2.jpg") ?>" alt="...">
 	      <div class="carousel-caption">
-	         	<h3>HELLO WE'RE FROST</h3>
-	    		<p>FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO & MOBILE APPLICATIONS</p>
+	         	<h3 class="topic1">HELLO WE'RE FROST</h3>
+	    		<p class="topic2">FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO & MOBILE APPLICATIONS</p>
 	      </div>
 	    </div>
 	    
@@ -124,8 +142,8 @@
 	    <div class="item active">
 	      <img src="<?php echo base_url("images/nature.jpeg") ?>" alt="...">
 	      <div class="carousel-caption">
-	       		<h3>HELLO WE'RE FROST</h3>
-	    		<p>FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO & MOBILE APPLICATIONS</p>
+	       		<h3 class="topic1">HELLO WE'RE FROST</h3>
+	    		<p class="topic2">FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO & MOBILE APPLICATIONS</p>
 	      </div>
 	    </div>
 	    <div class="item">
