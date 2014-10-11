@@ -25,4 +25,12 @@ class Users_model extends CI_Model {
 		return $this->db->where('video_id',$this->uri->segment(3))->get('videos')->result();
 
 	}
+
+	function search_content($search_content){
+		$where = "(category LIKE '%".$search_content."%' OR discription  LIKE '%".$search_content."%')";
+		$this->db->select('*');
+		$this->db->where($where);
+		$result=$this->db->get('search')->result();
+		return $result;
+	}
 }
