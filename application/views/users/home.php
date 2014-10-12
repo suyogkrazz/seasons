@@ -146,5 +146,90 @@
 	<div class="ads">
 		<img src="<?php echo base_url("images/btm0x0w2.png") ?>">
 	</div>
+	<div id="carousel-example1-generic" class="carousel slide" data-ride="carousel">
+	  <!-- Indicators -->
+	  <ol class="carousel-indicators">
+	    <li data-target="#carousel-example1-generic" data-slide-to="0" class="active"></li>
+	    <li data-target="#carousel-example1-generic" data-slide-to="1"></li>
+	    <li data-target="#carousel-example1-generic" data-slide-to="2"></li>
+	  </ol>
+
+	  <!-- Wrapper for slides -->
+	  <div class="carousel-inner">
+	    <div class="item active">
+	      <img src="<?php echo base_url("images/nature.jpeg") ?>" alt="...">
+	      <div class="carousel-caption">
+	       		<h3 class="topic1">HELLO WE'RE FROST</h3>
+	    		<p class="topic2">FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO </p>
+	      </div>
+	    </div>
+	    <div class="item">
+	      <img src="<?php echo base_url("images/slider-bg2.jpg") ?>" alt="...">
+	      <div class="carousel-caption">
+	         	<h3>HELLO WE'RE FROST</h3>
+	    		<p>FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO </p>
+	      </div>
+	    </div>
+	    
+	  </div>
+
+	  <!-- Controls -->
+	  <a class="left carousel-control" href="#carousel-example1-generic" role="button" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left"></span>
+	  </a>
+	  <a class="right carousel-control" href="#carousel-example1-generic" role="button" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right"></span>
+	  </a>
+	</div>
+	<div class="ads">
+		<img src="<?php echo base_url("images/btm0x0w2.png") ?>">
+	</div>
+	<div id="carousel-example1-generic" class="carousel slide" data-ride="carousel">
+	  <!-- Indicators -->
+	  <ol class="carousel-indicators">
+	    <li data-target="#carousel-example1-generic" data-slide-to="0" class="active"></li>
+	    <li data-target="#carousel-example1-generic" data-slide-to="1"></li>
+	    <li data-target="#carousel-example1-generic" data-slide-to="2"></li>
+	  </ol>
+
+	  <!-- Wrapper for slides -->
+	  <div class="carousel-inner">
+	    <div class="item active">
+	      <img src="<?php echo base_url("images/nature.jpeg") ?>" alt="...">
+	      <div class="carousel-caption">
+	       		<h3 class="topic1">HELLO WE'RE FROST</h3>
+	    		<p class="topic2">FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO </p>
+	      </div>
+	    </div>
+	    <div class="item">
+	      <img src="<?php echo base_url("images/slider-bg2.jpg") ?>" alt="...">
+	      <div class="carousel-caption">
+	         	<h3>HELLO WE'RE FROST</h3>
+	    		<p>FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO </p>
+	      </div>
+	    </div>
+	    
+	  </div>
+
+	  <!-- Controls -->
+	  <a class="left carousel-control" href="#carousel-example1-generic" role="button" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left"></span>
+	  </a>
+	  <a class="right carousel-control" href="#carousel-example1-generic" role="button" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right"></span>
+	  </a>
+	</div>
+	<div class="ads">
+		<img src="<?php echo base_url("images/btm0x0w2.png") ?>">
+	</div>
+	<div class="footer">
+		<div class="row">
+			<div class="col-md-3">hey</div>
+			<div class="col-md-3">hey</div>
+			<div class="col-md-3">hey</div>
+			<div class="col-md-3">hey</div>
+		</div>
+		
+	</div>
 
 </div>
