@@ -185,13 +185,13 @@ class Admin_model extends CI_Model {
 	}
 	
 	function add_services($data){
-		if($this->db->insert("service",$data)){
+		if($this->db->insert("categories",$data)){
 			return true;
 		}
 		return false;
 	}
 	function get_services(){
-		$results=$this->db->order_by('id', 'desc')->get('service')->result();
+		$results=$this->db->order_by('id', 'desc')->get('categories')->result();
 		return $results;
 	}
 	function get_particular_service(){

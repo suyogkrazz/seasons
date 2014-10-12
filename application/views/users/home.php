@@ -1,37 +1,4 @@
 <div class="container-fluid">
-	
-	<nav class="navbar navbar-default" role="navigation">
-	  <div class="container">
-	    <!-- Brand and toggle get grouped for better mobile display -->
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand" href="#"><img src="<?php echo base_url("images/logo.png") ?>"</a>
-	    </div>
-
-	    <!-- Collect the nav links, forms, and other content for toggling -->
-	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	     <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#">Home</a></li>
-	        <li><a href="#">About Us</a></li>
-	        <li><a href="#">Gallery</a></li>
-	        <li><a href="#">Blog</a></li>
-	        <li><a href="#">Contact Us</a></li>
-	        <form class="navbar-form navbar-left" role="search">
-	        <div class="form-group">
-	          <input type="text" class="form-control form-search" placeholder="Search">
-	        </div>
-	        
-	      </form>
-	        
-	      </ul>
-	    </div><!-- /.navbar-collapse -->
-	  </div><!-- /.container-fluid -->
-	</nav>
 
 	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
@@ -101,12 +68,12 @@
 		<img src="<?php echo base_url("images/bdxuixdd.png") ?>">
 	</div>
 
-	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	<div id="carousel-example2-generic" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
-	    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-	    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-	    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+	    <li data-target="#carousel-example2-generic" data-slide-to="0" class="active"></li>
+	    <li data-target="#carousel-example2-generic" data-slide-to="1"></li>
+	    <li data-target="#carousel-example2-generic" data-slide-to="2"></li>
 	  </ol>
 
 	  <!-- Wrapper for slides -->
@@ -129,10 +96,10 @@
 	  </div>
 
 	  <!-- Controls -->
-	  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+	  <a class="left carousel-control" href="#carousel-example2-generic" role="button" data-slide="prev">
 	    <span class="glyphicon glyphicon-chevron-left"></span>
 	  </a>
-	  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+	  <a class="right carousel-control" href="#carousel-example2-generic" role="button" data-slide="next">
 	    <span class="glyphicon glyphicon-chevron-right"></span>
 	  </a>
 	</div>
@@ -140,12 +107,12 @@
 		<img src="<?php echo base_url("images/newrelic2.jpg") ?>">
 	</div>
 
-	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	<div id="carousel-example1-generic" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
-	    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-	    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-	    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+	    <li data-target="#carousel-example1-generic" data-slide-to="0" class="active"></li>
+	    <li data-target="#carousel-example1-generic" data-slide-to="1"></li>
+	    <li data-target="#carousel-example1-generic" data-slide-to="2"></li>
 	  </ol>
 
 	  <!-- Wrapper for slides -->
@@ -168,10 +135,10 @@
 	  </div>
 
 	  <!-- Controls -->
-	  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+	  <a class="left carousel-control" href="#carousel-example1-generic" role="button" data-slide="prev">
 	    <span class="glyphicon glyphicon-chevron-left"></span>
 	  </a>
-	  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+	  <a class="right carousel-control" href="#carousel-example1-generic" role="button" data-slide="next">
 	    <span class="glyphicon glyphicon-chevron-right"></span>
 	  </a>
 	</div>

@@ -1,9 +1,9 @@
-<h1 class="heading">Add Services</h1>
+<h1 class="heading">Add Category</h1>
 
 <?php echo form_open_multipart('admin/addservices/', array('role'=>'form', 'class'=>'form-horizontal'))?>
 
 	<div class="form-group">
-		<label class="col-sm-2 control-label">Service Title :</label>
+		<label class="col-sm-2 control-label">Category Name :</label>
 		<div class="col-sm-10">
 			<input type="text" class="form-control" id="service_name" name="service_name" autofocus required>
 		</div>
