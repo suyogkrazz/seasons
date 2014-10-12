@@ -36,6 +36,8 @@
 	    <span class="glyphicon glyphicon-chevron-right"></span>
 	  </a>
 	</div>
+
+
 	<div class="catagories-wrapper">
 		<div class="row">
 			<div class="costum"><a href="javascript:void(0);">Hotel(16)</a></div>
@@ -65,9 +67,12 @@
 		</div>
 		
 	</div>
-	<div class="ads">
+	<div class="ads darkness">
+
 		<img src="<?php echo base_url("images/bdxuixdd.png") ?>">
 	</div>
+
+
 
 	<div id="carousel-example2-generic" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
