@@ -1,41 +1,41 @@
-<h1 class="heading">Service / Package / Edit</h1>
+<h1 class="heading">Service / Advertise / Edit</h1>
 
 <?php echo form_open_multipart('admin/events_postupdate/', array('role'=>'form', 'class'=>'form-horizontal'))?>
 
 	<div class="form-group">
-		<label class="col-sm-2 control-label">Package Name :</label>
+		<label class="col-sm-2 control-label">Name :</label>
 		<div class="col-sm-10">
 			<input type="text" class="form-control" value="<?php echo $package[0]->name; ?>" name="name"  required>
 		</div>
 	</div>
 
 	<div class="form-group">
-		<label class="col-sm-2 control-label">Price :</label>
+		<label class="col-sm-2 control-label">Video :</label>
 		<div class="col-sm-10">
-			<input type="text" class="form-control" value="<?php echo $package[0]->price; ?>" name="price" required>
+			<input type="text" name="video" value="<?php echo $package[0]->video; ?>" placeholder="Place youtube embed code" class="form-control">
 		</div>
 	</div>
 
 	<div>
-		<label class="control-label">Package Description :</label>
-		<textarea name="description" id="body" required><?php echo $package[0]->description; ?></textarea>
+		<label class="control-label">Contact Info :</label>
+		<textarea name="info" id="body" required><?php echo $package[0]->info; ?></textarea>
 		<script>
 	        CKEDITOR.replace( 'body' );
 	    </script>
 	</div>
 
 	<div>
-		<label class="control-label">Package Detail :</label>
-		<textarea name="detail" id="body1" required><?php echo $package[0]->detail; ?></textarea>
+		<label class="control-label">Description :</label>
+		<textarea name="description" id="body1" required><?php echo $package[0]->description; ?></textarea>
 		<script>
 	        CKEDITOR.replace( 'body1' );
 	    </script>
 	</div>
 
-	<input type="hidden" name="service_id" value="<?php echo $package[0]->service_id ?>" >
+	<input type="hidden" name="service_id" value="<?php echo $package[0]->ad_id ?>" >
 	<input type="hidden" name="id" value="<?php echo $package[0]->id ; ?>" >
 	<div class="submit">
-		<button type="submit" class="btn btn-default">Update Package</button>
+		<button type="submit" class="btn btn-default">Update Advertisement</button>
 	</div>
 <?php echo form_close(); ?>
 
@@ -67,7 +67,7 @@
 <div class="row">
 
 
-	<?php foreach ($package_img as $photos):?>		
+	<?php foreach ($package_img as $photos):?>
 		<div class="col-md-2">
 			<div class="package-images">
 				<a class="example-image-link thumb" href="<?php echo base_url('assets/images/'.$photos->path); ?>" data-lightbox="example-set" >
