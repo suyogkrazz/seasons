@@ -68,9 +68,11 @@
 	    <span class="glyphicon glyphicon-chevron-right"></span>
 	  </a>
 	</div>
-	<div class="ads">
+	<div class="ads darkness" >
 		<img src="<?php echo base_url("images/bdxuixdd.png") ?>">
 	</div>
+
+
 
 	<div id="carousel-example2-generic" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
