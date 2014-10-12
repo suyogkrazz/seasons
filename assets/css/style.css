@@ -137,3 +137,29 @@ body{
 .catagories-wrapper{
 	padding: 20px;
 }
+.about-us{
+	text-align: justify;
+	background: rgb(191, 200, 202);
+	color: rgb(26, 129, 129);
+	padding: 6px;
+	min-height: 219px;
+	border-radius: 3px;
+}
+.abt-img img{
+	width: 100%;
+	height: auto;
+}
+.abt-wrapper{
+	margin-top: 20px;
+}
+.members{
+	margin-top: 0px !important;
+	color: rgb(88, 162, 231);
+}
+.mem{
+	background: white;
+	padding: 13px;
+}
+.margin-buttom{
+	margin-bottom: 15px;
+}
