@@ -259,8 +259,6 @@ class Admin extends CI_Controller {
 					'path'=>$path1,
 				);
 			}
-
-			$msg = $this->admin_model->add_package_image($data1);
 		}
 		redirect('admin/service_detail/'.$this->input->post('id'));		
 	}
@@ -307,7 +305,7 @@ class Admin extends CI_Controller {
 		  		$path='assets/images/'.$path1;
 		  		if($_FILES['file']['error'][$key]==0 && move_uploaded_file($_FILES['file']['tmp_name'][$key], $path)){
 					$data=array(
-					'package_id' => $this->input->post('package_id'),
+					'ad_id' => $this->input->post('package_id'),
 					'path'=>$path1,
 					);
 				}
@@ -321,33 +319,33 @@ class Admin extends CI_Controller {
 				else{
 					$data = array(
 						'title' => " EditEvents",
-						'content' => 'admin/edit_package',
-						'global_message' => $msg
+						'content' => 'admin/edit_package'
 					);
-					$data['package']=$this->db->where('id', $this->input->post('id'))->get('package')->result();
+					$data['package']=$this->db->where('id', $this->input->post('package_id'))->get('package')->result();
 					$data['package_img']=$this->db->where('package_id', $this->input->post('package_id'))->get('package_image')->result();
 					$this->load->view('includes/template', $data);
 				}
 			}
-			redirect('admin/edit_package/'.$this->input->post('id'));
+			redirect('admin/edit_package/'.$this->input->post('package_id'));
 
 		}
 		else{
-			redirect('admin/edit_package/'.$this->input->post('id'));
+			redirect('admin/edit_package/'.$this->input->post('package_id'));
 		}
 	}
 
 	public function delete_package(){
 		$data=$this->db->where('id', $this->uri->segment(3))->get('package')->result();
-		$data=$this->db->where('package_id', $data[0]->id)->get('package_image')->result();
+		$data=$this->db->where('ad_id', $data[0]->id)->get('package_image')->result();
 		foreach ($data as $datas ) {
 			$path='./assets/images/'.$datas->path;
 			unlink($path);
+			$this->db->where('ad_id',$datas->ad_id)->delete('package_image');
 		}
-		$this->admin_model->delete_package_images($data);
+		
 		$data=$this->db->where('id', $this->uri->segment(3))->get('package')->result();
 		$this->admin_model->delete_package();
-		redirect('admin/service_detail/'.$data[0]->service_id);
+		redirect('admin/service_detail/'.$data[0]->ad_id);
 	}
 
 	public function delete_package_img(){
@@ -355,21 +353,21 @@ class Admin extends CI_Controller {
 		$path='./assets/images/'.$data[0]->path;
 		unlink($path);
 		$this->admin_model->delete_package_img($data[0]->id);
-		redirect('admin/edit_package/'.$data[0]->package_id);
+		redirect('admin/edit_package/'.$data[0]->ad_id);
 	}
 
 
 	public function deleteservice(){
-		$data=$this->db->where('service_id', $this->uri->segment(3))->get('package')->result();
+		$data=$this->db->where('ad_id', $this->uri->segment(3))->get('package')->result();
 
 		foreach ($data as $datad ) {									
-		$datass=$this->db->where('package_id', $datad->id)->get('package_image')->result();
-		foreach ($datass as $datas ) {
-			$path='./assets/images/'.$datas->path;
-			unlink($path);
-		}
-				$this->admin_model->delete_package_images($datad);
-				$this->admin_model->delete_package_serv();
+		$datass=$this->db->where('ad_id', $datad->id)->get('package_image')->result();
+			foreach ($datass as $datas ) {
+				$path='./assets/images/'.$datas->path;
+				unlink($path);
+				$this->db->where('ad_id', $datas->ad_id)->delete('package_image');
+			}
+			$this->admin_model->delete_package_serv();
 		}
 		$data=$this->admin_model->get_particular_service();
 		$re=$data->option_id;
