@@ -517,7 +517,7 @@ class Admin extends CI_Controller {
 	public function services(){
 	$data1['service']=$this->admin_model->get_services();
 		$data = array(
-		'title' => 'Services',
+		'title' => 'Categories',
 		'content' => 'admin/add_services',
 		'id' => 'service'
 	);
@@ -525,7 +525,7 @@ class Admin extends CI_Controller {
 	$this->load->view('admin/includes/template',array_merge($data,$data1));
 	}	
 	public function addservices(){
-	$this->form_validation->set_rules('service_name', 'Service', 'trim|is_unique[service.name]');
+	$this->form_validation->set_rules('service_name', 'Service', 'trim|is_unique[categories.name]');
 	if($this->form_validation->run() == true){
 				$data=array(
 					'name' => $this->input->post('service_name'),

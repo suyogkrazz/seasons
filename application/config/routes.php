@@ -41,15 +41,9 @@
 $route['default_controller'] = "home";
 $route['404_override'] = '';
 $route['admin/change-profile-picture'] = 'admin/changeProfilePicture';
-$route['company-profile'] = "home/about";
-$route['news'] = "home/news";
-$route['news/(:any)'] = 'home/news_detail/$1';
-$route['terms-and-condition'] = "home/terms";
+$route['about-us'] = 'home/about';
+$route['faqs'] = 'home/faqs';
 $route['contact-us'] = 'home/contact';
-$route['services/(:any)'] = 'home/service';
-$route['package/(:any)'] = 'home/package';
-$route['book-package/(:any)'] = 'home/book';
-$route['complete-booking'] = 'home/book_submit';
 
 
 /* End of file routes.php */

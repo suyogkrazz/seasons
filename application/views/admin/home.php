@@ -34,7 +34,7 @@
 
 						<div class="service-of">
 							<strong>Package Of : </strong>
-							<?php $service = $this->db->where('id', $services->service_id)->get('service')->result(); ?>
+							<?php $service = $this->db->where('id', $services->service_id)->get('categories')->result(); ?>
 							<a href="<?php echo base_url('admin/service_detail/'.$service[0]->id) ?>"><?php echo $service[0]->name; ?></a>
 						</div>
 					</div>
@@ -79,7 +79,7 @@
 
 <div class="row">
 	<div class="title-heading"><h2>Services</h2></div>
-	<?php $dash_services = $this->db->order_by('id', 'desc')->limit(4)->get('service')->result(); ?>
+	<?php $dash_services = $this->db->order_by('id', 'desc')->limit(4)->get('categories')->result(); ?>
 	<?php foreach($dash_services as $dash): ?>
 		<div class="col-md-3">
 			<div class="services-home">

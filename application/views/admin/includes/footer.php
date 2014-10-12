@@ -18,13 +18,9 @@
    $("#aboutus .sidebar-navigation a:contains('About Us')").addClass('active');
    $("#media .sidebar-navigation a:contains('Media')").addClass('active');
    $("#media .sidebar-navigation #medias").addClass('in');
-   $("#news .sidebar-navigation a:contains('News')").addClass('active');
-   $("#testimonials .sidebar-navigation a:contains('Add Testimonials')").addClass('active');
-   $("#service .sidebar-navigation a:contains('Services')").addClass('active');
+   $("#service .sidebar-navigation a:contains('Categories')").addClass('active');
    $("#service .sidebar-navigation #services").addClass('in');
    $("#files .sidebar-navigation a:contains('Files')").addClass('active');
-   $("#special .sidebar-navigation a:contains('Special Offer')").addClass('active');
-    $("#most .sidebar-navigation a:contains('Most Viewed')").addClass('active');
 </script>
 
 <script type="text/javascript">
