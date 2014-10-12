@@ -195,12 +195,12 @@ class Admin_model extends CI_Model {
 		return $results;
 	}
 	function get_particular_service(){
-		$results=$this->db->get_where('service',array('id'=>$this->uri->segment(3)))->result();
+		$results=$this->db->get_where('categories',array('id'=>$this->uri->segment(3)))->result();
 		 return $results[0];
 	}
 	function delete_service(){
 		$this->db->where("id",$this->uri->segment(3));
-		$this->db->delete('service');
+		$this->db->delete('categories');
 		return;
 	}
 	function add_package($data){
@@ -231,42 +231,18 @@ class Admin_model extends CI_Model {
 		$this->db->delete('package_image');
 		return;
 	}
-	function delete_package_images($data){
-		foreach ($data as $datas) {
-		$this->db->where("id",$datas->id);
-		$this->db->delete('package_image');
-		}
-		return;
-	}
+
 	function delete_package(){
 		$this->db->where("id",$this->uri->segment(3));
 		$this->db->delete('package');
 		return;
 	}
 	function delete_package_serv(){
-		$this->db->where("service_id",$this->uri->segment(3));
+		$this->db->where("ad_id",$this->uri->segment(3));
 		$this->db->delete('package');
 		return;
 	}
-	function add_video($data){
-		if($this->db->insert('videos',$data)){
-			return 1;
-		}
-		else{
-			return 0;
-		}
-	}
-	 function get_videos(){
-	 	$this->db->select('*');
-	    $result=$this->db->get('videos')->result();
-	    return $result;
-	 }
 
-	 function delete_video(){
-	 	$this->db->where("video_id",$this->uri->segment(3));
-	 	$this->db->delete('videos');
-	 	return 1;
-	 }
 	function add_object_slider($data){
 		if($this->db->get('slide')->num_rows() > 5){
 			$this->session->set_flashdata('msg', 'You cannot add more than 5 images.');

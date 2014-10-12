@@ -19,7 +19,7 @@
         <li><a href="<?php echo base_url('contact-us') ?>">Contact Us</a></li>
         <form class="navbar-form navbar-left" role="search" method="post" action="<?php echo base_url("home/search_content") ?>">
           <div class="form-group">
-            <input type="text" class="form-control form-search" placeholder="Search packages.." name="search_content">
+            <input type="text" class="form-control form-search" placeholder="Search category.." name="search_content">
           </div>
           
         </form>
