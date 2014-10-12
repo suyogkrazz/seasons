@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><img src="<?php echo base_url("images/logo.png") ?>"</a>
+      <a class="navbar-brand" href="<?php echo base_url(); ?>"><img src="<?php echo base_url("images/logo.png") ?>"</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,12 +17,12 @@
         <li><a href="<?php echo base_url('about-us') ?>">About Us</a></li>
         <li><a href="<?php echo base_url('faqs') ?>">FAQ's</a></li>
         <li><a href="<?php echo base_url('contact-us') ?>">Contact Us</a></li>
-        <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control form-search" placeholder="Search">
-        </div>
-        
-      </form>
+        <form class="navbar-form navbar-left" role="search" method="post" action="<?php echo base_url("home/search_content") ?>">
+          <div class="form-group">
+            <input type="text" class="form-control form-search" placeholder="Search packages.." name="search_content">
+          </div>
+          
+        </form>
         
       </ul>
     </div><!-- /.navbar-collapse -->
