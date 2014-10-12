@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
 	
 	<nav class="navbar navbar-default" role="navigation">
@@ -21,9 +22,9 @@
 	        <li><a href="#">Gallery</a></li>
 	        <li><a href="#">Blog</a></li>
 	        <li><a href="#">Contact Us</a></li>
-	        <form class="navbar-form navbar-left" role="search">
+	        <form class="navbar-form navbar-left" role="search" method="post" action="<?php echo base_url("home/search_content") ?>">
 	        <div class="form-group">
-	          <input type="text" class="form-control form-search" placeholder="Search">
+	          <input type="text" class="form-control form-search" placeholder="Search packages.." name="search_content">
 	        </div>
 	        
 	      </form>

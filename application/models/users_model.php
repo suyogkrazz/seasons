@@ -27,10 +27,10 @@ class Users_model extends CI_Model {
 	}
 
 	function search_content($search_content){
-		$where = "(category LIKE '%".$search_content."%' OR discription  LIKE '%".$search_content."%')";
+		$where = "(name LIKE '%".$search_content."%' OR description  LIKE '%".$search_content."%')";
 		$this->db->select('*');
 		$this->db->where($where);
-		$result=$this->db->get('search')->result();
+		$result=$this->db->get('package')->result();
 		return $result;
 	}
 }
