@@ -1,11 +1,11 @@
-<h1 class="heading">Service / Packages</h1>
+<h1 class="heading">Category / </h1>
 
 <div class="submit">
-	<div class="btn btn-default submit btn-log"><?php echo anchor('admin/add_events/'.$service[0]->id, "Add Package") ?></div>
+	<div class="btn btn-default submit btn-log"><?php echo anchor('admin/add_events/'.$service[0]->id, "New") ?></div>
 </div>
 
 
-<?php $serviceName = $this->db->where('id', $this->uri->segment(3))->get('service')->result(); ?>
+<?php $serviceName = $this->db->where('id', $this->uri->segment(3))->get('categories')->result(); ?>
 <div class="sub-heading"><?php echo ucfirst($serviceName[0]->name); ?> Packages</div>
 <table class="table table-striped">
 	<tr>

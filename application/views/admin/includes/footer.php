@@ -16,8 +16,7 @@
 <script type="text/javascript">
    $("#home .sidebar-navigation a:contains('Dashboard')").addClass('active');
    $("#aboutus .sidebar-navigation a:contains('About Us')").addClass('active');
-   $("#media .sidebar-navigation a:contains('Media')").addClass('active');
-   $("#media .sidebar-navigation #medias").addClass('in');
+   $("#media .sidebar-navigation a:contains('Slider')").addClass('active');
    $("#service .sidebar-navigation a:contains('Categories')").addClass('active');
    $("#service .sidebar-navigation #services").addClass('in');
    $("#files .sidebar-navigation a:contains('Files')").addClass('active');

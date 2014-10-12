@@ -218,7 +218,7 @@ class Admin_model extends CI_Model {
 		return false;
 	}
 	function add_package_image($data){
-		$num_rows = $this->db->where('package_id', $this->input->post('package_id'))->get('package_image')->num_rows();
+		$num_rows = $this->db->where('ad_id', $this->input->post('id'))->get('package_image')->num_rows();
 
 		if($num_rows > 3){
 			return "You cannot put more than 4 image for 1 package.";
