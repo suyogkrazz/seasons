@@ -85,7 +85,7 @@ class Home extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$this->session->set_flashdata('feedback', 'place a item OR category!');
-			redirect('home');
+			redirect();
 		}
 		else{
 			$search_content=$this->input->post('search_content');
