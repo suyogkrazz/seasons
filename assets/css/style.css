@@ -33,7 +33,7 @@ body{
 	margin-left: 7px;
 }
 .carousel-caption{
-	bottom: 360px !important;
+	bottom: 330px !important;
 	text-align: left !important;
 	left: 13% !important;
 }
@@ -41,10 +41,12 @@ body{
 	background: rgba(214, 94, 94, 0.99);
 	display: inline-block;
 	padding: 6px 12px;
+	font-size: 39px !important;
 }
 .topic2{
 	background: rgba(123, 130, 134, 0.6);
 	padding: 8px 10px;
+	font-size: 20px;
 }
 .form-spacing{
 	padding-left: 45px;
@@ -104,17 +106,18 @@ body{
     background-color: #4F5367;
     font-family: 'Yanone Kaffeesatz';
     font-weight: 700;
+    float: left;
     font-size: 20px;
     display: block;
-    padding: 4px;
+    padding: 6px 12px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     border-radius: 8px;
     -webkit-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
     -moz-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
-    box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
-    margin: 20px auto;
-	width: 160px;
+    box-shadow:0px 9px 0px rgba(42, 42, 58, 1), 0px 9px 25px rgba(0,0,0,.7);
+    margin: 10px;
+	/*width: 160px;*/
 	text-align: center;
 	
 	-webkit-transition: all .1s ease;
@@ -133,4 +136,33 @@ body{
 }
 .catagories-wrapper{
 	padding: 20px;
+}
+.about-us{
+	text-align: justify;
+	background: rgb(191, 200, 202);
+	color: rgb(26, 129, 129);
+	padding: 6px;
+	min-height: 219px;
+	border-radius: 3px;
+}
+.abt-img img{
+	width: 100%;
+	height: auto;
+}
+.abt-wrapper{
+	margin-top: 20px;
+}
+.members{
+	margin-top: 0px !important;
+	color: rgb(88, 162, 231);
+}
+.mem{
+	background: white;
+	padding: 13px;
+}
+.margin-buttom{
+	margin-bottom: 15px;
+}
+.footer{
+	height: 35px;
 }
