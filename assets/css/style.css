@@ -37,7 +37,15 @@ body{
 	text-align: left !important;
 	left: 13% !important;
 }
-
+.topic1{
+	background: rgba(214, 94, 94, 0.99);
+	display: inline-block;
+	padding: 6px 12px;
+}
+.topic2{
+	background: rgba(123, 130, 134, 0.6);
+	padding: 8px 10px;
+}
 .form-spacing{
 	padding-left: 45px;
 	letter-spacing: 1px;
@@ -86,4 +94,43 @@ body{
 .ads{
 	background: #4F5367;
 	padding: 30px;
+}
+
+
+.costum>a {
+	position: relative;
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+    background-color: #4F5367;
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: 700;
+    font-size: 20px;
+    display: block;
+    padding: 4px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    -moz-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    margin: 20px auto;
+	width: 160px;
+	text-align: center;
+	
+	-webkit-transition: all .1s ease;
+	-moz-transition: all .1s ease;
+	-ms-transition: all .1s ease;
+	-o-transition: all .1s ease;
+	transition: all .1s ease;
+}
+
+.costum>a:active {
+    -webkit-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    -moz-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    position: relative;
+    top: 6px;
+}
+.catagories-wrapper{
+	padding: 20px;
 }

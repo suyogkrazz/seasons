@@ -185,13 +185,13 @@ class Admin_model extends CI_Model {
 	}
 	
 	function add_services($data){
-		if($this->db->insert("service",$data)){
+		if($this->db->insert("categories",$data)){
 			return true;
 		}
 		return false;
 	}
 	function get_services(){
-		$results=$this->db->order_by('id', 'desc')->get('service')->result();
+		$results=$this->db->order_by('id', 'desc')->get('categories')->result();
 		return $results;
 	}
 	function get_particular_service(){
@@ -218,7 +218,7 @@ class Admin_model extends CI_Model {
 		return false;
 	}
 	function add_package_image($data){
-		$num_rows = $this->db->where('package_id', $this->input->post('package_id'))->get('package_image')->num_rows();
+		$num_rows = $this->db->where('ad_id', $this->input->post('id'))->get('package_image')->num_rows();
 
 		if($num_rows > 3){
 			return "You cannot put more than 4 image for 1 package.";

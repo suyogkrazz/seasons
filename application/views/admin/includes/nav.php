@@ -24,13 +24,12 @@
 				<ul class="sidebar-navigation">
 					<li><a href="<?php echo base_url('admin'); ?>"><span class="glyphicon glyphicon-dashboard fav-icon"></span>Dashboard</a></li>
 					<li><a href="<?php echo base_url('admin/aboutus'); ?>"><span class="glyphicon glyphicon-flag fav-icon"></span>About Us</a></li>
-					<li><a href="<?php echo base_url('admin/news'); ?>"><span class="glyphicon glyphicon-list-alt fav-icon"></span>News</a></li>
-					<li><a href="<?php echo base_url('admin/testimonials'); ?>"><span class="glyphicon glyphicon-comment fav-icon"></span>Add Testimonials</a></li>
+					<li><a href="<?php echo base_url('admin/slider'); ?>"><span class="glyphicon glyphicon-picture fav-icon"></span>Slider</a></li>
 		
 					<div class="panel-group nav-panel-group" id="navaccordian">					
 						<div class="panel panel-default nav-panel">
 							<div class="panel-heading nav-panel-heading">
-								<li><a href="#services" data-toggle="collapse" data-parent="#navaccordian"><span class="glyphicon glyphicon-ok-sign fav-icon"></span>Services<span class="glyphicon glyphicon-chevron-down drop-up"></span></a></li>
+								<li><a href="#services" data-toggle="collapse" data-parent="#navaccordian"><span class="glyphicon glyphicon-ok-sign fav-icon"></span>Categories<span class="glyphicon glyphicon-chevron-down drop-up"></span></a></li>
 							</div>
 							<div class="panel-collapse collapse" id="services">
 								<div class="panel-body nav-panel-body">
@@ -44,15 +43,7 @@
 												</a>
 											</li>
 
-											<li>
-												<a href="<?php echo base_url('admin/most'); ?>">
-													<div class="paneloption">
-														Select Most Viewed	
-													</div>
-												</a>
-											</li>
-
-											<?php $service = $this->db->order_by('id', 'desc')->get('service')->result(); ?>
+											<?php $service = $this->db->order_by('id', 'desc')->get('categories')->result(); ?>
 											<?php foreach($service as $service): ?>
 											<li>
 												<a href="<?php echo base_url('admin/service_detail/'.$service->id)?>">												
@@ -68,47 +59,7 @@
 							</div>
 						</div>
 
-						<div class="panel panel-default nav-panel">
-							<div class="panel-heading nav-panel-heading">
-								<li><a href="#medias" data-toggle="collapse" data-parent="#navaccordian"><span class="glyphicon glyphicon-picture fav-icon"></span>Media<span class="glyphicon glyphicon-chevron-down drop-up"></span></a></li>
-							</div>
-							<div class="panel-collapse collapse" id="medias">
-								<div class="panel-body nav-panel-body">
-									<li>
-										<ul>
-											<li>
-												<a href="<?php echo base_url('admin/slider'); ?>">												
-													<div class="mediapaneloption">
-														Add Slider
-													</div>												
-												</a>
-											</li>
-
-											<li>
-												<a href="<?php echo base_url('admin/album'); ?>">
-													<div class="mediapaneloption">
-														Add Album
-													</div>
-												</a>
-											</li>
-
-											<li>
-												<a href="<?php echo base_url('admin/video'); ?>">
-													<div class="mediapaneloption">
-														Add Video
-													</div>
-												</a>
-											</li>
-										</ul>
-									</li>
-								</div>
-							</div>
-						</div>
-
 					</div>
-
-					<li><a href="<?php echo base_url('admin/file'); ?>"><span class="glyphicon glyphicon-file fav-icon"></span>Files</a></li>
-					<li><a href="<?php echo base_url('admin/special'); ?>"><span class="glyphicon glyphicon-star fav-icon"></span>Create Special Offer</a></li>
 
 
 				</ul>
