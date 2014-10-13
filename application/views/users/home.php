@@ -46,7 +46,7 @@
 	  </a>
 	</div>
 
-	<div class="catagories-wrapper">
+	<!-- <div class="catagories-wrapper">
 		<div class="row">
 			<?php foreach($categories as $cat): ?>
 				<?php $num = $this->db->where('ad_id', $cat->id)->get('package')->num_rows; ?>
@@ -54,13 +54,21 @@
 			<?php endforeach; ?>
 		</div>
 		
-	</div>
-
+	</div> -->
 	<div class="ads darkness">
+		
 		<?php $image = $this->db->where('ad_id', $banner[0]->banner1)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
-		<a href="<?php echo base_url('ad/'.$banner[0]->banner1) ?>">
 			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
-		</a>
+		<style type="text/css">
+			/*.ads {
+			    background-image: url("<?php echo base_url('assets/images/'.$image[0]->path) ?>");
+			}*/
+		</style>
+	</div>
+	<div class="dark">
+	<a href="<?php echo base_url('ad/'.$banner[0]->banner1) ?>">
+			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+	</a>
 	</div>
 
 	<div id="second-slider" class="carousel slide" data-ride="carousel">
@@ -110,7 +118,7 @@
 	  </a>
 	</div>
 
-	<div class="ads">
+	<div class="ads  darkness1">
 		<?php $image = $this->db->where('ad_id', $banner[0]->banner2)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
 		<a href="<?php echo base_url('ad/'.$banner[0]->banner2) ?>">
 			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
