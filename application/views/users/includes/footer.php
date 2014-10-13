@@ -1,10 +1,5 @@
 	<div class="footer">
-		<div class="row">
-			<div class="col-md-3">hey</div>
-			<div class="col-md-3">hey</div>
-			<div class="col-md-3">hey</div>
-			<div class="col-md-3">hey</div>
-		</div>		
+		<div class="pine">Powered by <a href="http://pinesofts.com/">Pinesofts.com</a></div>	
 	</div>
 	
 	<script type="text/javascript" src="<?php echo site_url().'assets/js/jquery.js' ?>"></script>

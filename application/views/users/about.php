@@ -15,7 +15,8 @@
 				<div class="col-md-4 abt-img"><img class="thumbnail" src="images/member-1.jpg"></div>
 				<div class="col-md-8">
 					<h3 class="members">Peter Lamsal</h3>
-					<div>
+					<div class="post">Wordpress worker </div>
+					<div class="desc">
 						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution 
 					</div>
 				</div>
@@ -23,10 +24,11 @@
 		</div>
 		<div class="col-md-6 margin-buttom">
 			<div class="row mem">
-				<div class="col-md-4 abt-img"><img class="thumbnail" src="images/member-1.jpg"></div>
+				<div class="col-md-4 abt-img"><img class="thumbnail" src="images/member-7.jpg"></div>
 				<div class="col-md-8">
-					<h3 class="members">Peter Lamsal</h3>
-					<div>
+					<h3 class="members">Asma Lamsal</h3>
+					<div class="post">House Wife </div>
+					<div class="desc">
 						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution 
 					</div>
 				</div>
@@ -34,10 +36,47 @@
 		</div>
 		<div class="col-md-6 margin-buttom">
 			<div class="row mem">
-				<div class="col-md-4 abt-img"><img class="thumbnail" src="images/member-1.jpg"></div>
+				<div class="col-md-4 abt-img"><img class="thumbnail" src="images/member-5.jpg"></div>
+				<div class="col-md-8">
+					<h3 class="members">Prachanda</h3>
+					<div class="post">House Wife </div>
+					<div class="desc">
+						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution 
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 margin-buttom">
+			<div class="row mem">
+				<div class="col-md-4 abt-img"><img class="thumbnail" src="images/member-2.jpg"></div>
 				<div class="col-md-8">
 					<h3 class="members">Peter Lamsal</h3>
-					<div>
+					<div class="post">House Wife </div>
+					<div class="desc">
+						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution 
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 margin-buttom">
+			<div class="row mem">
+				<div class="col-md-4 abt-img"><img class="thumbnail" src="images/member-3.jpg"></div>
+				<div class="col-md-8">
+					<h3 class="members">Peter Lamsal</h3>
+					<div class="post">House Wife </div>
+					<div class="desc">
+						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution 
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 margin-buttom">
+			<div class="row mem">
+				<div class="col-md-4 abt-img"><img class="thumbnail" src="images/member-6.jpg"></div>
+				<div class="col-md-8">
+					<h3 class="members">Peter Lamsal</h3>
+					<div class="post">House Wife </div>
+					<div class="desc">
 						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution 
 					</div>
 				</div>
