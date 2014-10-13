@@ -55,7 +55,7 @@
 		</div>
 		
 	</div>
-	
+
 	<div class="ads darkness">
 		<?php $image = $this->db->where('ad_id', $banner[0]->banner1)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
 		<a href="<?php echo base_url('ad/'.$banner[0]->banner1) ?>">

@@ -34,7 +34,7 @@ $(document).ready(function() {
 		};
 
 	});
-     
+
 	$("#uploadPreview").imgAreaSelect({
 		// set crop ratio (optional)
 	  		x1 : 47,
