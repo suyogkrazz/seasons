@@ -10,17 +10,16 @@
 					.darkness{
 							position:fixed;
 							width:100%;
-							height:30%;
-							top:90%;
+							height:100%;
 							z-index:-1;
 						}
-						.darkness1{
+					/*	.darkness1{
 							position:fixed;
 							width:100%;
 							height:30%;
 							top:100%;
 							z-index:1;
-						}
+						}*/
 					
 				</style>
 

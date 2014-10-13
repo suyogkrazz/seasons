@@ -59,17 +59,15 @@
 		
 		<?php $image = $this->db->where('ad_id', $banner[0]->banner1)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
 			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
-		<style type="text/css">
-			/*.ads {
-			    background-image: url("<?php echo base_url('assets/images/'.$image[0]->path) ?>");
-			}*/
-		</style>
+
 	</div>
 	<div class="dark">
 	<a href="<?php echo base_url('ad/'.$banner[0]->banner1) ?>">
 			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
 	</a>
+
 	</div>
+
 
 	<div id="second-slider" class="carousel slide" data-ride="carousel">
 
