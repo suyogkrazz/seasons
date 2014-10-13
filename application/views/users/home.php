@@ -50,7 +50,7 @@
 		<div class="row">
 			<?php foreach($categories as $cat): ?>
 				<?php $num = $this->db->where('ad_id', $cat->id)->get('package')->num_rows; ?>
-				<div class="costum"><a href="<?php echo base_url('home/category/'.$cat->id); ?>"><?php echo $cat->name."(".$num.")"; ?></a></div>
+				<div class="costum"><a href="<?php echo base_url('categories/'.$cat->id); ?>"><?php echo $cat->name."(".$num.")"; ?></a></div>
 			<?php endforeach; ?>
 		</div>
 		
