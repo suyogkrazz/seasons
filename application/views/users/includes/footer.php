@@ -1,10 +1,13 @@
 	<div class="footer">
 		<div class="pine">Powered by <a href="http://pinesofts.com/">Pinesofts.com</a></div>	
 	</div>
+
 	<script type="text/javascript" src="<?php echo site_url().'assets/js/jquery-1.7.1.min.js' ?>"></script>
 	<script type="text/javascript" src="<?php echo site_url().'assets/js/bootstrap.js' ?>"></script>
 	<script type="text/javascript" src="<?php echo site_url().'assets/js/jarallax.js' ?>"></script>
 	<script type="text/javascript" src="<?php echo site_url().'assets/js/jquery.nicescroll.js' ?>"></script>
+		<script type="text/javascript" src="<?php echo site_url().'assets/js/validator.min.js' ?>"></script>
+
 	<script>
    init = function(){
 		  var jarallax = new Jarallax();
