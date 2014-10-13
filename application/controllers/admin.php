@@ -164,6 +164,28 @@ class Admin extends CI_Controller {
 	}
 
 /*---------------------------------------------------------------------------------------------------------------------------------*/
+	/*Add Team Members*/
+/*------------------------------------------------------------------------------------------------------------------------------------*/
+	function team(){
+		$data = array(
+			'title' => 'team',
+			'content' => 'admin/team',
+			'id' => 'team',
+			'team' => $this->db->order_by('id', 'desc')->get('team')->result()
+		);
+
+		$this->load->view('admin/includes/template', $data);
+	}
+
+	function add_member(){
+		if($this->admin_model->add_member()){
+			redirect('admin/team');
+		}
+		$this->session->set_flashdata('msg', 'Something Went Wrong. Please try agian.');
+		redirect('admin/team');
+	}
+
+/*-----------------------------------------------------------------------------------------------------------------------------*/
 
 	public function services(){
 	$data1['service']=$this->admin_model->get_services();

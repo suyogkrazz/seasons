@@ -173,7 +173,10 @@ html {
 	margin-bottom: 15px;
 }
 .footer{
+<<<<<<< HEAD
 
+=======
+>>>>>>> 824e0f4c4aa31c37286d074040aafa070e95357e
 	height: 40px;
 	background: #333;
 	color: rgb(179, 181, 184);
@@ -244,6 +247,7 @@ html {
 }
 .btn-modified{
 	margin-top: 20px;
+
 }
 .banner img{
 	width: 100%;
@@ -279,4 +283,3 @@ html {
 	padding: 6px;
 	text-align: center;
 	border-radius: 3px;
-}

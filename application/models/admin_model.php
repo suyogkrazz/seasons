@@ -184,7 +184,7 @@ class Admin_model extends CI_Model {
 
 		$name = $_FILES['audio']['name'];
 		$ext = strtolower(end((explode(".", $name))));
-		if($ext="mp3"){
+		if($ext=="mp3"){
 			$path = uniqid().'.mp3';
 			$store = 'assets/audio/'.$path;
 			if($_FILES['audio']['error'] == 0 && move_uploaded_file($_FILES['audio']['tmp_name'], $store)){
@@ -197,6 +197,30 @@ class Admin_model extends CI_Model {
 		else{
 			return "Please seelct mp3 file.";
 		}
+	}
+
+	function add_member(){
+
+		$name = $_FILES['image']['name'];
+		$ext = strtolower(end((explode(".", $name))));
+		if($ext=="jpg" || $ext=="png" || $ext="gif"){
+			$path = uniqid().'.'.$ext;
+			$store = 'assets/images/'.$path;
+			if($_FILES['image']['error'] == 0 && move_uploaded_file($_FILES['image']['tmp_name'], $store)){
+				$data = array(
+					'name' => $this->input->post('name'),
+					'post' => $this->input->post('post'),
+					'path' => $path,
+					'about' => $this->input->post('about')
+				);
+
+				if($this->db->insert('team', $data)){
+					return true;
+				}
+			}
+		}
+		return false;
+
 	}
 
 }
