@@ -72,19 +72,38 @@
 
 
 	<div class="form-group">
+
 	<label class="col-sm-2 control-label">Choose Image:</label>
 	<div class="col-sm-9">
            	 <input type="file" id="uploadImagecrop" name="uploadImage" accept="image/gif, image/jpeg, image/png"  required/>
 		<div class="help-block with-errors"></div>
 	</div>
+		<label class="col-sm-2 control-label">Name:</label>
+		<div class="col-sm-9">
+			<input type="text"  class="form-control" id ="description" name="name" placeholder="Name your image" required>
+			<div class="help-block with-errors"></div>
+		</div>
 		<label class="col-sm-2 control-label">Slider Description:</label>
 		<div class="col-sm-9">
-			<input type="text"  class="form-control" id ="description" name="description" required>
+			<input type="text"  class="form-control" id ="description" name="description" placeholder="Say some more or not">
 			<div class="help-block with-errors"></div>
 		</div>
 	</div>
 
-	
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">For:</label>
+		<div class="col-sm-9">
+			<select name="slider" class="form-control">
+				<option value="1">First Slider</option>
+				<option value="2">Second Slider</option>
+				<option value="3">Third Slider</option>
+				<option value="4">Fourth Slider</option>
+				<option value="5">Fifth Slider</option>
+			</select>
+		</div>
+	</div>
+
  		
 	<div class="submit">
 		<div class="col-sm-2"></div>
@@ -94,24 +113,171 @@
 	</div>
 <?php echo form_close(); ?>
 
+<br>
+<hr>
+<h2 class="sub-heading">Sliders</h2>
 
-	<br/>
-	<hr />
-	<div class="slider-image">
-		<?php foreach ($slider as $slide):?> 
-			<div class='description'><?php echo $slide->description; ?></div>
-			<div class='thumb'>
-				<?php  echo img(array(
-					'src'=>'assets/images/'.$slide->path,
-					'class'=>'thumb',
-					'height'=> 200,
-					'width'=> 'auto'
-				));?>
-			</div>
-			<div class="delete img-dlt">
-				<?php  echo anchor("admin/deleteobject/".$slide->id,"<span class='glyphicon glyphicon glyphicon-trash'></span>"); ?>
-			</div>
+<div class="panel-group" id="accordian">
 
-			<hr />
-		<?php endforeach; ?>
-	</div>	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<strong><a href="#first" data-toggle="collapse" data-parent="#accordian">First Slider</a></strong>
+		</div>
+
+		<div class="panel-collapse collapse in" id="first">
+			<div class="panel-body">
+				<div class="slider-image">
+					<?php foreach ($first as $slide):?> 
+						<div class='description'>
+							<?php echo "<strong>".$slide->name."</strong><br>"; ?>
+							<?php echo $slide->description; ?>
+						</div>
+						<div class='thumb'>
+							<?php  echo img(array(
+								'src'=>'assets/images/'.$slide->path,
+								'class'=>'thumb',
+								'height'=> 200,
+								'width'=> 'auto'
+							));?>
+						</div>
+						<div class="delete img-dlt">
+							<?php  echo anchor("admin/deleteobject/".$slide->id,"<span class='glyphicon glyphicon glyphicon-trash'></span>"); ?>
+						</div>
+
+						<hr />
+					<?php endforeach; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<strong><a href="#second" data-toggle="collapse" data-parent="#accordian">Second Slider</a></strong>
+		</div>
+
+		<div class="panel-collapse collapse" id="second">
+			<div class="panel-body">
+				<div class="slider-image">
+					<?php foreach ($second as $slide):?> 
+						<div class='description'>
+							<?php echo "<strong>".$slide->name."</strong><br>"; ?>
+							<?php echo $slide->description; ?>
+						</div>
+						<div class='thumb'>
+							<?php  echo img(array(
+								'src'=>'assets/images/'.$slide->path,
+								'class'=>'thumb',
+								'height'=> 200,
+								'width'=> 'auto'
+							));?>
+						</div>
+						<div class="delete img-dlt">
+							<?php  echo anchor("admin/deleteobject/".$slide->id,"<span class='glyphicon glyphicon glyphicon-trash'></span>"); ?>
+						</div>
+
+						<hr />
+					<?php endforeach; ?>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<strong><a href="#Third" data-toggle="collapse" data-parent="#accordian">Third Slider</a></strong>
+		</div>
+
+		<div class="panel-collapse collapse" id="Third">
+			<div class="panel-body">
+				<div class="slider-image">
+					<?php foreach ($third as $slide):?> 
+						<div class='description'>
+							<?php echo "<strong>".$slide->name."</strong><br>"; ?>
+							<?php echo $slide->description; ?>
+						</div>
+						<div class='thumb'>
+							<?php  echo img(array(
+								'src'=>'assets/images/'.$slide->path,
+								'class'=>'thumb',
+								'height'=> 200,
+								'width'=> 'auto'
+							));?>
+						</div>
+						<div class="delete img-dlt">
+							<?php  echo anchor("admin/deleteobject/".$slide->id,"<span class='glyphicon glyphicon glyphicon-trash'></span>"); ?>
+						</div>
+
+						<hr />
+					<?php endforeach; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<strong><a href="#Fourth" data-toggle="collapse" data-parent="#accordian">Fourth Slider</a></strong>
+		</div>
+
+		<div class="panel-collapse collapse" id="Fourth">
+			<div class="panel-body">
+				<div class="slider-image">
+					<?php foreach ($fourth as $slide):?> 
+						<div class='description'>
+							<?php echo "<strong>".$slide->name."</strong><br>"; ?>
+							<?php echo $slide->description; ?>
+						</div>
+						<div class='thumb'>
+							<?php  echo img(array(
+								'src'=>'assets/images/'.$slide->path,
+								'class'=>'thumb',
+								'height'=> 200,
+								'width'=> 'auto'
+							));?>
+						</div>
+						<div class="delete img-dlt">
+							<?php  echo anchor("admin/deleteobject/".$slide->id,"<span class='glyphicon glyphicon glyphicon-trash'></span>"); ?>
+						</div>
+
+						<hr />
+					<?php endforeach; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<strong><a href="#Fifth" data-toggle="collapse" data-parent="#accordian">Fifth Slider</a></strong>
+		</div>
+
+		<div class="panel-collapse collapse" id="Fifth">
+			<div class="panel-body">
+				<div class="slider-image">
+					<?php foreach ($fifth as $slide):?> 
+						<div class='description'>
+							<?php echo "<strong>".$slide->name."</strong><br>"; ?>
+							<?php echo $slide->description; ?>
+						</div>
+						<div class='thumb'>
+							<?php  echo img(array(
+								'src'=>'assets/images/'.$slide->path,
+								'class'=>'thumb',
+								'height'=> 200,
+								'width'=> 'auto'
+							));?>
+						</div>
+						<div class="delete img-dlt">
+							<?php  echo anchor("admin/deleteobject/".$slide->id,"<span class='glyphicon glyphicon glyphicon-trash'></span>"); ?>
+						</div>
+
+						<hr />
+					<?php endforeach; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

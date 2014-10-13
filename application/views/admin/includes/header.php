@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title> <?php echo ucfirst($title).' | Admin | Fishtail Travel'; ?> </title>
+	<title> <?php echo ucfirst($title).' | Admin | Seasons Pokhara'; ?> </title>
 	<link rel="icon" href="<?php echo base_url('favicon.png'); ?>" type="image/png">
 	<link rel="stylesheet" type="text/css" href="<?php echo site_url().'assets/css/bootstrap.min.css'; ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/cropper.css'); ?>">
