@@ -5,7 +5,14 @@ class Home extends CI_Controller {
 	function index(){
 		$data = array(
 			'title' => 'Home',
-			'content' => 'users/home'
+			'content' => 'users/home',
+			'categories' => $this->db->get('categories')->result(),
+			'first' => $this->db->where('slider', 1)->order_by('id', 'desc')->get('slide')->result(),
+			'second' => $this->db->where('slider', 2)->order_by('id', 'desc')->get('slide')->result(),
+			'third' => $this->db->where('slider', 3)->order_by('id', 'desc')->get('slide')->result(),
+			'fourth' => $this->db->where('slider', 4)->order_by('id', 'desc')->get('slide')->result(),
+			'fifth' => $this->db->where('slider', 5)->order_by('id', 'desc')->get('slide')->result(),
+			'banner' => $this->db->get('banner')->result()
 		);
 		$this->load->view('users/includes/template', $data);
 	}
@@ -105,5 +112,24 @@ class Home extends CI_Controller {
 			
 		}
 	}
+
+	/*Advertisement functions*/
+
+	function ads(){
+		$data = array(
+			'title' => 'Advertisement',
+			'content' => 'users/ads',
+			'detail' => $this->db->where('id', $this->uri->segment(2))->get('package')->result(),
+			'images' => $this->db->where('ad_id', $this->uri->segment(2))->order_by('id', 'desc')->get('package_image')->result()
+		);
+
+		if(empty($data['detail']) && empty($data['image'])){
+			show_404();
+		}
+
+		$this->load->view('users/includes/template', $data);
+	}
+
+	/*Advertisement functions end*/
 
 }

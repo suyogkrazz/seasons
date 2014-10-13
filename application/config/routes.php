@@ -44,6 +44,7 @@ $route['admin/change-profile-picture'] = 'admin/changeProfilePicture';
 $route['about-us'] = 'home/about';
 $route['faqs'] = 'home/faqs';
 $route['contact-us'] = 'home/contact';
+$route['ad/(:any)'] = 'home/ads';
 
 
 /* End of file routes.php */
