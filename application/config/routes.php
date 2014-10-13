@@ -46,7 +46,8 @@ $route['faqs'] = 'home/faqs';
 $route['contact-us'] = 'home/contact';
 $route['send-message'] = 'home/contact_post';
 $route['ad/(:any)'] = 'home/ads';
-$route['categories/(:any)'] = 'home/categories';
+$route['categories/(:any)'] = 'home/category';
+$route['search-content']= 'home/search_content';
 
 
 /* End of file routes.php */

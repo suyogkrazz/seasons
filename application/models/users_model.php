@@ -48,4 +48,11 @@ class Users_model extends CI_Model {
 			return $result;
 		}
 	}
+
+	function display_item(){
+		$this->db->where('ad_id',$this->uri->segment(2));
+		$result=$this->db->get('package')->result();
+		return $result;
+	}
+
 }
