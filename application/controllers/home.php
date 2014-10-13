@@ -132,4 +132,16 @@ class Home extends CI_Controller {
 
 	/*Advertisement functions end*/
 
+	function category(){
+
+		$data=array(
+			'title'=>'category',
+			'content'=>'users/search'
+		);
+		$result=$this->users_model->display_item();
+		$data['records']=$result;
+		
+		$this->load->view('users/includes/template', $data);
+	}
+
 }
