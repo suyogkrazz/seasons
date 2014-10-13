@@ -6,7 +6,7 @@
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Name :</label>
 		<div class="col-sm-10">
-			<input type="text" class="form-control" placeholder="Name of hotel" name="name" required>
+			<input type="text" class="form-control" placeholder="Name of Advertisement" name="name" required>
 		</div>
 	</div>
 

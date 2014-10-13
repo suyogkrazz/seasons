@@ -1,5 +1,6 @@
 body{
 	background: #F0F0F0;
+	display: block;
 }
 .row{
 	margin-left: 0 !important;
@@ -166,6 +167,7 @@ body{
 	margin-bottom: 15px;
 }
 .footer{
+<<<<<<< HEAD
 	height: 40px;
 	background: #333;
 	color: rgb(179, 181, 184);
@@ -235,3 +237,7 @@ body{
 .btn-modified{
 	margin-top: 20px;
 }
+=======
+	height: 35px;
+}
+>>>>>>> a3783a2d5c02432e1b2ccbaecbe9e754a152664d

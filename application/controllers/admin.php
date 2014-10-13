@@ -123,6 +123,9 @@ class Admin extends CI_Controller {
 		redirect('admin/settings');
 	}
 
+	/*About Us Functions*/
+/*--------------------------------------------------------------------------------------------------------------------------------*/
+
 	public function aboutus(){
 		$data1['about'] = $this->db->get('aboutus')->result();
 		$data = array(
@@ -132,14 +135,6 @@ class Admin extends CI_Controller {
 		);
 
 		$this->load->view('admin/includes/template',array_merge($data,$data1));
-	}
-
-	function add_message() {
-		$data = array(
-			'message_from_chairman' => $this->input->post('message')
-		);
-		$this->db->update('aboutus', $data, "id = 1");
-		redirect('admin/aboutus');
 	}
 
 	function add_image(){
@@ -159,23 +154,7 @@ class Admin extends CI_Controller {
 			redirect('admin/aboutus');
 		}
 	}
-	function add_image_chair(){
-		if(!empty($_FILES['file'])){
-			$name=$_FILES['file']['name'];
-			$ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
-			$path1= 'chair'.'.'.$ext;
-  			$path='assets/images/'.$path1;
-	  		if($_FILES['file']['error']==0 && move_uploaded_file($_FILES['file']['tmp_name'], $path)){
-				$data=array(
-					'chair_path'=>$path1
-				);
-				$this->db->update('aboutus', $data, "id = 1");
-				redirect('admin/aboutus');
-			}
-			$this->session->set_flashdata('msg', 'Error Occurred. Please choose different file.');
-			redirect('admin/aboutus');
-		}
-	}
+
 	function addaboutus(){
 		$data = array(
 			'description' => $this->input->post('about')
@@ -183,13 +162,9 @@ class Admin extends CI_Controller {
 		$this->db->update('aboutus', $data, "id = 1");
 		redirect('admin/aboutus');
 	}
-	function addwhy(){
-		$data = array(
-			'why' => $this->input->post('about')
-		);
-		$this->db->update('aboutus', $data, "id = 1");
-		redirect('admin/aboutus');
-	}	
+
+/*---------------------------------------------------------------------------------------------------------------------------------*/
+
 	public function services(){
 	$data1['service']=$this->admin_model->get_services();
 		$data = array(
@@ -258,12 +233,33 @@ class Admin extends CI_Controller {
 					'ad_id' => $package,
 					'path'=>$path1,
 				);
+				if($this->admin_model->add_package_image($data1)){
+					redirect('admin/service_detail/'.$this->input->post('id'));
+				}
+				else{
+					$this->session->set_flashdata('msg', 'Something went wrong. Please try again.');
+					redirect('admin/add_events/'.$this->input->post('id'));
+				}
 			}
-
-			$msg = $this->admin_model->add_package_image($data1);
 		}
-		redirect('admin/service_detail/'.$this->input->post('id'));		
+			
 	}
+
+	function audio(){
+		$data = array(
+			'title' => 'Add Audio',
+			'content' => 'admin/audio',
+			'id' => 'service'
+		);
+
+		$this->load->view('admin/includes/template', $data);
+	}
+
+	function add_audio(){
+		echo $this->admin_model->do_upload();
+		die();
+	}
+
 	function edit_package(){
 		$data = array(
 			'title' => " EditEvents",
@@ -307,47 +303,39 @@ class Admin extends CI_Controller {
 		  		$path='assets/images/'.$path1;
 		  		if($_FILES['file']['error'][$key]==0 && move_uploaded_file($_FILES['file']['tmp_name'][$key], $path)){
 					$data=array(
-					'package_id' => $this->input->post('package_id'),
+					'ad_id' => $this->input->post('package_id'),
 					'path'=>$path1,
 					);
 				}
 
-				$msg = $this->admin_model->add_package_image($data);
-
-				if($msg == true ){
-					
+				if($this->admin_model->add_package_image($data)){
+					redirect('admin/edit_package/'.$this->input->post('package_id'));
 				}
-
 				else{
-					$data = array(
-						'title' => " EditEvents",
-						'content' => 'admin/edit_package',
-						'global_message' => $msg
-					);
-					$data['package']=$this->db->where('id', $this->input->post('id'))->get('package')->result();
-					$data['package_img']=$this->db->where('package_id', $this->input->post('package_id'))->get('package_image')->result();
-					$this->load->view('includes/template', $data);
+					$this->session->set_flashdata('msg', 'Something went wrong. Please try again.');
+					redirect('admin/edit_package/'.$this->input->post('package_id'));
 				}
 			}
-			redirect('admin/edit_package/'.$this->input->post('id'));
+			
 
 		}
 		else{
-			redirect('admin/edit_package/'.$this->input->post('id'));
+			redirect('admin/edit_package/'.$this->input->post('package_id'));
 		}
 	}
 
 	public function delete_package(){
 		$data=$this->db->where('id', $this->uri->segment(3))->get('package')->result();
-		$data=$this->db->where('package_id', $data[0]->id)->get('package_image')->result();
+		$data=$this->db->where('ad_id', $data[0]->id)->get('package_image')->result();
 		foreach ($data as $datas ) {
 			$path='./assets/images/'.$datas->path;
 			unlink($path);
+			$this->db->where('ad_id',$datas->ad_id)->delete('package_image');
 		}
-		$this->admin_model->delete_package_images($data);
+		
 		$data=$this->db->where('id', $this->uri->segment(3))->get('package')->result();
 		$this->admin_model->delete_package();
-		redirect('admin/service_detail/'.$data[0]->service_id);
+		redirect('admin/service_detail/'.$data[0]->ad_id);
 	}
 
 	public function delete_package_img(){
@@ -355,21 +343,21 @@ class Admin extends CI_Controller {
 		$path='./assets/images/'.$data[0]->path;
 		unlink($path);
 		$this->admin_model->delete_package_img($data[0]->id);
-		redirect('admin/edit_package/'.$data[0]->package_id);
+		redirect('admin/edit_package/'.$data[0]->ad_id);
 	}
 
 
 	public function deleteservice(){
-		$data=$this->db->where('service_id', $this->uri->segment(3))->get('package')->result();
+		$data=$this->db->where('ad_id', $this->uri->segment(3))->get('package')->result();
 
 		foreach ($data as $datad ) {									
-		$datass=$this->db->where('package_id', $datad->id)->get('package_image')->result();
-		foreach ($datass as $datas ) {
-			$path='./assets/images/'.$datas->path;
-			unlink($path);
-		}
-				$this->admin_model->delete_package_images($datad);
-				$this->admin_model->delete_package_serv();
+		$datass=$this->db->where('ad_id', $datad->id)->get('package_image')->result();
+			foreach ($datass as $datas ) {
+				$path='./assets/images/'.$datas->path;
+				unlink($path);
+				$this->db->where('ad_id', $datas->ad_id)->delete('package_image');
+			}
+			$this->admin_model->delete_package_serv();
 		}
 		$data=$this->admin_model->get_particular_service();
 		$re=$data->option_id;
@@ -378,14 +366,18 @@ class Admin extends CI_Controller {
 	}
 				
 	public function slider()
-	{					
-		$data['slider']=$this->admin_model->get_object_slider();
-		$data1 = array(
+	{
+		$data = array(
 			'title' => 'Add Slider',
 			'content' => 'admin/add_objects',
-			'id' => 'media'
+			'id' => 'media',
+			'first' => $this->db->where('slider', 1)->order_by('id', 'desc')->get('slide')->result(),
+			'second' => $this->db->where('slider', 2)->order_by('id', 'desc')->get('slide')->result(),
+			'third' => $this->db->where('slider', 3)->order_by('id', 'desc')->get('slide')->result(),
+			'fourth' => $this->db->where('slider', 4)->order_by('id', 'desc')->get('slide')->result(),
+			'fifth' => $this->db->where('slider', 5)->order_by('id', 'desc')->get('slide')->result(),
 		);
-		$this->load->view('admin/includes/template', array_merge($data,$data1));
+		$this->load->view('admin/includes/template', $data);
 	}
 
 	public function addobjects(){
@@ -407,12 +399,16 @@ class Admin extends CI_Controller {
 		imagejpeg($dstImg, $path,100);
 		imagedestroy($dstImg);
 		$data=array(
-		'description'=>$this->input->post('description'),
-		'path'=>$path1
+			'description'=>$this->input->post('description'),
+			'path'=>$path1,
+			'name' => $this->input->post('name'),
+			'slider' => $this->input->post('slider')
 		);
 
-		$this->admin_model->add_object_slider($data);
-		redirect('admin/slider');			
+		if($this->admin_model->add_object_slider($data)){
+			$this->session->set_flashdata('msg', 'Slider Added.');
+		}
+		redirect('admin/slider');
 	}
 
 	public function deleteobject(){
@@ -421,6 +417,29 @@ class Admin extends CI_Controller {
 		unlink($path);
 		$product=$this->admin_model->delete_object();
 		redirect('admin/slider');			
+	}
+
+	function banner(){
+		$data = array(
+			'title' => 'banner',
+			'content' => 'admin/banner',
+			'id' => 'banner',
+			'ads' => $this->db->get('package')->result(),
+			'banner' => $this->db->get('banner')->result()
+		);
+
+		$this->load->view('admin/includes/template', $data);
+	}
+
+	function banner_update(){
+		if($this->admin_model->banner_update()){
+			$this->session->set_flashdata('msg', 'Banner Update');
+			redirect('admin/banner');
+		}
+		else{
+			$this->session->set_flashdata('msg', 'Error. Please try again.');
+			redirect('admin/banner');
+		}
 	}
 
 

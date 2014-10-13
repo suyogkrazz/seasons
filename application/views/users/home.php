@@ -1,230 +1,278 @@
-
 <div class="container-fluid">
 
-	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	<div id="first-slider" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
-	    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-	    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-	    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+	    <?php $j=-1; foreach($first as $ol): ?>
+		    <?php $j++; ?>
+		   	<?php if($j==0): ?>
+		    <li data-target="#first-slider" data-slide-to="<?php echo $j; ?>" class="active"></li>
+		    <?php else :?>
+		    <li data-target="#first-slider" data-slide-to="<?php echo $j; ?>"></li>
+		    <?php endif; ?>
+		<?php endforeach; ?>
 	  </ol>
 
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner">
-	    <div class="item active">
-	      <img src="<?php echo base_url("images/HD-Widescreen-Wallpapers-5.jpg") ?>" alt="...">
-	      <div class="carousel-caption">
-	       		<h3 class="topic1">HELLO WE'RE FROST</h3>
-	    		<p class="topic2">FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO </p>
-	      </div>
-	    </div>
-	    <div class="item">
-	      <img src="<?php echo base_url("images/slider-bg2.jpg") ?>" alt="...">
-	      <div class="carousel-caption">
-	         	<h3 class="topic1">HELLO WE'RE FROST</h3>
-	    		<p class="topic2">FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO </p>
-	      </div>
-	    </div>
+	  	<?php $i=0; foreach($first as $slide): $i++; ?>
+	  	<?php if($i==1): ?>
+		    <div class="item active">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <div class="carousel-caption">
+		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
+		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		      </div>
+		    </div>
+		<?php else: ?>
+		    <div class="item">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <div class="carousel-caption">
+		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
+		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		      </div>
+		    </div>
+		<?php endif; ?>
+		<?php endforeach; ?>
 	    
 	  </div>
 
 	  <!-- Controls -->
-	  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+	  <a class="left carousel-control" href="#first-slider" role="button" data-slide="prev">
 	    <span class="glyphicon glyphicon-chevron-left"></span>
 	  </a>
-	  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+	  <a class="right carousel-control" href="#first-slider" role="button" data-slide="next">
 	    <span class="glyphicon glyphicon-chevron-right"></span>
 	  </a>
 	</div>
+
 	<div class="catagories-wrapper">
 		<div class="row">
-			<div class="costum"><a href="javascript:void(0);">Hotel(16)</a></div>
-			<div class="costum"><a href="javascript:void(0);">School(10)</a></div>
-			<div class="costum"><a href="javascript:void(0);">Shop(4)</a></div>
-			<div class="costum"><a href="javascript:void(0);">Radi0(13)</a></div>
-			<div class="costum"><a href="javascript:void(0);">Computer(9)</a></div>
-			<div class="costum"><a href="javascript:void(0);">Motels(23)</a></div>
-			<div class="costum"><a href="javascript:void(0);">Hotel(16)</a></div>
-			<div class="costum"><a href="javascript:void(0);">School(10)</a></div>
-			<div class="costum"><a href="javascript:void(0);">Shop(4)</a></div>
-			<div class="costum"><a href="javascript:void(0);">Radi0(13)</a></div>
-			<div class="costum"><a href="javascript:void(0);">Computer(9)</a></div>
-			<div class="costum"><a href="javascript:void(0);">Motels(23)</a></div>
-			<div class="costum"><a href="javascript:void(0);">Hotel(16)</a></div>
-			<div class="costum"><a href="javascript:void(0);">School(10)</a></div>
-			<div class="costum"><a href="javascript:void(0);">Shop(4)</a></div>
-			<div class="costum"><a href="javascript:void(0);">Radi0(13)</a></div>
-			<div class="costum"><a href="javascript:void(0);">Computer(9)</a></div>
-			<div class="costum"><a href="javascript:void(0);">Motels(23)</a></div>
-			<div class="costum"><a href="javascript:void(0);">Hotel(16)</a></div>
-			<div class="costum"><a href="javascript:void(0);">School(10)</a></div>
-			<div class="costum"><a href="javascript:void(0);">Shop(4)</a></div>
-			<div class="costum"><a href="javascript:void(0);">Radi0(13)</a></div>
-			<div class="costum"><a href="javascript:void(0);">Computer(9)</a></div>
-			<div class="costum"><a href="javascript:void(0);">Motels(23)</a></div>
+			<?php foreach($categories as $cat): ?>
+				<?php $num = $this->db->where('ad_id', $cat->id)->get('package')->num_rows; ?>
+				<div class="costum"><a href="javascript:void(0);"><?php echo $cat->name."(".$num.")"; ?></a></div>
+			<?php endforeach; ?>
 		</div>
 		
 	</div>
-	<div class="ads">
-		<img src="<?php echo base_url("images/bdxuixdd.png") ?>">
+
+	<div class="ads darkness">
+		<?php $image = $this->db->where('ad_id', $banner[0]->banner1)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
+		<a href="<?php echo base_url('ad/'.$banner[0]->banner1) ?>">
+			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+		</a>
 	</div>
 
-	<div id="carousel-example2-generic" class="carousel slide" data-ride="carousel">
+	<div id="second-slider" class="carousel slide" data-ride="carousel">
+
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
-	    <li data-target="#carousel-example2-generic" data-slide-to="0" class="active"></li>
-	    <li data-target="#carousel-example2-generic" data-slide-to="1"></li>
-	    <li data-target="#carousel-example2-generic" data-slide-to="2"></li>
+	    <?php $j=-1; foreach($second as $ol): ?>
+		    <?php $j++; ?>
+		   	<?php if($j==0): ?>
+		    <li data-target="#second-slider" data-slide-to="<?php echo $j; ?>" class="active"></li>
+		    <?php else :?>
+		    <li data-target="#second-slider" data-slide-to="<?php echo $j; ?>"></li>
+		    <?php endif; ?>
+		<?php endforeach; ?>
 	  </ol>
 
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner">
-	    <div class="item active">
-	      <img src="<?php echo base_url("images/hd-wallpaper-widescreen-underwater.jpg") ?>" alt="...">
-	      <div class="carousel-caption">
-	       		<h3 class="topic1">HELLO WE'RE FROST</h3>
-	    		<p class="topic2">FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO </p>
-	      </div>
-	    </div>
-	    <div class="item">
-	      <img src="<?php echo base_url("images/slider-bg2.jpg") ?>" alt="...">
-	      <div class="carousel-caption">
-	         	<h3 class="topic1">HELLO WE'RE FROST</h3>
-	    		<p class="topic2">FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO </p>
-	      </div>
-	    </div>
+	  	<?php $i=0; foreach($second as $slide): $i++; ?>
+	  	<?php if($i==1): ?>
+		    <div class="item active">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <div class="carousel-caption">
+		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
+		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		      </div>
+		    </div>
+		<?php else: ?>
+		    <div class="item">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <div class="carousel-caption">
+		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
+		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		      </div>
+		    </div>
+		<?php endif; ?>
+		<?php endforeach; ?>
 	    
 	  </div>
 
 	  <!-- Controls -->
-	  <a class="left carousel-control" href="#carousel-example2-generic" role="button" data-slide="prev">
+	  <a class="left carousel-control" href="#second-slider" role="button" data-slide="prev">
 	    <span class="glyphicon glyphicon-chevron-left"></span>
 	  </a>
-	  <a class="right carousel-control" href="#carousel-example2-generic" role="button" data-slide="next">
+	  <a class="right carousel-control" href="#second-slider" role="button" data-slide="next">
 	    <span class="glyphicon glyphicon-chevron-right"></span>
 	  </a>
 	</div>
+
 	<div class="ads">
-		<img src="<?php echo base_url("images/newrelic2.jpg") ?>">
+		<?php $image = $this->db->where('ad_id', $banner[0]->banner2)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
+		<a href="<?php echo base_url('ad/'.$banner[0]->banner2) ?>">
+			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+		</a>
 	</div>
 
-	<div id="carousel-example1-generic" class="carousel slide" data-ride="carousel">
+	<div id="third-slider" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
-	    <li data-target="#carousel-example1-generic" data-slide-to="0" class="active"></li>
-	    <li data-target="#carousel-example1-generic" data-slide-to="1"></li>
-	    <li data-target="#carousel-example1-generic" data-slide-to="2"></li>
+	    <?php $j=-1; foreach($third as $ol): ?>
+		    <?php $j++; ?>
+		   	<?php if($j==0): ?>
+		    <li data-target="#third-slider" data-slide-to="<?php echo $j; ?>" class="active"></li>
+		    <?php else :?>
+		    <li data-target="#third-slider" data-slide-to="<?php echo $j; ?>"></li>
+		    <?php endif; ?>
+		<?php endforeach; ?>
 	  </ol>
 
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner">
-	    <div class="item active">
-	      <img src="<?php echo base_url("images/nature.jpeg") ?>" alt="...">
-	      <div class="carousel-caption">
-	       		<h3 class="topic1">HELLO WE'RE FROST</h3>
-	    		<p class="topic2">FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO </p>
-	      </div>
-	    </div>
-	    <div class="item">
-	      <img src="<?php echo base_url("images/slider-bg2.jpg") ?>" alt="...">
-	      <div class="carousel-caption">
-	         	<h3>HELLO WE'RE FROST</h3>
-	    		<p>FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO </p>
-	      </div>
-	    </div>
+	  	<?php $i=0; foreach($third as $slide): $i++; ?>
+	  	<?php if($i==1): ?>
+		    <div class="item active">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <div class="carousel-caption">
+		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
+		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		      </div>
+		    </div>
+		<?php else: ?>
+		    <div class="item">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <div class="carousel-caption">
+		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
+		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		      </div>
+		    </div>
+		<?php endif; ?>
+		<?php endforeach; ?>
 	    
 	  </div>
 
 	  <!-- Controls -->
-	  <a class="left carousel-control" href="#carousel-example1-generic" role="button" data-slide="prev">
+	  <a class="left carousel-control" href="#third-slider" role="button" data-slide="prev">
 	    <span class="glyphicon glyphicon-chevron-left"></span>
 	  </a>
-	  <a class="right carousel-control" href="#carousel-example1-generic" role="button" data-slide="next">
+	  <a class="right carousel-control" href="#third-slider" role="button" data-slide="next">
 	    <span class="glyphicon glyphicon-chevron-right"></span>
 	  </a>
 	</div>
+
 	<div class="ads">
-		<img src="<?php echo base_url("images/btm0x0w2.png") ?>">
+		<?php $image = $this->db->where('ad_id', $banner[0]->banner3)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
+		<a href="<?php echo base_url('ad/'.$banner[0]->banner3) ?>">
+			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+		</a>
 	</div>
-	<div id="carousel-example1-generic" class="carousel slide" data-ride="carousel">
+
+	<div id="fourth-slider" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
-	    <li data-target="#carousel-example1-generic" data-slide-to="0" class="active"></li>
-	    <li data-target="#carousel-example1-generic" data-slide-to="1"></li>
-	    <li data-target="#carousel-example1-generic" data-slide-to="2"></li>
+	    <?php $j=-1; foreach($fourth as $ol): ?>
+		    <?php $j++; ?>
+		   	<?php if($j==0): ?>
+		    <li data-target="#fourth-slider" data-slide-to="<?php echo $j; ?>" class="active"></li>
+		    <?php else :?>
+		    <li data-target="#fourth-slider" data-slide-to="<?php echo $j; ?>"></li>
+		    <?php endif; ?>
+		<?php endforeach; ?>
 	  </ol>
 
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner">
-	    <div class="item active">
-	      <img src="<?php echo base_url("images/nature.jpeg") ?>" alt="...">
-	      <div class="carousel-caption">
-	       		<h3 class="topic1">HELLO WE'RE FROST</h3>
-	    		<p class="topic2">FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO </p>
-	      </div>
-	    </div>
-	    <div class="item">
-	      <img src="<?php echo base_url("images/slider-bg2.jpg") ?>" alt="...">
-	      <div class="carousel-caption">
-	         	<h3>HELLO WE'RE FROST</h3>
-	    		<p>FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO </p>
-	      </div>
-	    </div>
+	  	<?php $i=0; foreach($fourth as $slide): $i++; ?>
+	  	<?php if($i==1): ?>
+		    <div class="item active">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <div class="carousel-caption">
+		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
+		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		      </div>
+		    </div>
+		<?php else: ?>
+		    <div class="item">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <div class="carousel-caption">
+		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
+		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		      </div>
+		    </div>
+		<?php endif; ?>
+		<?php endforeach; ?>
 	    
 	  </div>
 
 	  <!-- Controls -->
-	  <a class="left carousel-control" href="#carousel-example1-generic" role="button" data-slide="prev">
+	  <a class="left carousel-control" href="#fourth-slider" role="button" data-slide="prev">
 	    <span class="glyphicon glyphicon-chevron-left"></span>
 	  </a>
-	  <a class="right carousel-control" href="#carousel-example1-generic" role="button" data-slide="next">
+	  <a class="right carousel-control" href="#fourth-slider" role="button" data-slide="next">
 	    <span class="glyphicon glyphicon-chevron-right"></span>
 	  </a>
 	</div>
+
 	<div class="ads">
-		<img src="<?php echo base_url("images/btm0x0w2.png") ?>">
+		<?php $image = $this->db->where('ad_id', $banner[0]->banner4)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
+		<a href="<?php echo base_url('ad/'.$banner[0]->banner4) ?>">
+			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+		</a>
 	</div>
-	<div id="carousel-example1-generic" class="carousel slide" data-ride="carousel">
+	<div id="fifth-slider" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
-	    <li data-target="#carousel-example1-generic" data-slide-to="0" class="active"></li>
-	    <li data-target="#carousel-example1-generic" data-slide-to="1"></li>
-	    <li data-target="#carousel-example1-generic" data-slide-to="2"></li>
+	    <?php $j=-1; foreach($fifth as $ol): ?>
+		    <?php $j++; ?>
+		   	<?php if($j==0): ?>
+		    <li data-target="#fifth-slider" data-slide-to="<?php echo $j; ?>" class="active"></li>
+		    <?php else :?>
+		    <li data-target="#fifth-slider" data-slide-to="<?php echo $j; ?>"></li>
+		    <?php endif; ?>
+		<?php endforeach; ?>
 	  </ol>
 
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner">
-	    <div class="item active">
-	      <img src="<?php echo base_url("images/nature.jpeg") ?>" alt="...">
-	      <div class="carousel-caption">
-	       		<h3 class="topic1">HELLO WE'RE FROST</h3>
-	    		<p class="topic2">FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO </p>
-	      </div>
-	    </div>
-	    <div class="item">
-	      <img src="<?php echo base_url("images/slider-bg2.jpg") ?>" alt="...">
-	      <div class="carousel-caption">
-	         	<h3>HELLO WE'RE FROST</h3>
-	    		<p>FROST IS A CREATIVE TEAM SPECIALIZING IN BRANDING, MOTION VIDEO </p>
-	      </div>
-	    </div>
+	  	<?php $i=0; foreach($fifth as $slide): $i++; ?>
+	  	<?php if($i==1): ?>
+		    <div class="item active">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <div class="carousel-caption">
+		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
+		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		      </div>
+		    </div>
+		<?php else: ?>
+		    <div class="item">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <div class="carousel-caption">
+		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
+		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		      </div>
+		    </div>
+		<?php endif; ?>
+		<?php endforeach; ?>
 	    
 	  </div>
 
 	  <!-- Controls -->
-	  <a class="left carousel-control" href="#carousel-example1-generic" role="button" data-slide="prev">
+	  <a class="left carousel-control" href="#fifth-slider" role="button" data-slide="prev">
 	    <span class="glyphicon glyphicon-chevron-left"></span>
 	  </a>
-	  <a class="right carousel-control" href="#carousel-example1-generic" role="button" data-slide="next">
+	  <a class="right carousel-control" href="#fifth-slider" role="button" data-slide="next">
 	    <span class="glyphicon glyphicon-chevron-right"></span>
 	  </a>
 	</div>
+
 	<div class="ads">
-		<img src="<?php echo base_url("images/btm0x0w2.png") ?>">
-	</div>
-	<div class="footer">
-		<div class="pine">Powered by <a href="http://pinesofts.com/">Pinesofts.com</a></div>
-		
+		<?php $image = $this->db->where('ad_id', $banner[0]->banner5)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
+		<a href="<?php echo base_url('ad/'.$banner[0]->banner5) ?>">
+			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+		</a>
 	</div>
 
 </div>

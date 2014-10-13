@@ -88,101 +88,6 @@ class Admin_model extends CI_Model {
 		}
 		return "Invalid Admin Password.";
 	}
-
-	function get_dashboard_services(){
-		return $this->db->order_by('id', 'desc')->limit(5)->get('package')->result();
-	}
-
-	function get_dashboard_image($id){
-		$image = $this->db->where('package_id', $id)->get('package_image')->num_rows();
-
-		if($image == 0){
-			return array('path' => 'default.jpg');
-		}
-
-		return $this->db->where('package_id', $id)->order_by('id', 'desc')->limit(1)->get('package_image')->result();
-	}
-
-	function file($name){
-		$data = array(
-			$this->input->post('type') => $name
-		);
-		if($this->db->where('id', 1)->update('files', $data)){
-			return true;
-		}
-		return false;
-	}
-
-	function special($data){
-		$check = $this->db->where('name', $data['name'])->get('special')->num_rows();
-		if($check<1){
-			if($this->db->insert('special', $data)){
-				return true;
-			}
-			return false;
-		}
-		return false;
-		
-	}
-
-	function update_special($data){
-		if($this->db->where('id', $this->input->post('id'))->update('special', $data)){
-			return true;
-		}
-		return false;
-	}
-
-	function news($data){
-		$row = $this->db->where('title', $data['title'])->get('news')->num_rows();
-		if($row>1){
-			return false;
-		}
-		$this->db->insert('news', $data);
-		return true;
-	}
-
-	function check_title(){
-		$duplicate = $this->db->where('title', $this->input->post('title'))->get('news')->num_rows();
-		if($duplicate > 0){
-			$questions = $this->db->where('title', $this->input->post('title'))->where('id', $this->input->post('id'))->get('news')->num_rows();
-			if($questions == 1){
-				return true;
-			}
-			else{
-				return false;
-			}
-		}
-		else{
-			return true;
-		}
-	}
-
-	function check_special_title(){
-		$duplicate = $this->db->where('name', $this->input->post('title'))->get('special')->num_rows();
-		if($duplicate > 0){
-			$questions = $this->db->where('name', $this->input->post('title'))->where('id', $this->input->post('id'))->get('special')->num_rows();
-			if($questions == 1){
-				return true;
-			}
-			else{
-				return false;
-			}
-		}
-		else{
-			return true;
-		}
-	}
-
-	function add_testimonials($data){
-		$this->db->insert("testimonials",$data);
-		return ;
-	}
-	
-	function delete_testimonials(){
-		$this->db->where("id",$this->uri->segment(3));
-		$this->db->delete('testimonials');
-		return;
-	}
 	
 	function add_services($data){
 		if($this->db->insert("categories",$data)){
@@ -195,12 +100,12 @@ class Admin_model extends CI_Model {
 		return $results;
 	}
 	function get_particular_service(){
-		$results=$this->db->get_where('service',array('id'=>$this->uri->segment(3)))->result();
+		$results=$this->db->get_where('categories',array('id'=>$this->uri->segment(3)))->result();
 		 return $results[0];
 	}
 	function delete_service(){
 		$this->db->where("id",$this->uri->segment(3));
-		$this->db->delete('service');
+		$this->db->delete('categories');
 		return;
 	}
 	function add_package($data){
@@ -231,57 +136,29 @@ class Admin_model extends CI_Model {
 		$this->db->delete('package_image');
 		return;
 	}
-	function delete_package_images($data){
-		foreach ($data as $datas) {
-		$this->db->where("id",$datas->id);
-		$this->db->delete('package_image');
-		}
-		return;
-	}
+
 	function delete_package(){
 		$this->db->where("id",$this->uri->segment(3));
 		$this->db->delete('package');
 		return;
 	}
 	function delete_package_serv(){
-		$this->db->where("service_id",$this->uri->segment(3));
+		$this->db->where("ad_id",$this->uri->segment(3));
 		$this->db->delete('package');
 		return;
 	}
-	function add_video($data){
-		if($this->db->insert('videos',$data)){
-			return 1;
-		}
-		else{
-			return 0;
-		}
-	}
-	 function get_videos(){
-	 	$this->db->select('*');
-	    $result=$this->db->get('videos')->result();
-	    return $result;
-	 }
 
-	 function delete_video(){
-	 	$this->db->where("video_id",$this->uri->segment(3));
-	 	$this->db->delete('videos');
-	 	return 1;
-	 }
 	function add_object_slider($data){
-		if($this->db->get('slide')->num_rows() > 5){
+		if($this->db->where('slider', $this->input->post('slider'))->get('slide')->num_rows() > 5){
 			$this->session->set_flashdata('msg', 'You cannot add more than 5 images.');
 			return false;
 		}
 		else{
 			$this->db->insert("slide",$data);
-			return ;
-			}	
-		}
-	function get_object_slider(){
-
-		$results=$this->db->get('slide')->result();
-		return $results;
+			return true;
+		}	
 	}
+	
 	function delete_object(){
 			$this->db->where("id",$this->uri->segment(3));
 			$this->db->delete('slide');
@@ -291,61 +168,22 @@ class Admin_model extends CI_Model {
 			$results=$this->db->get_where('slide',array('id'=>$this->uri->segment(3)))->result();
 	 	return $results[0];
 	}
-	function add_images($data){
-		$this->db->insert("images",$data);
-		return ;
-	}
-	function get_images(){
-		$results=$this->db->get_where('images',array('album_id'=>$this->uri->segment(3)))->result();
-		 return $results;
-	}
-	function add_object_album($data){
-		$this->db->insert("album",$data);
-		return ;
-	}
-	function get_object_album(){
-		$results=$this->db->order_by('id', 'desc')->get('album')->result();
-		return $results;
-	}
-	function get_object_album_user(){
-		$this->db->select("album.id,album.name,images.path,images.album_id");
-		$this->db->from("album");
-		$this->db->join("images", "album.id=images.album_id");
-	 	$results=$this->db->get()->result();
-		return $results;
-	}
 
-	function get_album_cover_image($id) {
-		$image = $this->db->where('album_id', $id)->get('images')->num_rows();
-		if($image == 0){
-			return array('path' => 'default.jpg');
+	function banner_update(){
+		$data = array(
+			$this->input->post('banner') => $this->input->post('ad_id')
+		);
+
+		if($this->db->where('id', 1)->update('banner', $data)){
+			return true;
 		}
-
-		return $this->db->where('album_id', $id)->order_by('id', 'desc')->limit(1)->get('images')->result();
+		return false;
 	}
 
-	function get_album_image(){
-		$results=$this->db->get_where('images',array('album_id'=>$this->uri->segment(3)))->result();
-	 	return $results;
-	}
-	function delete_image(){
-		$this->db->where("album_id",$this->uri->segment(3));
-			$this->db->delete('images');
-			return;
-	}
-	function delete_album(){
-		$this->db->where("id",$this->uri->segment(3));
-			$this->db->delete('album');
-			return;
-	}
-	function add_mostviewed($data){
-		$num_rows = $this->db->get('mostviewed')->num_rows();
+	function do_upload(){
 
-		if($num_rows > 2){
-			return false;
-		}
-		$this->db->insert('mostviewed', $data);
-		return true;
+		$name = $_FILES['audio']['name'];
+		$ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
 	}
 
 }

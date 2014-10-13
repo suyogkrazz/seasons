@@ -25,7 +25,7 @@
 		</td>
 			
 		<td>
-			<?php  echo anchor("admin/delete_package/".$pack->id,"Delete"); ?>
+			<?php  echo anchor("admin/delete_package/".$pack->id,"Delete"); ?> / <?php  echo anchor("admin/audio/".$pack->id,"Add Audio"); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
