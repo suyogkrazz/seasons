@@ -67,8 +67,8 @@
 		</div>
 		
 	</div>
-	<div class="ads darkness">
-
+	<!-- <div class="ads darkness"> -->
+	<div class="ads">
 		<img src="<?php echo base_url("images/bdxuixdd.png") ?>">
 	</div>
 
