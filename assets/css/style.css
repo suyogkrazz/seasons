@@ -1,6 +1,12 @@
 body{
 	background: #F0F0F0;
 	display: block;
+	margin-bottom: 75px;
+
+}
+html {
+	position: relative;
+	min-height: 100%
 }
 .row{
 	margin-left: 0 !important;
@@ -167,12 +173,18 @@ body{
 	margin-bottom: 15px;
 }
 .footer{
+<<<<<<< HEAD
+
+=======
+>>>>>>> 824e0f4c4aa31c37286d074040aafa070e95357e
 	height: 40px;
 	background: #333;
 	color: rgb(179, 181, 184);
 	padding: 10px;
 	font-size: 17px;
-	/*font-family: cursive;*/
+	bottom: 0px;
+	position: absolute;
+	width: 100%;
 }
 .post{
 	font-family: cursive;
@@ -235,5 +247,39 @@ body{
 }
 .btn-modified{
 	margin-top: 20px;
-	height: 35px;
+
 }
+.banner img{
+	width: 100%;
+}
+.banner-imgs img{
+	width: 100%;
+	height: 185px;
+}
+.paddings{
+	padding-left: 0px !important;
+}
+.separator{
+	margin-top: 15px;
+}
+.article{
+		background: rgb(97, 121, 133);
+	padding: 6px;
+	font-size: 22px;
+	text-align: center;
+	border-radius: 3px;
+	color: white;
+}
+.article-desc{
+	margin-top: 8px;
+	text-align: justify;
+	background: rgba(243, 243, 243, 0.32);
+	padding: 8px;
+	color: rgb(126, 122, 122);
+	margin-bottom: 8px;
+}
+.medias{
+	background: rgb(224, 223, 219);
+	padding: 6px;
+	text-align: center;
+	border-radius: 3px;

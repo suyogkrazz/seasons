@@ -23,6 +23,7 @@ class Home extends CI_Controller {
 			'content' => 'users/about'
 		);
 		$data['about'] = $this->db->get('aboutus')->result();
+		$data['team'] = $this->db->get('team')->result();
 
 		$this->load->view('users/includes/template', $data);
 	}
@@ -44,6 +45,28 @@ class Home extends CI_Controller {
 		$this->load->view('users/includes/template', $data);
 	}
 
+	function contact_post(){
+		$t=$this->db->get('admin')->result();
+		$to = $t[0]->email;
+
+		$name = "<strong>Name : </strong>".$this->input->post('name')."<br>";
+		$email = "<strong>Email : </strong>".$this->input->post('email')."<br><br>";
+		$text = "<strong>Message : </strong>".$this->input->post('message')."<br>";
+
+		$message = $name.$email.$text;
+
+		$subject = "New Inquery From Your Site";
+
+		if($this->sendemail($to, $subject, $message)){
+			$this->session->set_flashdata('msg', 'We have received your message. We will get back to you soon. Thank you.');
+		}
+		else{
+			$this->session->set_flashdata('msg', 'Message could not be sent. Please try again.');
+		}
+		redirect('contact-us');
+
+	}
+
 	public function sendemail($to, $subject, $message){
 		$e = $this->db->get('contact_info')->result();
 	    $contact_email = $e[0]->contact_email;
@@ -62,7 +85,7 @@ class Home extends CI_Controller {
 
 		$this->load->library('email', $config);
 		$this->email->set_newline("\r\n");
-		$this->email->from("Fishtail Travels");
+		$this->email->from("Seasons Pokhara");
 		$this->email->to($to);
 		$this->email->subject($subject);
 		$this->email->message($message);
