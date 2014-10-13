@@ -5,7 +5,14 @@
 <?php if(empty($ad)): ?>
 	<?php echo "404 Page Not Found"; exit(); ?>
 <?php else: ?>
-<div class="sub-heading">Audio For <?php echo $ad[0]->name; ?></div>
+	<div class="sub-heading">Audio For <?php echo $ad[0]->name; ?></div>
+	<?php if(!empty($ad[0]->audio)): ?>
+		<div>Available audio</div>	
+		<audio controls>
+		  <source src="<?php echo base_url('assets/audio/'.$ad[0]->audio); ?>" type="audio/mpeg">
+		Your browser does not support the audio element.
+		</audio>
+	<?php endif; ?>
 <?php endif; ?>
 
 <?php echo form_open_multipart('admin/add_audio', array('class'=>'form-horizontal', 'data-toggle'=>'validator')) ?>
