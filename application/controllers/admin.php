@@ -164,6 +164,10 @@ class Admin extends CI_Controller {
 	}
 
 /*---------------------------------------------------------------------------------------------------------------------------------*/
+	
+	function team(){
+		
+	}
 
 	public function services(){
 	$data1['service']=$this->admin_model->get_services();
