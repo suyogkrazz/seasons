@@ -2,7 +2,7 @@
 			</div>
 
 	<div class="admin-footer">
-		Copyright &copy; <a href="<?php echo base_url(); ?>" target="_blank">fishtailadventures.com</a> | Developed by <a href="http://pinesofts.com/" target="_blank">PineSofts</a>.
+		Copyright &copy; <a href="<?php echo base_url(); ?>" target="_blank">seasonspokhara.com</a> | Developed by <a href="http://pinesofts.com/" target="_blank">PineSofts</a>.
 	</div>
 
 	<script type="text/javascript" src="<?php echo site_url().'assets/js/jquery.js' ?>"></script>
@@ -17,9 +17,9 @@
    $("#home .sidebar-navigation a:contains('Dashboard')").addClass('active');
    $("#aboutus .sidebar-navigation a:contains('About Us')").addClass('active');
    $("#media .sidebar-navigation a:contains('Slider')").addClass('active');
+   $("#banner .sidebar-navigation a:contains('Banner')").addClass('active');
    $("#service .sidebar-navigation a:contains('Categories')").addClass('active');
    $("#service .sidebar-navigation #services").addClass('in');
-   $("#files .sidebar-navigation a:contains('Files')").addClass('active');
 </script>
 
 <script type="text/javascript">
