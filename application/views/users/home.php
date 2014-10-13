@@ -55,11 +55,11 @@
 		</div>
 		
 	</div>
-	
-	<div class="ads darkness">
+
+	<div class="ads">
 		<?php $image = $this->db->where('ad_id', $banner[0]->banner1)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
 		<a href="<?php echo base_url('ad/'.$banner[0]->banner1) ?>">
-			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>" height="150px" width="150px">
 		</a>
 	</div>
 

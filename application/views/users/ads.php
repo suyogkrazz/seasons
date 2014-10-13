@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-md-8">
 			<?php foreach($images as $img): ?>
-				<img src="<?php echo base_url('assets/images/'.$img->path); ?>">
+				<img src="<?php echo base_url('assets/images/'.$img->path); ?>" height="300px" width="300px">
 			<?php endforeach; ?>
 		</div>
 

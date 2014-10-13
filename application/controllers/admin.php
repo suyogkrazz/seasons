@@ -256,8 +256,8 @@ class Admin extends CI_Controller {
 	}
 
 	function add_audio(){
-		echo $this->admin_model->do_upload();
-		die();
+		$this->session->set_flashdata('msg', $this->admin_model->audio());
+		redirect('admin/audio/'.$this->input->post('id'));
 	}
 
 	function edit_package(){

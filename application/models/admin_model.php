@@ -180,10 +180,23 @@ class Admin_model extends CI_Model {
 		return false;
 	}
 
-	function do_upload(){
+	function audio(){
 
 		$name = $_FILES['audio']['name'];
-		$ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
+		$ext = strtolower(end((explode(".", $name))));
+		if($ext="mp3"){
+			$path = uniqid().'.mp3';
+			$store = 'assets/audio/'.$path;
+			if($_FILES['audio']['error'] == 0 && move_uploaded_file($_FILES['audio']['tmp_name'], $store)){
+				if($this->db->where('id', $this->input->post('id'))->update('package', array('audio'=>$path))){
+					return "Audio Uploaded";
+				}
+			}
+			return "Error Occurred. Try Again";
+		}
+		else{
+			return "Please seelct mp3 file.";
+		}
 	}
 
 }
