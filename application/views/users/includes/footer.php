@@ -8,11 +8,9 @@
 	<script>
    init = function(){
 		  var jarallax = new Jarallax();
-		  jarallax.addAnimation(' .darkness',[{progress:'0%', top:'0%'},{progress:'2%', top:'-10%'},{progress:'15%', top:'0%',marginLeft:"-1"},{progress:'25%', marginLeft:"-1"},{progress:'26%', marginLeft:"10000"},{progress:'50%', top:'10%'}]);
-		  // jarallax.addAnimation(' .darkness1',[{progress:'26%', top:'0%'},{progress:'28%', top:'-10%'},{progress:'33%', top:'0%',marginLeft:"-1"},{progress:'59%', marginLeft:"10000"}}]);   
-		jarallax.addAnimation(' .darkness1',[{progress:'26%', top:'0%'},{progress:'28%', top:'-10%'},{progress:'49%', top:'0%',marginLeft:"-1"},{progress:'50%', top:'10%',marginLeft:"-1"},{progress:'51%', top:'10%',marginLeft:"10000"}]);
-	 
-		
+		  jarallax.addAnimation(' .darkness',[{progress:'0%', top:'0%'},{progress:'2%', top:'-10%'},{progress:'15%', top:'0%',marginLeft:"-1"},{progress:'22%', marginLeft:"-1"},{progress:'24%', marginLeft:"10000"},{progress:'50%', top:'10%'}]);
+		jarallax.addAnimation(' .darkness1',[{progress:'26%', top:'0%'},{progress:'28%', top:'-10%',marginLeft:"-1"},{progress:'49%', top:'0%',marginLeft:"-1"},{progress:'50%', top:'10%',marginLeft:"10000"},{progress:'51%', top:'10%',marginLeft:"10000"}]);
+	 	// jarallax.addAnimation('.darkness2',[{progress:'50%', top:'0%'}]);
 		 }
 
     </script>
