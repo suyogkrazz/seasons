@@ -55,7 +55,8 @@
 		</div>
 		
 	</div>
-	<div class="ads">
+	
+	<div class="ads darkness">
 		<?php $image = $this->db->where('ad_id', $banner[0]->banner1)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
 		<a href="<?php echo base_url('ad/'.$banner[0]->banner1) ?>">
 			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
@@ -63,6 +64,7 @@
 	</div>
 
 	<div id="second-slider" class="carousel slide" data-ride="carousel">
+
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
 	    <?php $j=-1; foreach($second as $ol): ?>
