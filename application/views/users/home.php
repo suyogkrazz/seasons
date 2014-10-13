@@ -118,11 +118,13 @@
 
 	<div class="ads  darkness1">
 		<?php $image = $this->db->where('ad_id', $banner[0]->banner2)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
-		<a href="<?php echo base_url('ad/'.$banner[0]->banner2) ?>">
-			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
-		</a>
+		<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
 	</div>
-
+	<div class="dark">
+	<a href="<?php echo base_url('ad/'.$banner[0]->banner2) ?>">
+			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+	</a>
+	</div>
 	<div id="third-slider" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
@@ -169,13 +171,18 @@
 	  </a>
 	</div>
 
-	<div class="ads">
+	<div class="ads darkness2">
 		<?php $image = $this->db->where('ad_id', $banner[0]->banner3)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
-		<a href="<?php echo base_url('ad/'.$banner[0]->banner3) ?>">
+		
 			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
-		</a>
-	</div>
 
+	</div>
+	<div class="dark">
+	<a href="<?php echo base_url('ad/'.$banner[0]->banner3) ?>">
+			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+	</a>
+
+	</div>
 	<div id="fourth-slider" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
@@ -222,11 +229,17 @@
 	  </a>
 	</div>
 
-	<div class="ads">
+	<div class="ads darkness3">
 		<?php $image = $this->db->where('ad_id', $banner[0]->banner4)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
-		<a href="<?php echo base_url('ad/'.$banner[0]->banner4) ?>">
+		
 			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
-		</a>
+
+	</div>
+	<div class="dark">
+	<a href="<?php echo base_url('ad/'.$banner[0]->banner4) ?>">
+			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+	</a>
+
 	</div>
 	<div id="fifth-slider" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
@@ -274,11 +287,16 @@
 	  </a>
 	</div>
 
-	<div class="ads">
+	<div class="ads darkness4">
 		<?php $image = $this->db->where('ad_id', $banner[0]->banner5)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
-		<a href="<?php echo base_url('ad/'.$banner[0]->banner5) ?>">
 			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
-		</a>
+
+	</div>
+	<div class="dark">
+	<a href="<?php echo base_url('ad/'.$banner[0]->banner5) ?>">
+			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+	</a>
+
 	</div>
 
 </div>

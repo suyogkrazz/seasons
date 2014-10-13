@@ -98,7 +98,6 @@ body{
 }
 .ads{
 	background: #4F5367;
-	padding: 30px;
 }
 .dark{
 	background: rgba(1, 0, 31, 0.55);
@@ -245,4 +244,6 @@ body{
 }
 .btn-modified{
 	margin-top: 20px;
+
 }
+

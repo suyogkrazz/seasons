@@ -13,13 +13,33 @@
 							height:100%;
 							z-index:-1;
 						}
-					/*	.darkness1{
+						.darkness1{
 							position:fixed;
 							width:100%;
-							height:30%;
-							top:100%;
-							z-index:1;
-						}*/
+							height:100%;
+							z-index:-2;
+						}
+						.darkness2{
+							position:fixed;
+							width:100%;
+							height:100%;
+							z-index:-3;
+						}
+					
+					.darkness3{
+							position:fixed;
+							width:100%;
+							height:100%;
+							z-index:-4;
+						}
+					
+					.darkness4{
+							position:fixed;
+							width:100%;
+							height:100%;
+							z-index:-5;
+						}
+					
 					
 				</style>
 

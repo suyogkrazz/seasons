@@ -635,3 +635,32 @@ h2{
 	color: #777;
 	margin: 30px 0px 15px 0px;
 }
+
+.margin-buttom{
+	margin-bottom: 15px;
+}
+
+.mem{
+	background: white;
+	padding: 13px;
+}
+
+.abt-img img{
+	width: 100%;
+	height: auto;
+}
+
+.members{
+	margin-top: 0px !important;
+	color: rgb(136, 142, 162);
+	margin-bottom: 2px !important;
+}
+
+.post{
+	font-family: cursive;
+	color: rgb(218, 139, 95);
+}
+
+.desc{
+	color:rgb(138, 156, 142);
+}

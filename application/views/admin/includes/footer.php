@@ -17,6 +17,7 @@
    $("#aboutus .sidebar-navigation a:contains('About Us')").addClass('active');
    $("#media .sidebar-navigation a:contains('Slider')").addClass('active');
    $("#banner .sidebar-navigation a:contains('Banner')").addClass('active');
+   $("#team .sidebar-navigation a:contains('Team')").addClass('active');
    $("#service .sidebar-navigation a:contains('Categories')").addClass('active');
    $("#service .sidebar-navigation #services").addClass('in');
 </script>
