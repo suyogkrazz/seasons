@@ -33,7 +33,7 @@ body{
 	margin-left: 7px;
 }
 .carousel-caption{
-	bottom: 330px !important;
+	bottom: 255px !important;
 	text-align: left !important;
 	left: 13% !important;
 }
@@ -86,12 +86,13 @@ body{
 }
 .item img{
 	width: 100%;
-	height: 550px !important;
+	height: 450px !important;
 }
 .ads img{
 	margin: 0 auto;
 	display: block;
 	width: 70%;
+	height: 105px;
 }
 .ads{
 	background: #4F5367;
@@ -154,7 +155,8 @@ body{
 }
 .members{
 	margin-top: 0px !important;
-	color: rgb(88, 162, 231);
+	color: rgb(136, 142, 162);
+	margin-bottom: 2px !important;
 }
 .mem{
 	background: white;
@@ -164,5 +166,72 @@ body{
 	margin-bottom: 15px;
 }
 .footer{
-	height: 35px;
+	height: 40px;
+	background: #333;
+	color: rgb(179, 181, 184);
+	padding: 10px;
+	font-size: 17px;
+	/*font-family: cursive;*/
+}
+.post{
+	font-family: cursive;
+	color: rgb(218, 139, 95);
+}
+.desc{
+	color:rgb(138, 156, 142);
+}
+.faq-header{
+	background: rgb(97, 121, 133);
+	color: white;
+	padding: 15px;
+	padding-bottom: 70px;
+}
+.faq-img img{
+	width: 100%;
+}
+.qns{
+	background: white;
+	padding: 26px;
+	margin-top: -55px;
+}
+.pine{
+	float: right;
+	margin-right: 27px;
+}
+.qn{
+	background: rgb(46, 57, 78);
+	padding: 5px;
+	font-size: 21px;
+	/* border-radius: 4px; */
+	/* margin-bottom: 8px; */
+	color: rgb(245, 245, 245);
+}
+.ans{
+	background: rgb(197, 223, 243);
+	padding: 10px;
+	margin-bottom: 10px;
+	color: rgb(76, 97, 111);
+}
+.contac{
+	background: white;
+	padding: 15px;
+	margin-top: -55px;
+}
+.form-control{
+	border: 1px solid #389CCA !important;
+}
+.contact-us{
+	background: rgb(115, 238, 120);
+	color: rgb(99, 92, 92);
+	padding: 8px;
+	border-radius: 3px;
+}
+.info{
+	background: rgb(250, 146, 49);
+	padding: 8px;
+	border-radius: 3px;
+	color: rgb(119, 112, 112);
+}
+.btn-modified{
+	margin-top: 20px;
 }

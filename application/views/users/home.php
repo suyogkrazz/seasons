@@ -223,12 +223,7 @@
 		<img src="<?php echo base_url("images/btm0x0w2.png") ?>">
 	</div>
 	<div class="footer">
-		<div class="row">
-			<div class="col-md-3">hey</div>
-			<div class="col-md-3">hey</div>
-			<div class="col-md-3">hey</div>
-			<div class="col-md-3">hey</div>
-		</div>
+		<div class="pine">Powered by <a href="http://pinesofts.com/">Pinesofts.com</a></div>
 		
 	</div>
 
