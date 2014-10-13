@@ -105,7 +105,16 @@ html {
 	background: #4F5367;
 	padding: 30px;
 }
-
+.dropdown-menu{
+	min-width: 370px !important;
+}
+.float{
+	float: left;
+	margin: 3px;
+	background: rgb(180, 187, 190);
+	padding: 4px 8px;
+	border-radius: 3px;
+}
 
 .costum>a {
 	position: relative;
@@ -152,6 +161,7 @@ html {
 	padding: 6px;
 	min-height: 219px;
 	border-radius: 3px;
+	margin-bottom: 10px;
 }
 .abt-img img{
 	width: 100%;
@@ -173,10 +183,7 @@ html {
 	margin-bottom: 15px;
 }
 .footer{
-<<<<<<< HEAD
 
-=======
->>>>>>> 824e0f4c4aa31c37286d074040aafa070e95357e
 	height: 40px;
 	background: #333;
 	color: rgb(179, 181, 184);
@@ -283,3 +290,11 @@ html {
 	padding: 6px;
 	text-align: center;
 	border-radius: 3px;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus{
+	background-color: transparent !important;
+}
+.dropdown-menu{
+	padding: 4px;
+	background-color: #4F5367 !important;
+}
