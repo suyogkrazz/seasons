@@ -10,28 +10,29 @@
 		<div class="col-md-8 ">
 			<div class="form-shadow">
 				<h2 class="contact-us">Contact Us</h2>
-				<?php $attributes = array('class' => 'form-horizontal', 'role' => 'form'); ?>
-				<?php echo form_open('home/contact_us_post', $attributes); ?>
-				<div class="form-group">
-				  	<label class="col-sm-2 control-label">Your Name :</label>
-				  	<div class="col-sm-10">
-				    	<input type="name" class="form-control" value="<?php echo set_value('name'); ?>" placeholder="Name">
-				  	</div>
-				 </div>
+				<?php echo form_open('send-message', array('class'=>'form-horizontal', 'data-toggle'=>'validator')); ?>
+					<div class="form-group">
+					  	<label class="col-sm-2 control-label">Your Name :</label>
+					  	<div class="col-sm-10">
+					    	<input type="text" name="name" class="form-control" placeholder="Name" required>
+					    	<div class="help-block with-errors"></div>
+					  	</div>
+					 </div>
 
-				<div class="form-group">
-				  	<label class="col-sm-2 control-label">Your Email :</label>
-				  	<div class="col-sm-10">
-				    	<input type="email" class="form-control" value="<?php echo set_value('email'); ?>" placeholder="Email">
-				  	</div>
-				</div>
+					<div class="form-group">
+					  	<label class="col-sm-2 control-label">Your Email :</label>
+					  	<div class="col-sm-10">
+					    	<input type="email" name="email" pattern="^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$" data-error="Invalid Email" class="form-control" value="<?php echo set_value('email'); ?>" placeholder="Email" required>
+					    	<div class="help-block with-errors"></div>
+					  	</div>
+					</div>
 
-				<div>	
-					<label class="control-label message">Message</label>
-						<textarea name="message" class="form-control" rows="10" id="message"><?php echo set_value('message'); ?></textarea>
-				</div>
-				<input type="submit" class="btn btn-success btn-modified submit-btn" value="Submit">
-				<?php echo validation_errors(); ?>
+					<div class="form-group">	
+						<label class="control-label message">Message</label>
+						<textarea name="message" class="form-control" rows="10" id="message" required></textarea>
+						<div class="help-block with-errors"></div>
+					</div>
+					<input type="submit" class="btn btn-success btn-modified submit-btn" value="Submit">
 				<?php echo form_close(); ?>
 
 			</div>
