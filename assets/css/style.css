@@ -1,3 +1,4 @@
+
 body{
 	background: #F0F0F0;
 	display: block;
@@ -98,13 +99,14 @@ html {
 .ads img{
 	margin: 0 auto;
 	display: block;
-	width: 100%;
+	width: 1366px;
 	height: 100%;
 
 }
 .ads{
 	background: #4F5367;
 }
+
 .dark{
 	background: rgba(1, 0, 31, 0.55);
 	height: 200px;
@@ -199,6 +201,7 @@ html {
 .desc{
 	color:rgb(138, 156, 142);
 }
+
 .faq-header{
 	background: rgb(97, 121, 133);
 	color: white;
