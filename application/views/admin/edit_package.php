@@ -50,7 +50,7 @@
 		</div>
 	</div>
 
-	<input type="hidden" name="package_id" value="<?php echo $package[0]->id ; ?>" >
+	<input type="hidden" name="id" value="<?php echo $package[0]->id ; ?>" >
 
 	<div class="form-group">
 		<div class="col-sm-2"></div>

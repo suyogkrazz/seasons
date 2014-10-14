@@ -4,34 +4,34 @@
 
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Name</label>
-		<div class="col-sm-5">
+		<div class="col-sm-7">
 			<input type="text" name="name" placeholder="Name of your staff" class="form-control" required>
 		</div>
-		<div class="col-sm-5">
+		<div class="col-sm-3">
 			<div class="help-block with-errors"></div>
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Post</label>
-		<div class="col-sm-5">
+		<div class="col-sm-7">
 			<input type="text" name="post" placeholder="Role of your staff" class="form-control" required>
 		</div>
-		<div class="col-sm-5">
+		<div class="col-sm-3">
 			<div class="help-block with-errors"></div>
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Image</label>
-		<div class="col-sm-5">
+		<div class="col-sm-7">
 			<input type="file" name="image" accept="image/gif, image/jpeg, image/png">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label class="col-sm-2 control-label">About</label>
-		<div class="col-sm-5">
+		<div class="col-sm-7">
 			<textarea name="about" id="about"></textarea>
 			<script type="text/javascript">
 				CKEDITOR.replace('about');
@@ -67,6 +67,7 @@
 						<div class="post"><?php echo $t->post; ?></div>
 						<div class="desc"><?php echo $t->about; ?></div>
 					</div>
+					<div><a href="<?php echo base_url('admin/remove_member/'.$t->id) ?>" class="btn btn-warning">Remove</a></div>
 				</div>
 			</div>
 		<?php endforeach; ?>

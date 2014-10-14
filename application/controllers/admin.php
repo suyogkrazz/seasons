@@ -185,6 +185,14 @@ class Admin extends CI_Controller {
 		redirect('admin/team');
 	}
 
+	function remove_member(){
+		if($this->admin_model->remove_member()){
+			redirect('admin/team');
+		}
+		$this->session->set_flashdata('msg', 'Something Went Wrong. Please try agian.');
+		redirect('admin/team');
+	}
+
 /*-----------------------------------------------------------------------------------------------------------------------------*/
 
 	public function services(){
@@ -318,31 +326,39 @@ class Admin extends CI_Controller {
 
 	function Package_image_add(){
 
-	if(!empty($_FILES['file'])){
+		if(!empty($_FILES['file'])){
 			foreach ($_FILES['file']['name'] as $key => $name) {
 	  			$ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
 	  			$path1= uniqid().'.'.$ext;
 		  		$path='assets/images/'.$path1;
+
 		  		if($_FILES['file']['error'][$key]==0 && move_uploaded_file($_FILES['file']['tmp_name'][$key], $path)){
 					$data=array(
-					'ad_id' => $this->input->post('package_id'),
-					'path'=>$path1,
+						'ad_id' => $this->input->post('id'),
+						'path'=>$path1,
 					);
 				}
 
-				if($this->admin_model->add_package_image($data)){
-					redirect('admin/edit_package/'.$this->input->post('package_id'));
+				$reply = $this->admin_model->add_package_image($data);
+
+				if($reply === true){
+					redirect('admin/edit_package/'.$this->input->post('id'));
+				}
+				else if($reply === false){
+					$this->session->set_flashdata('msg', 'Something went wrong. Please try again.');
+					redirect('admin/edit_package/'.$this->input->post('id'));
 				}
 				else{
-					$this->session->set_flashdata('msg', 'Something went wrong. Please try again.');
-					redirect('admin/edit_package/'.$this->input->post('package_id'));
+					$this->session->set_flashdata('msg', $reply);
+					redirect('admin/edit_package/'.$this->input->post('id'));
 				}
 			}
-			
+				
 
 		}
 		else{
-			redirect('admin/edit_package/'.$this->input->post('package_id'));
+			$this->session->set_flashdata('msg', 'Something went wrong. Please try again.');
+			redirect('admin/edit_package/'.$this->input->post('id'));
 		}
 	}
 
