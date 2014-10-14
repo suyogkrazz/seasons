@@ -98,15 +98,24 @@ html {
 .ads img{
 	margin: 0 auto;
 	display: block;
-	width: 70%;
-	height: 105px;
+	width: 100%;
+	height: 100%;
+
 }
 .ads{
 	background: #4F5367;
+}
+.dark{
+	background: rgba(1, 0, 31, 0.55);
+	height: 200px;
 	padding: 30px;
 }
-
-
+.dark img{
+	margin: 0 auto;
+	display: block;
+	width: 70%;
+	height: 105px;
+}
 .costum>a {
 	position: relative;
     color: rgba(255,255,255,1);
@@ -173,10 +182,7 @@ html {
 	margin-bottom: 15px;
 }
 .footer{
-<<<<<<< HEAD
 
-=======
->>>>>>> 824e0f4c4aa31c37286d074040aafa070e95357e
 	height: 40px;
 	background: #333;
 	color: rgb(179, 181, 184);
@@ -249,6 +255,7 @@ html {
 	margin-top: 20px;
 
 }
+
 .banner img{
 	width: 100%;
 }
@@ -283,3 +290,4 @@ html {
 	padding: 6px;
 	text-align: center;
 	border-radius: 3px;
+

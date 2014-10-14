@@ -8,25 +8,42 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo site_url().'assets/css/style.css'; ?>">
 			<style type="text/css">
 					.darkness{
-					position:fixed;
-					width:100%;
-					height:50%;
-					top:80%;
-					z-index:999999;
-}
+							position:fixed;
+							width:100%;
+							height:100%;
+							z-index:-1;
+						}
+						.darkness1{
+							position:fixed;
+							width:100%;
+							height:100%;
+							z-index:-2;
+						}
+						.dar{
+							position:fixed;
+							width:100%;
+							height:100%;
+							z-index:123213;
+						}
+					
+					.darkness3{
+							position:fixed;
+							width:100%;
+							height:100%;
+							z-index:-4;
+						}
+					
+					.darkness4{
+							position:fixed;
+							width:100%;
+							height:100%;
+							z-index:-5;
+						}
+					
+					
 				</style>
 
     
 
 </head>
 <body onload="init()">
-  <div class="start" >
-<!-- 	  <div class="darkness">
-				  	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	  </div>
- -->
