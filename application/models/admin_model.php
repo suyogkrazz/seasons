@@ -125,11 +125,15 @@ class Admin_model extends CI_Model {
 	function add_package_image($data){
 		$num_rows = $this->db->where('ad_id', $this->input->post('id'))->get('package_image')->num_rows();
 
-		if($num_rows > 3){
-			return "You cannot put more than 4 image for 1 package.";
+		if($num_rows > 4){
+			unlink('./assets/images/'.$data['path']);
+			return "You cannot put more than 5 image for 1 Ad.";
 		}
-		$this->db->insert('package_image', $data);
-		return true;
+		else{
+			$this->db->insert('package_image', $data);
+			return true;
+		}
+		return false;
 	}
 	function delete_package_img($data){
 			$this->db->where("id",$data);
@@ -185,7 +189,7 @@ class Admin_model extends CI_Model {
 		$name = $_FILES['audio']['name'];
 		$ext = strtolower(end((explode(".", $name))));
 		if($ext=="mp3"){
-			$path = uniqid().'.mp3';
+			$path = $this->input->post('id').'.mp3';
 			$store = 'assets/audio/'.$path;
 			if($_FILES['audio']['error'] == 0 && move_uploaded_file($_FILES['audio']['tmp_name'], $store)){
 				if($this->db->where('id', $this->input->post('id'))->update('package', array('audio'=>$path))){
@@ -221,6 +225,13 @@ class Admin_model extends CI_Model {
 		}
 		return false;
 
+	}
+
+	function remove_member(){
+		if($this->db->where('id', $this->uri->segment(3))->delete('team')){
+			return true;
+		}
+		return false;
 	}
 
 }
