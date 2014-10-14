@@ -1,13 +1,15 @@
 
-<!-- <div class="row">
-	<?php echo $this->session->flashdata('feedback');?>
+<div class="row">
+	<div class="container not-found"> 
+		<?php echo $this->session->flashdata('feedback');?>
+	</div>
 	<?php if(!empty($records)): foreach($records as $row): ?>
 		<div><?php echo anchor("ad/$row->id", $row->name); ?></div>
 		<div><?php echo $row->info; ?></div>
 	    <?php endforeach; ?>
 	<?php endif; ?>
-</div> -->
-<div class="faq-header">
+</div>
+<!-- <div class="faq-header">
 	<div class="container">
 		<h1>Search reasults of Hotels</h1>
 	</div>
@@ -88,4 +90,4 @@
 		</div>
 
 	</div>
-</div>
+</div> -->

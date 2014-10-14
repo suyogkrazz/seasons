@@ -1,7 +1,7 @@
 body{
 	background: #F0F0F0;
 	display: block;
-	margin-bottom: 75px;
+	margin-bottom: 40px;
 
 }
 html {
@@ -326,4 +326,16 @@ html {
 }
 .table-font{
 	color: rgb(105, 100, 100);
+}
+.not-found{
+	background: rgb(204, 201, 201);
+	height: 80%;
+	margin-top: 15px;
+	border-radius: 3px;
+	border: 2px solid rgb(192, 186, 186);
+	text-align: center;
+	padding: 50px;
+	font-size: 34px;
+	text-transform: uppercase;
+	color: rgb(216, 72, 72);
 }
