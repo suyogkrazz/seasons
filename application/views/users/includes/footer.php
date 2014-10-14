@@ -12,7 +12,7 @@
    init = function(){
 		  var jarallax = new Jarallax();
 		  jarallax.addAnimation(' .darkness',[{progress:'0%', top:'0%',opacity:'1'},{progress:'22%',opacity:'1'},{progress:'24%', opacity:'0'},{progress:'50%', top:'10%', opacity:'0'}]);
-		jarallax.addAnimation(' .darkness1',[{progress:'22%', top:'0%',opacity:'1'},{progress:'49%',opacity:'1'},{progress:'50%', top:'10%',opacity:'0'},{progress:'51%', top:'10%',opacity:'0'}]);
+		jarallax.addAnimation(' .darkness1',[{progress:'24%', top:'0%',opacity:'1'},{progress:'49%',opacity:'1'},{progress:'50%', top:'10%',opacity:'0'},{progress:'51%', top:'10%',opacity:'0'}]);
 	 	jarallax.addAnimation('.darkness2',[{progress:'40%', top:'10%',opacity:'1'},{progress:'50%', top:'5%',opacity:'1'},{progress:'69%', top:'-1%',opacity:'1'},{progress:'75%', top:'-1%',opacity:'0'}]);
 	 	jarallax.addAnimation('.darkness3',[{progress:'75%', top:'0%',opacity:'1'},{progress:'80%', top:'-10%',opacity:'1'},{progress:'95%', top:'-10%',opacity:'1'},{progress:'96%', top:'-10%',opacity:'0'}]);
 	 	jarallax.addAnimation('.darkness4',[{progress:'92%', top:'0%',opacity:'1'},{progress:'150%', top:'-10%',opacity:'1'}]);
