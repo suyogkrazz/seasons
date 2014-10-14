@@ -470,14 +470,25 @@ class Admin extends CI_Controller {
 	}
 
 	function banner_update(){
-		if($this->admin_model->banner_update()){
-			$this->session->set_flashdata('msg', 'Banner Update');
+		if(!empty($_FILES['file'])){
+			$name=$_FILES['file']['name'];
+			$ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
+			$path1= $this->input->post('banner').'.'.$ext;
+  			$path='assets/images/'.$path1;
+	  		if($_FILES['file']['error']==0 && move_uploaded_file($_FILES['file']['tmp_name'], $path)){
+				if($this->admin_model->banner_update()){
+					$this->session->set_flashdata('msg', 'Banner Update');
+					redirect('admin/banner');
+				}
+				else{
+					$this->session->set_flashdata('msg', 'Error. Please try again.');
+					redirect('admin/banner');
+				}
+			}
+			$this->session->set_flashdata('msg', 'Error Occurred. Please choose different file.');
 			redirect('admin/banner');
 		}
-		else{
-			$this->session->set_flashdata('msg', 'Error. Please try again.');
-			redirect('admin/banner');
-		}
+		
 	}
 
 
