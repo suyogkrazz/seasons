@@ -1,6 +1,6 @@
 <?php if(!empty($ads)): ?>
 
-<?php echo form_open('admin/banner_update', array('class'=>'form-horizontal')); ?>
+<?php echo form_open_multipart('admin/banner_update', array('class'=>'form-horizontal')); ?>
 
 <div class="form-group">
 	<div class="row">
@@ -29,7 +29,15 @@
 		</div>
 	</div>	
 </div>
-
+<div class="form-group">
+	<div class="row">
+		<label class="col-sm-2 control-label">Select Banner</label>
+		<div class="col-sm-7">
+			 <input type="file" id="files" name="file" accept="image/jpeg"  required/>
+		</div>
+	</div>	
+</div>
+	 	
 <div class="form-group">
 	<div class="col-sm-2"></div>
 	<div class="col-sm-3">
@@ -55,5 +63,7 @@
 		<strong><?php echo $name[0]->name; ?></strong><br>
 		<?php $image = $this->db->where('ad_id', $name[0]->id)->order_by('id','desc')->limit(1)->get('package_image')->result(); ?>
 		<img src="<?php echo base_url('assets/images/'.$image[0]->path); ?>" height='100px' width="400px">
+		<br><strong>Banner Image:</strong><br>
+		<img src="<?php echo base_url('assets/images/banner'.$i.'.jpg'); ?>" height='100px' width="400px">
 	</div>
 <?php endfor; ?>
