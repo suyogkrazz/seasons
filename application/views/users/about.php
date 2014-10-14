@@ -1,10 +1,10 @@
 <div class=container>
 	<div class="row abt-wrapper">
-		<div class="col-md-8 about-us">
+		<div class="col-md-8 col-sm-8 about-us">
 		<h3>Who are We?</h3>
 			<?php echo strip_tags($about[0]->description); ?>
 		</div>
-		<div class="col-md-4 abt-img">
+		<div class="col-md-4 col-sm-4 abt-img">
 			<img src="<?php echo base_url('assets/images/'.$about[0]->path); ?>">
 		</div>
 	</div>
@@ -14,8 +14,8 @@
 		<div class="row">
 			<div class="col-md-6 margin-buttom">
 				<div class="row mem">
-					<div class="col-md-4 abt-img"><img class="thumbnail" src="<?php echo base_url('assets/images/'.$t->path); ?>"></div>
-					<div class="col-md-8">
+					<div class="col-md-4 col-sm-4 col-xs-4 abt-img"><img class="thumbnail" src="<?php echo base_url('assets/images/'.$t->path); ?>"></div>
+					<div class="col-md-8 col-sm-8 col-xs-8">
 						<h3 class="members"><?php echo $t->name; ?></h3>
 						<div class="post"><?php echo $t->post; ?></div>
 						<div class="desc">
@@ -27,8 +27,8 @@
 		<?php else: $i=1;?>
 			<div class="col-md-6 margin-buttom">
 				<div class="row mem">
-					<div class="col-md-4 abt-img"><img class="thumbnail" src="<?php echo base_url('assets/images/'.$t->path); ?>"></div>
-					<div class="col-md-8">
+					<div class="col-md-4 col-sm-4 col-xs-4 abt-img"><img class="thumbnail" src="<?php echo base_url('assets/images/'.$t->path); ?>"></div>
+					<div class="col-md-8 col-sm-8 col-xs-8">
 						<h3 class="members"><?php echo $t->name; ?></h3>
 						<div class="post"><?php echo $t->post; ?></div>
 						<div class="desc">
