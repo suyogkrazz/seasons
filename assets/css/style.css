@@ -102,6 +102,9 @@ html {
 	height: 100%;
 
 }
+.btn-costum>a{
+	color: white !important;
+}
 .ads{
 	background: #4F5367;
 }

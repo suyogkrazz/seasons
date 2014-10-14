@@ -2,7 +2,12 @@
 <?php if(!empty($records)): ?>
 <div class="faq-header">
 	<div class="container">
-		<h1>Search reasults of <?php echo $search_content; ?></h1>
+		<?php if(!empty($search_content)): ?>
+			<h1>Search reasults of <?php echo $search_content; ?></h1>
+		<?php else: ?>
+			<?php $topic = $this->db->where('id', $this->uri->segment(2))->get('categories')->result(); ?>
+			<h1><?php echo $topic[0]->name; ?></h1>
+		<?php endif; ?>
 	</div>
 </div>
 <div class="container qns">
