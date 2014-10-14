@@ -31,5 +31,7 @@
 	<?php endforeach; ?>
 </div>
 <?php else: ?>
-	Content Not Found
+	<div class="container not-found"> 
+		Content Not Found
+	</div>
 <?php endif; ?>
