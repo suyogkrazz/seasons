@@ -33,7 +33,8 @@
 				</td>
 				<td>
 					<a href='<?php echo site_url()."admin/service_detail/$services->id" ?>'>
-						<?php echo $services->name; ?>
+						<?php $num = $this->db->where('ad_id', $services->id)->get('package')->num_rows; ?>
+						<?php echo $services->name."(".$num.")"; ?>
 					</a>
 				</td>
 					
