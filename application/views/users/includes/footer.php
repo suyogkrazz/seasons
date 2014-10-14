@@ -42,6 +42,12 @@ $(document).ready(
   }
 
 );
+$('.carousel').on('slide', function () {
+  $('.carousel-inner > .item .carousel-caption').css('display','none');
+})  
+$('.carousel').on('slid', function () {
+  $('.carousel-inner > .item.active .carousel-caption').fadeIn( "slow" );
+})
     </script>
 </body>
 </html>
