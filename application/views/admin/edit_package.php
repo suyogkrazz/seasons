@@ -12,7 +12,7 @@
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Video :</label>
 		<div class="col-sm-10">
-			<input type="text" name="video" value="<?php echo $package[0]->video; ?>" placeholder="Place youtube embed code" class="form-control">
+			<textarea name="video" placeholder="Place youtube embed code" class="form-control"><?php echo $package[0]->video; ?></textarea>
 		</div>
 	</div>
 

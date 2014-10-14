@@ -20,7 +20,7 @@
 	<div class="form-group">
 		<label class="col-sm-2 control-label">Video :</label>
 		<div class="col-sm-10">
-			<input type="text" name="video" placeholder="Place youtube embed code" class="form-control">
+			<textarea name="video" placeholder="Place youtube embed code" class="form-control"></textarea>
 		</div>
 	</div>
 
