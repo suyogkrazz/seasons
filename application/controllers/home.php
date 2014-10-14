@@ -6,7 +6,6 @@ class Home extends CI_Controller {
 		$data = array(
 			'title' => 'Home',
 			'content' => 'users/home',
-			'categories' => $this->db->get('categories')->result(),
 			'first' => $this->db->where('slider', 1)->order_by('id', 'desc')->get('slide')->result(),
 			'second' => $this->db->where('slider', 2)->order_by('id', 'desc')->get('slide')->result(),
 			'third' => $this->db->where('slider', 3)->order_by('id', 'desc')->get('slide')->result(),
@@ -126,11 +125,11 @@ class Home extends CI_Controller {
 						'content' => 'users/search'
 					);
 				$data['records']=$result;
+				$data['search_content'] = $search_content;
 				$this->load->view('users/includes/template', $data);
 			}
 			else{
-				$this->session->set_flashdata('feedback', 'content not found!');
-				redirect('home/search_error');
+				redirect('search-error');
 			}
 			
 		}
@@ -161,7 +160,8 @@ class Home extends CI_Controller {
 
 		$data=array(
 			'title'=>'category',
-			'content'=>'users/search'
+			'content'=>'users/search',
+			'search_content'=>''
 		);
 		$result=$this->users_model->display_item();
 		$data['records']=$result;

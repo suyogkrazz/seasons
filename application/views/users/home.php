@@ -18,7 +18,7 @@
 	  	<?php $i=0; foreach($first as $slide): $i++; ?>
 	  	<?php if($i==1): ?>
 		    <div class="item active">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
@@ -26,7 +26,7 @@
 		    </div>
 		<?php else: ?>
 		    <div class="item">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
@@ -45,16 +45,7 @@
 	    <span class="glyphicon glyphicon-chevron-right"></span>
 	  </a>
 	</div>
-
-	<!-- <div class="catagories-wrapper">
-		<div class="row">
-			<?php foreach($categories as $cat): ?>
-				<?php $num = $this->db->where('ad_id', $cat->id)->get('package')->num_rows; ?>
-				<div class="costum"><a href="<?php echo base_url('categories/'.$cat->id); ?>"><?php echo $cat->name."(".$num.")"; ?></a></div>
-			<?php endforeach; ?>
-		</div>
-		
-	</div> -->
+	
 	<div class="ads darkness">
 		
 		<?php $image = $this->db->where('ad_id', $banner[0]->banner1)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
@@ -89,7 +80,7 @@
 	  	<?php $i=0; foreach($second as $slide): $i++; ?>
 	  	<?php if($i==1): ?>
 		    <div class="item active">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
@@ -97,7 +88,7 @@
 		    </div>
 		<?php else: ?>
 		    <div class="item">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
@@ -145,7 +136,7 @@
 	  	<?php $i=0; foreach($third as $slide): $i++; ?>
 	  	<?php if($i==1): ?>
 		    <div class="item active">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
@@ -153,7 +144,7 @@
 		    </div>
 		<?php else: ?>
 		    <div class="item">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
@@ -202,7 +193,7 @@
 	  	<?php $i=0; foreach($fourth as $slide): $i++; ?>
 	  	<?php if($i==1): ?>
 		    <div class="item active">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
@@ -210,7 +201,7 @@
 		    </div>
 		<?php else: ?>
 		    <div class="item">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
@@ -261,7 +252,7 @@
 	  	<?php $i=0; foreach($fifth as $slide): $i++; ?>
 	  	<?php if($i==1): ?>
 		    <div class="item active">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
@@ -269,7 +260,7 @@
 		    </div>
 		<?php else: ?>
 		    <div class="item">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>

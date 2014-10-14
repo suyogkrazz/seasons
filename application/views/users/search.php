@@ -1,91 +1,42 @@
 
-<!-- <div class="row">
-	<?php echo $this->session->flashdata('feedback');?>
-	<?php if(!empty($records)): foreach($records as $row): ?>
-		<div><?php echo anchor("ad/$row->id", $row->name); ?></div>
-		<div><?php echo $row->info; ?></div>
-	    <?php endforeach; ?>
-	<?php endif; ?>
-</div> -->
+<?php if(!empty($records)): ?>
 <div class="faq-header">
 	<div class="container">
-		<h1>Search reasults of Hotels</h1>
+		<?php if(!empty($search_content)): ?>
+			<h1>Search reasults of <?php echo $search_content; ?></h1>
+		<?php else: ?>
+			<?php $topic = $this->db->where('id', $this->uri->segment(2))->get('categories')->result(); ?>
+			<h1><?php echo $topic[0]->name; ?></h1>
+		<?php endif; ?>
 	</div>
 </div>
 <div class="container qns">
+	<?php foreach($records as $row): ?>
 	<div class="row search-row">
 		<div class="col-md-3">
-			<img class="thumbnail search-img" src="<?php echo base_url("images/HD-Widescreen-Wallpapers-5.jpg") ?>">
+			<?php $img = $this->db->where('ad_id', $row->id)->limit(1)->order_by('id', 'desc')->get('package_image')->result(); ?>
+			<img class="thumbnail search-img" src="<?php echo base_url("assets/images/".$img[0]->path); ?>">
 		</div>
 		<div class="col-md-9">
 			<table class="table table-font">
 			  <tr>
 			  	<td>Name:</td>
-			  	<td>Annapurna hotel</td>
+			  	<td><?php echo anchor("ad/$row->id", $row->name); ?></td>
 			  </tr>
 			  <tr>
-			  	<td>Address:</td>
-			  	<td>Lakeside,Pokhara</td>
-			  </tr>
-			  <tr>
-			  	<td>Contact No:</td>
-			  	<td>061-5284050,+977-98334958204</td>
+			  	<td>Info:</td>
+			  	<td><?php echo $row->info; ?></td>
 			  </tr>
 			</table>
 			<div>
-				<button type="button" class="btn btn-success btn-costum">View More</button>
+				<button type="button" class="btn btn-success btn-costum"><?php echo anchor("ad/$row->id", 'View More'); ?></button>
 			</div>
 		</div>
-
 	</div>
-	<div class="row search-row">
-		<div class="col-md-3">
-			<img class="thumbnail search-img" src="<?php echo base_url("images/HD-Widescreen-Wallpapers-5.jpg") ?>">
-		</div>
-		<div class="col-md-9">
-			<table class="table table-font">
-			  <tr>
-			  	<td>Name:</td>
-			  	<td>Annapurna hotel</td>
-			  </tr>
-			  <tr>
-			  	<td>Address:</td>
-			  	<td>Lakeside,Pokhara</td>
-			  </tr>
-			  <tr>
-			  	<td>Contact No:</td>
-			  	<td>061-5284050,+977-98334958204</td>
-			  </tr>
-			</table>
-			<div>
-				<button type="button" class="btn btn-success btn-costum">View More</button>
-			</div>
-		</div>
-
-	</div>
-	<div class="row search-row">
-		<div class="col-md-3">
-			<img class="thumbnail search-img" src="<?php echo base_url("images/HD-Widescreen-Wallpapers-5.jpg") ?>">
-		</div>
-		<div class="col-md-9">
-			<table class="table table-font">
-			  <tr>
-			  	<td>Name:</td>
-			  	<td>Annapurna hotel</td>
-			  </tr>
-			  <tr>
-			  	<td>Address:</td>
-			  	<td>Lakeside,Pokhara</td>
-			  </tr>
-			  <tr>
-			  	<td>Contact No:</td>
-			  	<td>061-5284050,+977-98334958204</td>
-			  </tr>
-			</table>
-			<div>
-				<button type="button" class="btn btn-success btn-costum">View More</button>
-			</div>
-		</div>
-
-	</div>
+	<?php endforeach; ?>
 </div>
+<?php else: ?>
+	<div class="container not-found"> 
+		Content Not Found
+	</div>
+<?php endif; ?>

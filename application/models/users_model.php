@@ -27,24 +27,15 @@ class Users_model extends CI_Model {
 	}
 
 	function search_content($search_content){
-		$where = "(name LIKE '%".$search_content."%')";
-		$this->db->select('id');
-		$this->db->where($where);
-		$row=$this->db->get('categories')->num_rows();
+		$row = $this->db->select('id')->like('name', $search_content, 'both')->get('categories')->num_rows();
 		if($row!=0){
-			$res=$this->db->get('categories')->result();
+			$res=$this->db->select('id')->like('name', $search_content, 'both')->get('categories')->result();
 			$id=$res[0]->id;
-			$where="(ad_id LIKE $id)";
-			$this->db->select('*');
-			$this->db->where($where);
-			$result=$this->db->get('package')->result();
+			$result=$this->db->where('ad_id', $id)->get('package')->result();
 			return $result;
 		}
 		else{
-			$where = "(name LIKE '%".$search_content."%' OR description LIKE '%".$search_content."%' OR info LIKE '%".$search_content."%')";
-			$this->db->select('*');
-			$this->db->where($where);
-			$result=$this->db->get('package')->result();
+			$result = $this->db->like('name', $search_content, 'both')->or_like('description',$search_content,'both')->or_like('info',$search_content,'both')->get('package')->result();
 			return $result;
 		}
 	}
