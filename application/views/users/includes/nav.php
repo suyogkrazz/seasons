@@ -17,15 +17,16 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li class="float">Hotel(16)</li>
-            <li class="float">Motel(12)<li>
-            <li class="float">Hotel(23)</li>
-            <li class="float">school(23)</li>
-            <li class="float">Marketting work(12)</li>
-            <li class="float">Computer(12)</li>
-            <li class="float">Industry(23)</li>
-            <li class="float">Launch(23)</li>
-            <li class="float">gfgfgfg(12)</li>
+            <a href="#"><div class="items">Hotel(16)</div></a>
+            <a href="#"><div class="items">Hotel(16)</div></a>
+            <a href="#"><div class="items">Hotel(16)</div></a>
+            <a href="#"><div class="items">Hotel(16)</div></a>
+            <a href="#"><div class="items">Hotel(16)</div></a>
+            <a href="#"><div class="items">Hotel(16)</div></a>
+            <a href="#"><div class="items">Hotel(16)</div></a>
+            <a href="#"><div class="items">Hotel(16)</div></a>
+            <a href="#"><div class="items">Hotel(16)</div></a>
+            <a href="#"><div class="items">Hotel(16)</div></a>            
           </ul>
         </li>
         <li><a href="<?php echo base_url('about-us') ?>">About Us</a></li>

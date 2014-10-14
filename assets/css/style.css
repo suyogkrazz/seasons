@@ -98,24 +98,24 @@ html {
 .ads img{
 	margin: 0 auto;
 	display: block;
-	width: 70%;
-	height: 105px;
+	width: 100%;
+	height: 100%;
+
 }
 .ads{
 	background: #4F5367;
+}
+.dark{
+	background: rgba(1, 0, 31, 0.55);
+	height: 200px;
 	padding: 30px;
 }
-.dropdown-menu{
-	min-width: 370px !important;
+.dark img{
+	margin: 0 auto;
+	display: block;
+	width: 70%;
+	height: 105px;
 }
-.float{
-	float: left;
-	margin: 3px;
-	background: rgb(180, 187, 190);
-	padding: 4px 8px;
-	border-radius: 3px;
-}
-
 .costum>a {
 	position: relative;
     color: rgba(255,255,255,1);
@@ -161,7 +161,6 @@ html {
 	padding: 6px;
 	min-height: 219px;
 	border-radius: 3px;
-	margin-bottom: 10px;
 }
 .abt-img img{
 	width: 100%;
@@ -256,6 +255,7 @@ html {
 	margin-top: 20px;
 
 }
+
 .banner img{
 	width: 100%;
 }
@@ -291,10 +291,24 @@ html {
 	text-align: center;
 	border-radius: 3px;
 }
-.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus{
-	background-color: transparent !important;
-}
 .dropdown-menu{
-	padding: 4px;
+	min-width: 400px;
 	background-color: #4F5367 !important;
+	padding: 5px;
+}
+.dropdown-menu>li{
+	display: inline-block;
+	float: left;
+}
+.items{
+	background: rgb(200, 199, 209);
+	padding: 5px;
+	border-radius: 2px;
+	text-align: center;
+	margin: 2px;
+	display: inline-block;
+	color: rgb(100, 104, 107);
+}
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
+	background: transparent !important;
 }
