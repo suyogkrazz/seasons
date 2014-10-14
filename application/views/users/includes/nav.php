@@ -31,7 +31,7 @@
         <li><a href="<?php echo base_url('about-us') ?>">About Us</a></li>
         <li><a href="<?php echo base_url('faqs') ?>">FAQ's</a></li>
         <li><a href="<?php echo base_url('contact-us') ?>">Contact Us</a></li>
-        <form class="navbar-form navbar-left" role="search" method="post" action="<?php echo base_url("home/search_content") ?>">
+        <form class="navbar-form navbar-left" role="search" method="post" action="<?php echo base_url("search-content") ?>">
           <div class="form-group">
             <input type="text" class="form-control form-search" placeholder="Search category.." name="search_content">
           </div>

@@ -9,62 +9,43 @@
 		</div>
 	</div>
 	<div><h2>Our Team Members</h2></div>
-	<div class="row">
-		<div class="col-md-6 margin-buttom">
-			<div class="row mem">
-				<div class="col-md-4 col-sm-4 col-xs-4 abt-img"><img class="thumbnail" src="images/member-1.jpg"></div>
-				<div class="col-md-8 col-sm-8 col-xs-8">
-					<h3 class="members">Peter Lamsal</h3>
-					<div class="post">Wordpress worker </div>
-					<div class="desc">
-						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution 
+		<?php $i=1; foreach($team as $t): ?>
+		<?php if($i==1): $i++;?>
+		<div class="row">
+			<div class="col-md-6 margin-buttom">
+				<div class="row mem">
+					<div class="col-md-4 col-sm-4 col-xs-4 abt-img"><img class="thumbnail" src="<?php echo base_url('assets/images/'.$t->path); ?>"></div>
+					<div class="col-md-8 col-sm-8 col-xs-8">
+						<h3 class="members"><?php echo $t->name; ?></h3>
+						<div class="post"><?php echo $t->post; ?></div>
+						<div class="desc">
+							<?php echo $t->about; ?>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div><div class="col-md-6 margin-buttom">
-			<div class="row mem">
-				<div class="col-md-4 col-sm-4 col-xs-4 abt-img"><img class="thumbnail" src="images/member-1.jpg"></div>
-				<div class="col-md-8 col-sm-8 col-xs-8">
-					<h3 class="members">Peter Lamsal</h3>
-					<div class="post">Wordpress worker </div>
-					<div class="desc">
-						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution 
-					</div>
-				</div>
-			</div>
-		</div><div class="col-md-6 margin-buttom">
-			<div class="row mem">
-				<div class="col-md-4 col-sm-4 col-xs-4 abt-img"><img class="thumbnail" src="images/member-1.jpg"></div>
-				<div class="col-md-8 col-sm-8 col-xs-8">
-					<h3 class="members">Peter Lamsal</h3>
-					<div class="post">Wordpress worker </div>
-					<div class="desc">
-						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution 
-					</div>
-				</div>
-			</div>
-		</div><div class="col-md-6 margin-buttom">
-			<div class="row mem">
-				<div class="col-md-4 col-sm-4 col-xs-4 abt-img"><img class="thumbnail" src="images/member-1.jpg"></div>
-				<div class="col-md-8 col-sm-8 col-xs-8">
-					<h3 class="members">Peter Lamsal</h3>
-					<div class="post">Wordpress worker </div>
-					<div class="desc">
-						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution 
-					</div>
-				</div>
-			</div>
-		</div><div class="col-md-6 margin-buttom">
-			<div class="row mem">
-				<div class="col-md-4 col-sm-4 col-xs-4 abt-img"><img class="thumbnail" src="images/member-1.jpg"></div>
-				<div class="col-md-8 col-sm-8 col-xs-8">
-					<h3 class="members">Peter Lamsal</h3>
-					<div class="post">Wordpress worker </div>
-					<div class="desc">
-						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution 
+		<?php else: $i=1;?>
+			<div class="col-md-6 margin-buttom">
+				<div class="row mem">
+					<div class="col-md-4 col-sm-4 col-xs-4 abt-img"><img class="thumbnail" src="<?php echo base_url('assets/images/'.$t->path); ?>"></div>
+					<div class="col-md-8 col-sm-8 col-xs-8">
+						<h3 class="members"><?php echo $t->name; ?></h3>
+						<div class="post"><?php echo $t->post; ?></div>
+						<div class="desc">
+							<?php echo $t->about; ?>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<?php endif; ?>
+		<?php endforeach; ?>
+
+		<?php 
+			$num = $this->db->get('team')->num_rows;
+			if($num%2!=0):
+				echo "</div>";
+			endif;
+		?>
 	</div>
 </div> 
