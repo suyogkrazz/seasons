@@ -18,7 +18,7 @@
 	  	<?php $i=0; foreach($first as $slide): $i++; ?>
 	  	<?php if($i==1): ?>
 		    <div class="item active">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
@@ -26,7 +26,7 @@
 		    </div>
 		<?php else: ?>
 		    <div class="item">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
@@ -88,7 +88,7 @@
 	  	<?php $i=0; foreach($second as $slide): $i++; ?>
 	  	<?php if($i==1): ?>
 		    <div class="item active">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
@@ -96,7 +96,7 @@
 		    </div>
 		<?php else: ?>
 		    <div class="item">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
@@ -143,7 +143,7 @@
 	  	<?php $i=0; foreach($third as $slide): $i++; ?>
 	  	<?php if($i==1): ?>
 		    <div class="item active">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
@@ -151,7 +151,7 @@
 		    </div>
 		<?php else: ?>
 		    <div class="item">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
@@ -199,7 +199,7 @@
 	  	<?php $i=0; foreach($fourth as $slide): $i++; ?>
 	  	<?php if($i==1): ?>
 		    <div class="item active">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
@@ -207,7 +207,7 @@
 		    </div>
 		<?php else: ?>
 		    <div class="item">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
@@ -257,7 +257,7 @@
 	  	<?php $i=0; foreach($fifth as $slide): $i++; ?>
 	  	<?php if($i==1): ?>
 		    <div class="item active">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
@@ -265,7 +265,7 @@
 		    </div>
 		<?php else: ?>
 		    <div class="item">
-		      <img src="<?php echo base_url("assets/images/$slide->path") ?>" alt="...">
+		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>

@@ -129,7 +129,7 @@ class Home extends CI_Controller {
 				$this->load->view('users/includes/template', $data);
 			}
 			else{
-				$this->session->set_flashdata('feedback', 'content not found!');
+				$this->session->set_flashdata('feedback', 'Search Result not found!');
 				redirect('home/search_error');
 			}
 			
