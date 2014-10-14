@@ -171,13 +171,13 @@
 	  </a>
 	</div>
 
-	<div class="ads dar">
-		<?php $image = $this->db->where('ad_id', $banner[0]->banner3)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
-			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+	<div class="ads darkness2">
+		<?php $images = $this->db->where('ad_id', $banner[0]->banner3)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
+			<img src="<?php echo base_url('assets/images/'.$images[0]->path) ?>">
 	</div>
 	<div class="dark">
 	<a href="<?php echo base_url('ad/'.$banner[0]->banner3) ?>">
-			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+			<img src="<?php echo base_url('assets/images/'.$images[0]->path) ?>">
 	</a>
 
 	</div>
