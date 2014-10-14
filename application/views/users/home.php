@@ -63,7 +63,8 @@
 	</div>
 	<div class="dark">
 	<a href="<?php echo base_url('ad/'.$banner[0]->banner1) ?>">
-			<img src="<?php echo base_url('assets/images/banner1.jpg') ?>">
+			<?php $ban = $this->db->where('id', $banner[0]->banner1)->get('package')->result(); ?>
+			<img src="<?php echo base_url('assets/images/banner/'.$ban[0]->banner) ?>">
 	</a>
 
 	</div>
@@ -122,7 +123,8 @@
 	</div>
 	<div class="dark">
 	<a href="<?php echo base_url('ad/'.$banner[0]->banner2) ?>">
-			<img src="<?php echo base_url('assets/images/banner2.jpg') ?>">
+			<?php $ban = $this->db->where('id', $banner[0]->banner2)->get('package')->result(); ?>
+			<img src="<?php echo base_url('assets/images/banner/'.$ban[0]->banner) ?>">
 	</a>
 	</div>
 	<div id="third-slider" class="carousel slide" data-ride="carousel">
@@ -177,7 +179,8 @@
 	</div>
 	<div class="dark">
 	<a href="<?php echo base_url('ad/'.$banner[0]->banner3) ?>">
-			<img src="<?php echo base_url('assets/images/banner3.jpg') ?>">
+		<?php $ban = $this->db->where('id', $banner[0]->banner3)->get('package')->result(); ?>
+			<img src="<?php echo base_url('assets/images/banner/'.$ban[0]->banner) ?>">
 	</a>
 
 	</div>
@@ -235,7 +238,8 @@
 	</div>
 	<div class="dark">
 	<a href="<?php echo base_url('ad/'.$banner[0]->banner4) ?>">
-			<img src="<?php echo base_url('assets/images/banner4.jpg') ?>">
+			<?php $ban = $this->db->where('id', $banner[0]->banner4)->get('package')->result(); ?>
+			<img src="<?php echo base_url('assets/images/banner/'.$ban[0]->banner) ?>">
 	</a>
 
 	</div>
@@ -292,7 +296,8 @@
 	</div>
 	<div class="dark">
 	<a href="<?php echo base_url('ad/'.$banner[0]->banner5) ?>">
-			<img src="<?php echo base_url('assets/images/banner5.jpg') ?>">
+			<?php $ban = $this->db->where('id', $banner[0]->banner5)->get('package')->result(); ?>
+			<img src="<?php echo base_url('assets/images/banner/'.$ban[0]->banner) ?>">
 	</a>
 
 	</div>

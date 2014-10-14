@@ -244,16 +244,27 @@ class Admin extends CI_Controller {
 	}
 
 	function events_post(){
-		$data=array(
-			'name'=>$this->input->post('name'),
-			'description'=>$this->input->post('description'),
-			'info'=>$this->input->post('info'),
-			'video'=>$this->input->post('video'),
-			'ad_id'=>$this->input->post('id'),
-		);
+		if(!empty($_FILES['bfile'])){
+			$name1=$_FILES['bfile']['name'];
+			$ext1 = strtolower(pathinfo($name1, PATHINFO_EXTENSION));
+			$path2= uniqid().'.'.$ext1;
+  			$path3='assets/images/banner/'.$path2;
+	  		if($_FILES['bfile']['error']==0 && move_uploaded_file($_FILES['bfile']['tmp_name'], $path3)){
+				$data=array(
+							'name'=>$this->input->post('name'),
+							'description'=>$this->input->post('description'),
+							'info'=>$this->input->post('info'),
+							'video'=>$this->input->post('video'),
+							'ad_id'=>$this->input->post('id'),
+							'banner'=>$path2
+						);
 
-		$package=$this->admin_model->add_package($data);
+			$package=$this->admin_model->add_package($data);
 
+			}
+		
+		}
+		
 		foreach ($_FILES['file']['name'] as $key => $name) {
 			$ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
 			$path1= uniqid().'.'.$ext;
@@ -302,6 +313,26 @@ class Admin extends CI_Controller {
 		}
 		$data['package_img']=$this->db->where('ad_id', $this->uri->segment(3))->get('package_image')->result();
 		$this->load->view('admin/includes/template', $data);
+
+	}
+	function update_bannerimage(){
+			$data=$this->db->where('id',$this->input->post('id'))->get('package')->result();
+			$path='./assets/images/banner/'.$data[0]->banner;
+
+			unlink($path);
+			if(!empty($_FILES['bfile'])){
+			$name1=$_FILES['bfile']['name'];
+			$ext1 = strtolower(pathinfo($name1, PATHINFO_EXTENSION));
+			$path2= uniqid().'.'.$ext1;
+  			$path3='assets/images/banner/'.$path2;
+	  		if($_FILES['bfile']['error']==0 && move_uploaded_file($_FILES['bfile']['tmp_name'], $path3)){
+		
+			$this->admin_model->update_package_banner($path2);
+			redirect('admin/edit_package/'.$this->input->post('id'));
+			}
+			redirect('admin/edit_package/'.$this->input->post('id'));
+		}
+		redirect('admin/edit_package/'.$this->input->post('id'));
 
 	}
 	function events_postupdate(){
@@ -364,6 +395,8 @@ class Admin extends CI_Controller {
 
 	public function delete_package(){
 		$data=$this->db->where('id', $this->uri->segment(3))->get('package')->result();
+		$path3='./assets/images/banner/'.$data[0]->banner;
+		unlink($path3);
 		$data=$this->db->where('ad_id', $data[0]->id)->get('package_image')->result();
 		foreach ($data as $datas ) {
 			$path='./assets/images/'.$datas->path;
@@ -470,12 +503,7 @@ class Admin extends CI_Controller {
 	}
 
 	function banner_update(){
-		if(!empty($_FILES['file'])){
-			$name=$_FILES['file']['name'];
-			$ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
-			$path1= $this->input->post('banner').'.'.$ext;
-  			$path='assets/images/'.$path1;
-	  		if($_FILES['file']['error']==0 && move_uploaded_file($_FILES['file']['tmp_name'], $path)){
+	
 				if($this->admin_model->banner_update()){
 					$this->session->set_flashdata('msg', 'Banner Update');
 					redirect('admin/banner');
@@ -484,11 +512,7 @@ class Admin extends CI_Controller {
 					$this->session->set_flashdata('msg', 'Error. Please try again.');
 					redirect('admin/banner');
 				}
-			}
-			$this->session->set_flashdata('msg', 'Error Occurred. Please choose different file.');
-			redirect('admin/banner');
-		}
-		
+	
 	}
 
 

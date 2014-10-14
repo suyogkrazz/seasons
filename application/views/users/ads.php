@@ -5,7 +5,7 @@
 </div>
 <div class="qns container">
 	<?php $image = $this->db->where('ad_id', $this->uri->segment(2))->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
-	<div class="banner"><img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>"></div>
+	<div class="banner"><img src="<?php echo base_url('assets/images/banner/'.$detail[0]->banner) ?>"></div>
 	<div class="row separator">
 		<div class="col-md-6 paddings">
 			<div class="row">

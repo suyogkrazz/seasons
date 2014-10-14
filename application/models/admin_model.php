@@ -122,6 +122,12 @@ class Admin_model extends CI_Model {
 
 		return false;
 	}
+	function update_package_banner($path2){
+		$data=array('banner'=>$path2);
+		$this->db->where('id',$this->input->post('id'));
+		$this->db->update('package',$data);
+		return;
+	}
 	function add_package_image($data){
 		$num_rows = $this->db->where('ad_id', $this->input->post('id'))->get('package_image')->num_rows();
 
