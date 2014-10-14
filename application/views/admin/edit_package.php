@@ -40,7 +40,26 @@
 <?php echo form_close(); ?>
 
 <hr />
+<?php echo form_open_multipart('admin/update_bannerimage/', array('role'=>'form', 'class'=>'form-horizontal'))?>
 
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Banner Image :</label>
+		<div class="col-sm-10">
+			<input type="file" id="file" name="bfile" accept="image/gif, image/jpeg, image/png" required/>
+		</div>
+	</div>
+
+	<input type="hidden" name="id" value="<?php echo $package[0]->id ; ?>" >
+
+	<div class="form-group">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-10">
+			<button type="submit" class="btn btn-default">Add</button>
+		</div>
+	</div>
+
+<?php echo form_close(); ?>
+<hr />
 <?php echo form_open_multipart('admin/Package_image_add/', array('role'=>'form', 'class'=>'form-horizontal'))?>
 
 	<div class="form-group">
@@ -62,7 +81,11 @@
 <?php echo form_close(); ?>
 
 <hr />
-
+<strong>Banner</strong>
+<div class="row">
+		<img src="<?php echo base_url('assets/images/banner/'.$package[0]->banner); ?>" />
+</div>
+<hr />
 <div class="row">
 
 
