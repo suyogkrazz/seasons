@@ -46,7 +46,25 @@
 				<div class="row mem">
 					<div class="medias">Video</div>
 					<?php if(!empty($detail[0]->video)): ?>
-						<?php echo $detail[0]->video; ?>
+						<!-- Button trigger modal -->
+						<a href="#" data-target=".bs-example-modal-lg" data-toggle="modal">Play this video</a>
+
+						<!-- Modal -->
+						<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-lg">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h4 class="modal-title" id="myModalLabel"><?php echo $detail[0]->name; ?></h4>
+									</div>
+									<div class="modal-body">
+										<div class="container"><?php echo $detail[0]->video; ?></div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
 					<?php else: ?>
 						Video Not Available
 					<?php endif; ?>
