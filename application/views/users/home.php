@@ -54,7 +54,7 @@
 	</div>
 	<div class="dark">
 	<a href="<?php echo base_url('ad/'.$banner[0]->banner1) ?>">
-			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+			<img src="<?php echo base_url('assets/images/banner1.jpg') ?>">
 	</a>
 
 	</div>
@@ -113,7 +113,7 @@
 	</div>
 	<div class="dark">
 	<a href="<?php echo base_url('ad/'.$banner[0]->banner2) ?>">
-			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+			<img src="<?php echo base_url('assets/images/banner2.jpg') ?>">
 	</a>
 	</div>
 	<div id="third-slider" class="carousel slide" data-ride="carousel">
@@ -168,7 +168,7 @@
 	</div>
 	<div class="dark">
 	<a href="<?php echo base_url('ad/'.$banner[0]->banner3) ?>">
-			<img src="<?php echo base_url('assets/images/'.$images[0]->path) ?>">
+			<img src="<?php echo base_url('assets/images/banner3.jpg') ?>">
 	</a>
 
 	</div>
@@ -226,7 +226,7 @@
 	</div>
 	<div class="dark">
 	<a href="<?php echo base_url('ad/'.$banner[0]->banner4) ?>">
-			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+			<img src="<?php echo base_url('assets/images/banner4.jpg') ?>">
 	</a>
 
 	</div>
@@ -283,7 +283,7 @@
 	</div>
 	<div class="dark">
 	<a href="<?php echo base_url('ad/'.$banner[0]->banner5) ?>">
-			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+			<img src="<?php echo base_url('assets/images/banner5.jpg') ?>">
 	</a>
 
 	</div>
