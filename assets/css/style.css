@@ -339,3 +339,6 @@ html {
 	text-transform: uppercase;
 	color: rgb(216, 72, 72);
 }
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;    
+}
