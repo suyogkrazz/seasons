@@ -21,6 +21,12 @@
     </script>
 
     <script type="text/javascript">
+		$("#myModal").on('hidden.bs.modal', function (e) {
+		    $("#myModal iframe").attr("src", $("#myModal iframe").attr("src"));
+		});
+    </script>
+
+    <script type="text/javascript">
     	$('.carousel').carousel({
 		  interval: false
 		})
