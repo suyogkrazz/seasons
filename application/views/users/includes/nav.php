@@ -17,16 +17,10 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <a href="#"><div class="items">Hotel(16)</div></a>
-            <a href="#"><div class="items">Hotel(16)</div></a>
-            <a href="#"><div class="items">Hotel(16)</div></a>
-            <a href="#"><div class="items">Hotel(16)</div></a>
-            <a href="#"><div class="items">Hotel(16)</div></a>
-            <a href="#"><div class="items">Hotel(16)</div></a>
-            <a href="#"><div class="items">Hotel(16)</div></a>
-            <a href="#"><div class="items">Hotel(16)</div></a>
-            <a href="#"><div class="items">Hotel(16)</div></a>
-            <a href="#"><div class="items">Hotel(16)</div></a>            
+            <?php foreach($categories as $cat): ?>
+              <?php $num = $this->db->where('ad_id', $cat->id)->get('package')->num_rows; ?>
+              <a href="<?php echo base_url('categories/'.$cat->id); ?>"><div class="items"><?php echo $cat->name."(".$num.")"; ?></div></a>
+            <?php endforeach; ?>          
           </ul>
         </li>
         <li><a href="<?php echo base_url('about-us') ?>">About Us</a></li>
