@@ -46,16 +46,15 @@
 	  </a>
 	</div>
 	
-	<div class="ads darkness">
-		
+	<div class="ads darkness">		
 		<?php $image = $this->db->where('ad_id', $banner[0]->banner1)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
-			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
-
+		<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
 	</div>
+
 	<div class="dark">
-	<a href="<?php echo base_url('ad/'.$banner[0]->banner1) ?>">
+		<a href="<?php echo base_url('ad/'.$banner[0]->banner1) ?>">
 			<img src="<?php echo base_url('assets/images/banner1.jpg') ?>">
-	</a>
+		</a>
 
 	</div>
 
