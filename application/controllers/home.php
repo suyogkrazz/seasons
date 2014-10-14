@@ -160,7 +160,8 @@ class Home extends CI_Controller {
 
 		$data=array(
 			'title'=>'category',
-			'content'=>'users/search'
+			'content'=>'users/search',
+			'search_content'=>''
 		);
 		$result=$this->users_model->display_item();
 		$data['records']=$result;
