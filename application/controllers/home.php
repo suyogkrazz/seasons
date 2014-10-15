@@ -142,10 +142,10 @@ class Home extends CI_Controller {
 			'title' => 'Advertisement',
 			'content' => 'users/ads',
 			'detail' => $this->db->where('id', $this->uri->segment(2))->get('package')->result(),
-			'images' => $this->db->where('ad_id', $this->uri->segment(2))->order_by('id', 'desc')->limit(10,1)->get('package_image')->result()
+			'images' => $this->db->where('ad_id', $this->uri->segment(2))->order_by('id', 'desc')->get('package_image')->result()
 		);
 
-		if(empty($data['detail']) && empty($data['image'])){
+		if(empty($data['detail']) && empty($data['images'])){
 			show_404();
 		}
 
