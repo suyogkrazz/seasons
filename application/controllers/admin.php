@@ -382,7 +382,7 @@ class Admin extends CI_Controller {
 				$reply = $this->admin_model->add_package_image($data);
 
 				if($reply === true){
-					redirect('admin/edit_package/'.$this->input->post('id'));
+					
 				}
 				else if($reply === false){
 					$this->session->set_flashdata('msg', 'Something went wrong. Please try again.');
@@ -392,8 +392,9 @@ class Admin extends CI_Controller {
 					$this->session->set_flashdata('msg', $reply);
 					redirect('admin/edit_package/'.$this->input->post('id'));
 				}
-			}
 				
+			}
+				redirect('admin/edit_package/'.$this->input->post('id'));
 
 		}
 		else{
