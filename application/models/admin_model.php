@@ -148,11 +148,28 @@ class Admin_model extends CI_Model {
 	}
 
 	function delete_package(){
+		$banner = $this->db->get('banner')->result();
+		for($i=1; $i<=4; $i++){
+			$bannerid = "banner".$i;
+			if($this->uri->segment(3) == $banner[0]->$bannerid){
+				$this->db->update('banner', array($bannerid => NULL));
+			}
+		}
 		$this->db->where("id",$this->uri->segment(3));
 		$this->db->delete('package');
 		return;
 	}
 	function delete_package_serv(){
+		$banner = $this->db->get('banner')->result();
+		for($i=1; $i<=4; $i++){
+			$pack = $this->db->where('ad_id', $this->uri->segment(3))->get('package')->result();
+			foreach($pack as $p){
+				$bannerid = "banner".$i;
+				if($p->id == $banner[0]->$bannerid){
+					$this->db->update('banner', array($bannerid => NULL));
+				}
+			}
+		}
 		$this->db->where("ad_id",$this->uri->segment(3));
 		$this->db->delete('package');
 		return;
@@ -209,6 +226,19 @@ class Admin_model extends CI_Model {
 		}
 	}
 
+	function remove_audio(){
+		$audio = $this->db->where('id', $this->uri->segment(3))->get('package')->result();
+		if(unlink('./assets/audio/'.$audio[0]->audio)){
+			$data = array(
+				'audio' => ''
+			);
+			if($this->db->where('id', $this->uri->segment(3))->update('package',$data)){
+				return "Audio Removed";
+			}
+		}
+		return "Error Occurred. Please Try Again.";
+	}
+
 	function add_member(){
 
 		$name = $_FILES['image']['name'];
@@ -234,6 +264,9 @@ class Admin_model extends CI_Model {
 	}
 
 	function remove_member(){
+		$team = $this->db->where('id', $this->uri->segment(3))->get('team')->result();
+		$path = './assets/images/'.$team[0]->path;
+		unlink($path);
 		if($this->db->where('id', $this->uri->segment(3))->delete('team')){
 			return true;
 		}

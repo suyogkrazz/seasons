@@ -286,6 +286,8 @@ class Admin extends CI_Controller {
 			
 	}
 
+/*Audio Functions*/
+/*--------------------------------------------------------------------------------------------------------------------------------*/
 	function audio(){
 		$data = array(
 			'title' => 'Add Audio',
@@ -300,6 +302,13 @@ class Admin extends CI_Controller {
 		$this->session->set_flashdata('msg', $this->admin_model->audio());
 		redirect('admin/audio/'.$this->input->post('id'));
 	}
+
+	function remove_audio(){
+		$this->session->set_flashdata('msg', $this->admin_model->remove_audio());
+		redirect('admin/audio/'.$this->uri->segment(3));
+	}
+
+/*----------------------------------------------------------------------------------------------------------------------------------*/
 
 	function edit_package(){
 		$data = array(
@@ -401,6 +410,7 @@ class Admin extends CI_Controller {
 		foreach ($data as $datas ) {
 			$path='./assets/images/'.$datas->path;
 			unlink($path);
+			unlink('./assets/images/'.$datas->audio);
 			$this->db->where('ad_id',$datas->ad_id)->delete('package_image');
 		}
 		
@@ -428,6 +438,9 @@ class Admin extends CI_Controller {
 				unlink($path);
 				$this->db->where('ad_id', $datas->ad_id)->delete('package_image');
 			}
+			$banner = './assets/images/banner/'.$datad->banner;
+			unlink($banner);
+			unlink('./assets/audio/'.$datad->audio);
 			$this->admin_model->delete_package_serv();
 		}
 		$data=$this->admin_model->get_particular_service();

@@ -9,8 +9,8 @@
 	<div class="row separator">
 		<div class="col-md-6 paddings">
 			<div class="row">
-			<?php if(!empty($images)): ?>
-				<?php foreach($images as $img): ?>
+			<?php if(!empty($image)): ?>
+				<?php foreach($image as $img): ?>
 					<div class="col-md-6 paddings banner-imgs"><img class="thumbnail" src="<?php echo base_url("assets/images/".$img->path); ?>"></div>
 				<?php endforeach; ?>
 			<?php else: ?>
@@ -32,8 +32,8 @@
 			<div class="article">Other Medias</div>
 			<div class="article-desc">
 				<div class="row mem">
+					<div class="medias">Audio</div>
 					<?php if(!empty($detail[0]->audio)): ?>
-						<div class="medias">Audio</div>
 						<audio controls>
 					  		<source src="<?php echo base_url('assets/audio/'.$detail[0]->audio); ?>" type="audio/mpeg">
 							Your browser does not support the audio element.

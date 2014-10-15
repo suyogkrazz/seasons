@@ -3,7 +3,7 @@
 <div class="faq-header">
 	<div class="container">
 		<?php if(!empty($search_content)): ?>
-			<h1>Search reasults of <?php echo $search_content; ?></h1>
+			<h1>Search results for <?php echo $search_content; ?></h1>
 		<?php else: ?>
 			<?php $topic = $this->db->where('id', $this->uri->segment(2))->get('categories')->result(); ?>
 			<h1><?php echo $topic[0]->name; ?></h1>
