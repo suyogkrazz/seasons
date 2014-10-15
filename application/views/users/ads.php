@@ -4,13 +4,12 @@
 	</div>
 </div>
 <div class="qns container">
-	<?php $image = $this->db->where('ad_id', $this->uri->segment(2))->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
 	<div class="banner"><img src="<?php echo base_url('assets/images/banner/'.$detail[0]->banner) ?>"></div>
 	<div class="row separator">
 		<div class="col-md-6 paddings">
 			<div class="row">
-			<?php if(!empty($image)): ?>
-				<?php foreach($image as $img): ?>
+			<?php if(!empty($images)): ?>
+				<?php foreach($images as $img): ?>
 					<div class="col-md-6 paddings banner-imgs"><img class="thumbnail" src="<?php echo base_url("assets/images/".$img->path); ?>"></div>
 				<?php endforeach; ?>
 			<?php else: ?>
