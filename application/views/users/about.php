@@ -8,6 +8,7 @@
 			<img src="<?php echo base_url('assets/images/'.$about[0]->path); ?>">
 		</div>
 	</div>
+	<?php if(!empty($team)): ?>
 	<div><h2>Our Team Members</h2></div>
 		<?php $i=1; foreach($team as $t): ?>
 		<?php if($i==1): $i++;?>
@@ -48,4 +49,5 @@
 			endif;
 		?>
 	</div>
+	<?php endif; ?>
 </div> 

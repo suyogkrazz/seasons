@@ -1,7 +1,7 @@
 <h1 class="heading">Dashboard</h1>
 
 <div class="row">
-	<div class="title-heading"><h2>Categories</h2></div>
+	<div class="title-heading"><h2><a href="<?php echo base_url('admin/services') ?>">Categories</a></h2></div>
 	<?php $dash_services = $this->db->order_by('id', 'desc')->get('categories')->result(); ?>
 	<?php foreach($dash_services as $dash): ?>
 		<div class="col-md-3">
@@ -17,7 +17,4 @@
 			</div>
 		</div>
 	<?php endforeach; ?>
-	<div class="row">
-		<a href="<?php echo base_url('admin/services') ?>">View All</a>
-	</div>
 </div>

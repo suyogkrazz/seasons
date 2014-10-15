@@ -40,25 +40,30 @@
 
 <?php echo form_close(); ?>
 
-<?php else: ?>
-	<div>No Advertisements to add.</div>
-
-<?php endif; ?>
-
 <?php for($i=1; $i<=5; $i++): ?>
 	<hr>
 	<?php echo "<strong>Banner ".$i."</strong>"; ?>
 	<div class="row">
 		<?php $bannerid = 'banner'.$i; ?>
 		<?php foreach($banner as $ad): ?>
-			<?php $name = $this->db->where('id', $ad->$bannerid)->get('package')->result(); ?>
+			<?php if($ad->$bannerid != NULL): ?>
+				<?php $name = $this->db->where('id', $ad->$bannerid)->get('package')->result(); ?>
+				<strong><?php echo $name[0]->name; ?></strong><br>
+				<?php $image = $this->db->where('ad_id', $name[0]->id)->order_by('id','desc')->limit(1)->get('package_image')->result(); ?>
+				<?php if(!empty($image)): ?>
+					<strong>Background Image:</strong><br>
+					<img src="<?php echo base_url('assets/images/'.$image[0]->path); ?>" height='100px' width="400px">
+				<?php endif; ?>
+				<br><strong>Banner Image:</strong><br>
+				<img src="<?php echo base_url('assets/images/banner/'.$name[0]->banner); ?>" height='100px' width="400px">
+			<?php else: ?>
+				<?php echo "Banner not selected"; ?>
+			<?php endif; ?>
 		<?php endforeach; ?>
-		<strong><?php echo $name[0]->name; ?></strong><br>
-		<?php $image = $this->db->where('ad_id', $name[0]->id)->order_by('id','desc')->limit(1)->get('package_image')->result(); ?>
-		<strong>Background Image:</strong><br>
-		<img src="<?php echo base_url('assets/images/'.$image[0]->path); ?>" height='100px' width="400px">
-		<br><strong>Banner Image:</strong><br>
-		<img src="<?php echo base_url('assets/images/banner/'.$name[0]->banner); ?>" height='100px' width="400px">
-		
 	</div>
 <?php endfor; ?>
+
+<?php else: ?>
+	<div>No Advertisements to add.</div>
+
+<?php endif; ?>

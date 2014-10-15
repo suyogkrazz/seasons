@@ -46,18 +46,27 @@
 	  </a>
 	</div>
 	
-	<div class="ads darkness">		
-		<?php $image = $this->db->where('ad_id', $banner[0]->banner1)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
-		<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
-	</div>
+	<?php if(!empty($banner[0]->banner1)): ?>
+		<div class="ads darkness">		
+			<?php $image = $this->db->where('ad_id', $banner[0]->banner1)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
+			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+		</div>
 
-	<div class="dark">
-	<a href="<?php echo base_url('ad/'.$banner[0]->banner1) ?>">
-			<?php $ban = $this->db->where('id', $banner[0]->banner1)->get('package')->result(); ?>
-			<img src="<?php echo base_url('assets/images/banner/'.$ban[0]->banner) ?>">
-	</a>
+		<div class="dark">
+			<a href="<?php echo base_url('ad/'.$banner[0]->banner1) ?>">
+				<?php $ban = $this->db->where('id', $banner[0]->banner1)->get('package')->result(); ?>
+				<img src="<?php echo base_url('assets/images/banner/'.$ban[0]->banner) ?>">
+			</a>
+		</div>
+	<?php else: ?>
+		<div class="ads darkness">
+			<img src="<?php echo base_url('assets/images/default.jpg'); ?>">
+		</div>
 
-	</div>
+		<div class="dark">
+			<img src="<?php echo base_url('assets/images/default.jpg'); ?>">
+		</div>
+	<?php endif; ?>
 
 
 	<div id="second-slider" class="carousel slide" data-ride="carousel">
@@ -107,16 +116,28 @@
 	  </a>
 	</div>
 
-	<div class="ads  darkness1">
-		<?php $image = $this->db->where('ad_id', $banner[0]->banner2)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
-		<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
-	</div>
-	<div class="dark">
-	<a href="<?php echo base_url('ad/'.$banner[0]->banner2) ?>">
-			<?php $ban = $this->db->where('id', $banner[0]->banner2)->get('package')->result(); ?>
-			<img src="<?php echo base_url('assets/images/banner/'.$ban[0]->banner) ?>">
-	</a>
-	</div>
+	<?php if(!empty($banner[0]->banner2)): ?>
+		<div class="ads  darkness1">
+			<?php $image = $this->db->where('ad_id', $banner[0]->banner2)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
+			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+		</div>
+
+		<div class="dark">
+			<a href="<?php echo base_url('ad/'.$banner[0]->banner2) ?>">
+				<?php $ban = $this->db->where('id', $banner[0]->banner2)->get('package')->result(); ?>
+				<img src="<?php echo base_url('assets/images/banner/'.$ban[0]->banner) ?>">
+			</a>
+		</div>
+	<?php else: ?>
+		<div class="ads darkness1">
+			<img src="<?php echo base_url('assets/images/default.jpg'); ?>">
+		</div>
+
+		<div class="dark">
+			<img src="<?php echo base_url('assets/images/default.jpg'); ?>">
+		</div>
+	<?php endif; ?>
+
 	<div id="third-slider" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
@@ -163,17 +184,27 @@
 	  </a>
 	</div>
 
-	<div class="ads darkness2">
-		<?php $images = $this->db->where('ad_id', $banner[0]->banner3)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
-			<img src="<?php echo base_url('assets/images/'.$images[0]->path) ?>">
-	</div>
-	<div class="dark">
-	<a href="<?php echo base_url('ad/'.$banner[0]->banner3) ?>">
-		<?php $ban = $this->db->where('id', $banner[0]->banner3)->get('package')->result(); ?>
-			<img src="<?php echo base_url('assets/images/banner/'.$ban[0]->banner) ?>">
-	</a>
+	<?php if(!empty($banner[0]->banner3)): ?>
+		<div class="ads darkness2">
+			<?php $images = $this->db->where('ad_id', $banner[0]->banner3)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
+				<img src="<?php echo base_url('assets/images/'.$images[0]->path) ?>">
+		</div>
+		<div class="dark">
+			<a href="<?php echo base_url('ad/'.$banner[0]->banner3) ?>">
+				<?php $ban = $this->db->where('id', $banner[0]->banner3)->get('package')->result(); ?>
+				<img src="<?php echo base_url('assets/images/banner/'.$ban[0]->banner) ?>">
+			</a>
+		</div>
+	<?php else: ?>
+		<div class="ads darkness2">
+			<img src="<?php echo base_url('assets/images/default.jpg'); ?>">
+		</div>
 
-	</div>
+		<div class="dark">
+			<img src="<?php echo base_url('assets/images/default.jpg'); ?>">
+		</div>
+	<?php endif; ?>
+
 	<div id="fourth-slider" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
@@ -220,19 +251,27 @@
 	  </a>
 	</div>
 
-	<div class="ads darkness3">
-		<?php $image = $this->db->where('ad_id', $banner[0]->banner4)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
-		
+	<?php if(!empty($banner[0]->banner4)): ?>
+		<div class="ads darkness3">
+			<?php $image = $this->db->where('ad_id', $banner[0]->banner4)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>		
 			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+		</div>
+		<div class="dark">
+			<a href="<?php echo base_url('ad/'.$banner[0]->banner4) ?>">
+				<?php $ban = $this->db->where('id', $banner[0]->banner4)->get('package')->result(); ?>
+				<img src="<?php echo base_url('assets/images/banner/'.$ban[0]->banner) ?>">
+			</a>
+		</div>
+	<?php else: ?>
+		<div class="ads darkness3">
+			<img src="<?php echo base_url('assets/images/default.jpg'); ?>">
+		</div>
 
-	</div>
-	<div class="dark">
-	<a href="<?php echo base_url('ad/'.$banner[0]->banner4) ?>">
-			<?php $ban = $this->db->where('id', $banner[0]->banner4)->get('package')->result(); ?>
-			<img src="<?php echo base_url('assets/images/banner/'.$ban[0]->banner) ?>">
-	</a>
+		<div class="dark">
+			<img src="<?php echo base_url('assets/images/default.jpg'); ?>">
+		</div>
+	<?php endif; ?>
 
-	</div>
 	<div id="fifth-slider" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
@@ -279,17 +318,25 @@
 	  </a>
 	</div>
 
-	<div class="ads darkness4">
-		<?php $image = $this->db->where('ad_id', $banner[0]->banner5)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
+	<?php if(!empty($banner[0]->banner5)): ?>
+		<div class="ads darkness4">
+			<?php $image = $this->db->where('ad_id', $banner[0]->banner5)->order_by('id', 'desc')->limit(1)->get('package_image')->result(); ?>
 			<img src="<?php echo base_url('assets/images/'.$image[0]->path) ?>">
+		</div>
+		<div class="dark">
+			<a href="<?php echo base_url('ad/'.$banner[0]->banner5) ?>">
+				<?php $ban = $this->db->where('id', $banner[0]->banner5)->get('package')->result(); ?>
+				<img src="<?php echo base_url('assets/images/banner/'.$ban[0]->banner) ?>">
+			</a>
+		</div>
+	<?php else: ?>
+		<div class="ads darkness4">
+			<img src="<?php echo base_url('assets/images/default.jpg'); ?>">
+		</div>
 
-	</div>
-	<div class="dark">
-	<a href="<?php echo base_url('ad/'.$banner[0]->banner5) ?>">
-			<?php $ban = $this->db->where('id', $banner[0]->banner5)->get('package')->result(); ?>
-			<img src="<?php echo base_url('assets/images/banner/'.$ban[0]->banner) ?>">
-	</a>
-
-	</div>
+		<div class="dark">
+			<img src="<?php echo base_url('assets/images/default.jpg'); ?>">
+		</div>
+	<?php endif; ?>
 
 </div>
