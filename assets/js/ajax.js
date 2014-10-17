@@ -44,7 +44,11 @@ $.ajax({
 
 	$('#search_results').append("</div>");
 
-				},
+				}, beforeSend : function (){
+					          $('#search_results').html("");
+                 $('#search_results').html("<img id='fix' src='"+base_url+"/assets/ajax_load.gif'>");
+
+            },
 				   error: function(jqXHR, textStatus, errorThrown){ 
       alert( jqXHR.responseText);
                

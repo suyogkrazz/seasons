@@ -45,7 +45,12 @@
 							height:100%;
 							z-index:-5;
 						}
-						
+						#fix{
+							position:relative;
+							margin:0px auto;
+							display: block;
+							z-index: 99999;
+						}
 
 				</style>
 
