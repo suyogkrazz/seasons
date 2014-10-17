@@ -34,5 +34,17 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<div class="container links">
+    <ul class="go-quickly">
+      <li>Go Quickly To<span class="glyphicon gly glyphicon-forward"></span></li>
+      <?php $categories = $this->db->get('categories')->result(); ?>
+      <?php foreach($categories as $cat): ?>
+        <?php $pack = $this->db->where('ad_id', $cat->id)->get('package')->num_rows(); ?>
+        <li><?php echo anchor('categories/'.$cat->id, $cat->name.'('.$pack.')'); ?></li>
+      <?php endforeach; ?>
+    </ul>
+</div>
 <?php echo $this->session->flashdata('msg'); ?>
+
 <div id="search_results">
