@@ -29,6 +29,11 @@ html {
 	background: #4F5367;
 	padding: 18px;
 }
+
+.carousel-caption a{
+	color: #FCF7FF !important;
+}
+
 .serch{
 	color: #FFF!important;
 	background-color: #60C5B9!important;
@@ -40,12 +45,10 @@ html {
 }
 .go-quickly>li{
 	float: left;
-	font-family: cursive;
-	border-right: 2px solid rgb(226, 110, 110);
+	border-right: 2px solid rgb(11, 40, 92);
 	padding-right: 4px;
 	padding-left: 5px;
-	font-weight: bold;
-	color: rgb(83, 99, 114);
+	color: rgb(84, 114, 143);
 }
 .search-btn{
 	color: white !important;
@@ -209,7 +212,7 @@ html {
 .footer{
 
 	height: 43px;
-	background: #5FACC5;
+	background: #4f5367;
 	color: rgb(179, 181, 184);
 	padding: 10px;
 	font-size: 17px;
@@ -221,8 +224,7 @@ html {
 	color: white;
 }
 .pines{
-	font-family: cursive !important;
-	color: rgb(82, 89, 124) !important;
+	color: #fff !important;
 }
 .post{
 	font-family: cursive;
