@@ -357,17 +357,13 @@ html {
 	margin-bottom:10px;
 }
 .below{
-	background: white;
+	/* background: white; */
 	padding: 4px 10px;
-	border: 3px solid white;
-	color: rgb(231, 111, 111);
+	/* border: 3px solid white; */
+	color: rgb(0, 0, 0);
 	margin-right: 4px;
 }
-.below:hover{
-	color: rgb(231, 111, 111);
-	border: 3px solid rgb(231, 111, 111);
-	background-color: transparent;
-}
+
 .links{
 	padding: 7px;
 	background-color: white;
