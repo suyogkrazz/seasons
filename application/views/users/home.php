@@ -1,3 +1,4 @@
+
 <div class="container-fluid ">
 	<div id="first-slider" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
@@ -359,3 +360,4 @@
 	<?php endif; ?>
 
 </div>
+

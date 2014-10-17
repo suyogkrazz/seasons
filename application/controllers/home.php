@@ -97,7 +97,30 @@ class Home extends CI_Controller {
 	     	return false;
 	    }
 	}
+	function search(){
+				$search_content=$this->input->post('search_item');
+				if ($search_content!=null) {
+					$result=$this->users_model->search_content($search_content);
+				$result_count=$this->users_model->search_content_num($search_content);
+				$suffix=($result_count != 1 )?'s':'';
+				$res= array();
+				foreach ($result as $key ) {
+					 $img = $this->db->where('ad_id', $key->id)->limit(1)->order_by('id', 'desc')->get('package_image')->result(); 
+					$data = array(
+					'id'=>$key->id,
+					'name'=> $key->name,
+					'description'=>$key->description,
+					'suff' =>$suffix,
+					'img'=>$img[0]->path,
+					'item' =>$search_content,
+					);
+					array_push($res, $data);
 
+				}
+				print_r(json_encode($res));
+				}
+				
+	}
 	function search_error(){
 		$data = array(
 						'title' => 'search error',
