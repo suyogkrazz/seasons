@@ -39,6 +39,19 @@ class Users_model extends CI_Model {
 			return $result;
 		}
 	}
+		function search_content_num($search_content){
+		$row = $this->db->select('id')->like('name', $search_content, 'both')->get('categories')->num_rows();
+		if($row!=0){
+			$res=$this->db->select('id')->like('name', $search_content, 'both')->get('categories')->result();
+			$id=$res[0]->id;
+			$result=$this->db->where('ad_id', $id)->get('package')->num_rows();
+			return $result;
+		}
+		else{
+			$result = $this->db->like('name', $search_content, 'both')->or_like('description',$search_content,'both')->or_like('info',$search_content,'both')->get('package')->num_rows();
+			return $result;
+		}
+	}
 
 	function display_item(){
 		$this->db->where('ad_id',$this->uri->segment(2));

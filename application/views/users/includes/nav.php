@@ -24,7 +24,8 @@
        
         <form class="navbar-form navbar-left" role="search" method="post" action="<?php echo base_url("search-content") ?>">
           <div class="form-group">
-            <input type="text" class="form-control form-search" placeholder="Search category.." name="search_content">
+            <input type="text" id="search" class="form-control form-search" placeholder="Search category.." name="search_content">
+            <input type="hidden" id="base_url" value="<?php echo base_url(); ?>">
           </div>
           <button type="submit" class="btn btn-default serch">Search</button>
         </form>
@@ -34,3 +35,4 @@
   </div><!-- /.container-fluid -->
 </nav>
 <?php echo $this->session->flashdata('msg'); ?>
+<div id="search_results">
