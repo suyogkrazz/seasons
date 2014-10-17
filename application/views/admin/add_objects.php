@@ -89,7 +89,7 @@
 			<div class="help-block with-errors"></div>
 		</div>
 	</div>
-
+	
 
 	<div class="form-group">
 		<label class="col-sm-2 control-label">For:</label>
@@ -103,7 +103,18 @@
 			</select>
 		</div>
 	</div>
-
+	<div class="form-group">
+		<div class="row">
+			<label class="col-sm-2 control-label">Select Ad</label>
+			<div class="col-sm-7">
+				<select name="ad_id" class="form-control">
+					<?php foreach($ads as $ad): ?>
+						<option value="<?php echo $ad->id; ?>"><?php echo $ad->name; ?></option>
+					<?php endforeach; ?>
+				</select>
+			</div>
+		</div>	
+	</div>
  		
 	<div class="submit">
 		<div class="col-sm-2"></div>

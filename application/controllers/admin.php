@@ -461,6 +461,7 @@ class Admin extends CI_Controller {
 			'third' => $this->db->where('slider', 3)->order_by('id', 'desc')->get('slide')->result(),
 			'fourth' => $this->db->where('slider', 4)->order_by('id', 'desc')->get('slide')->result(),
 			'fifth' => $this->db->where('slider', 5)->order_by('id', 'desc')->get('slide')->result(),
+			'ads' => $this->db->get('package')->result(),
 		);
 		$this->load->view('admin/includes/template', $data);
 	}
@@ -487,7 +488,8 @@ class Admin extends CI_Controller {
 			'description'=>$this->input->post('description'),
 			'path'=>$path1,
 			'name' => $this->input->post('name'),
-			'slider' => $this->input->post('slider')
+			'slider' => $this->input->post('slider'),
+			'adid'=>$this->input->post('ad_id')
 		);
 
 		if($this->admin_model->add_object_slider($data)){

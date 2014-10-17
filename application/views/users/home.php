@@ -29,16 +29,20 @@
 		    <div class="item active">
 		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
+		     	<a href="<?php echo base_url('ad/'.$slide->adid) ?>">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		    	</a>
 		      </div>
 		    </div>
 		<?php else: ?>
 		    <div class="item">
 		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
+		     	<a href="<?php echo base_url('ad/'.$slide->adid) ?>">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		    	</a>
 		      </div>
 		    </div>
 		<?php endif; ?>
@@ -99,16 +103,20 @@
 		    <div class="item active">
 		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
+		      <a href="<?php echo base_url('ad/'.$slide->adid) ?>">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		    	</a>
 		      </div>
 		    </div>
 		<?php else: ?>
 		    <div class="item">
 		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
+		      <a href="<?php echo base_url('ad/'.$slide->adid) ?>">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		    	</a>
 		      </div>
 		    </div>
 		<?php endif; ?>
@@ -167,16 +175,20 @@
 		    <div class="item active">
 		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
+		      <a href="<?php echo base_url('ad/'.$slide->adid) ?>">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		    	</a>
 		      </div>
 		    </div>
 		<?php else: ?>
 		    <div class="item">
 		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
+		      <a href="<?php echo base_url('ad/'.$slide->adid) ?>">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		    	</a>
 		      </div>
 		    </div>
 		<?php endif; ?>
@@ -234,16 +246,20 @@
 		    <div class="item active">
 		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
+		     <a href="<?php echo base_url('ad/'.$slide->adid) ?>">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		    </a>
 		      </div>
 		    </div>
 		<?php else: ?>
 		    <div class="item">
 		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
+		      <a href="<?php echo base_url('ad/'.$slide->adid) ?>">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		    </a>
 		      </div>
 		    </div>
 		<?php endif; ?>
@@ -301,16 +317,20 @@
 		    <div class="item active">
 		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
+		      <a href="<?php echo base_url('ad/'.$slide->adid) ?>">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		    </a>
 		      </div>
 		    </div>
 		<?php else: ?>
 		    <div class="item">
 		      <img src="<?php echo base_url("assets/images/$slide->path") ?>">
 		      <div class="carousel-caption">
+		      <a href="<?php echo base_url('ad/'.$slide->adid) ?>">
 		       		<h3 class="topic1"><?php echo $slide->name; ?></h3>
 		    		<p class="topic2"><?php echo $slide->description; ?></p>
+		   	</a>
 		      </div>
 		    </div>
 		<?php endif; ?>
