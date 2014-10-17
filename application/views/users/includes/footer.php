@@ -1,5 +1,13 @@
 	<div class="footer">
-		<div class="pine">Powered by <a href="http://pinesofts.com/">Pinesofts.com</a></div>	
+	<div class="cata row">
+		<div class="col-md-9">
+			<a class="below" href="<?php echo base_url('about-us') ?>">About Us</a>
+			<a class="below" href="<?php echo base_url('faqs') ?>">FAQ's</a>
+			<a class="below" href="<?php echo base_url('contact-us') ?>">Contact Us</a>
+		</div>
+        
+        <div class="col-md-3 powered">Powered by <a class="pines" href="http://pinesofts.com/">Pinesofts.com</a></div>
+	</div>
 	</div>
 
 	<script type="text/javascript" src="<?php echo site_url().'assets/js/jquery-1.7.1.min.js' ?>"></script>

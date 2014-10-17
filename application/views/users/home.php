@@ -1,5 +1,14 @@
-<div class="container-fluid">
-
+<div class="container-fluid ">
+	<div class="container links">
+		<ul class="go-quickly">
+			<li>Go Quickly To<span class="glyphicon gly glyphicon-forward"></span></li>
+			<li>Hotel(10)</li>
+			<li>Cafe(9)</li>
+			<li>Hospital(6)</li>
+			<li>Restaurant(10)</li>
+			<li>Radio(5)</li>
+		</ul>
+	</div>
 	<div id="first-slider" class="carousel slide" data-ride="carousel">
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
