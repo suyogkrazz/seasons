@@ -50,6 +50,13 @@ html {
 	padding-left: 5px;
 	color: rgb(84, 114, 143);
 }
+.go-quickly>li>a{
+	float: left;
+	/*border-right: 2px solid rgb(11, 40, 92);*/
+	padding-right: 4px;
+	padding-left: 5px;
+	color: rgb(84, 114, 143);
+}
 .search-btn{
 	color: white !important;
 	background-color: #93C0E9;
@@ -412,6 +419,9 @@ html {
 			display: inline-block;
 			padding: 3px 6px;
 			font-size: 27px !important;
+		}
+		.form-search {
+			width: 100% !important;
 		}
 		.topic2 {
 			background: rgba(123, 130, 134, 0.6);
