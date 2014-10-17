@@ -19,11 +19,33 @@ html {
 	margin-left: auto;
 }
 .form-search{
-	border-radius: 28px;
+	width: 751px !important;
+}
+.gly{
+	margin-left: 5px;
+	margin-right: 5px;
 }
 .search-wrapper{
 	background: #4F5367;
 	padding: 18px;
+}
+.serch{
+	color: #FFF!important;
+	background-color: #60C5B9!important;
+	border-color: rgba(204, 204, 204, 0)!important;
+	text-transform: uppercase!important;
+}
+.go-quickly{
+	list-style: none;
+}
+.go-quickly>li{
+	float: left;
+	font-family: cursive;
+	border-right: 2px solid rgb(226, 110, 110);
+	padding-right: 4px;
+	padding-left: 5px;
+	font-weight: bold;
+	color: rgb(83, 99, 114);
 }
 .search-btn{
 	color: white !important;
@@ -186,14 +208,21 @@ html {
 }
 .footer{
 
-	height: 40px;
-	background: #333;
+	height: 43px;
+	background: #5FACC5;
 	color: rgb(179, 181, 184);
 	padding: 10px;
 	font-size: 17px;
 	bottom: 0px;
 	position: absolute;
 	width: 100%;
+}
+.powered{
+	color: white;
+}
+.pines{
+	font-family: cursive !important;
+	color: rgb(82, 89, 124) !important;
 }
 .post{
 	font-family: cursive;
@@ -327,6 +356,22 @@ html {
 	border-radius: 3px;
 	margin-bottom:10px;
 }
+.below{
+	background: white;
+	padding: 4px 10px;
+	border: 3px solid white;
+	color: rgb(231, 111, 111);
+	margin-right: 4px;
+}
+.below:hover{
+	color: rgb(231, 111, 111);
+	border: 3px solid rgb(231, 111, 111);
+	background-color: transparent;
+}
+.links{
+	padding: 7px;
+	background-color: white;
+}
 .table-font{
 	color: rgb(105, 100, 100);
 }
@@ -342,9 +387,7 @@ html {
 	text-transform: uppercase;
 	color: rgb(216, 72, 72);
 }
-ul.nav li.dropdown:hover > ul.dropdown-menu {
-    display: block;    
-}
+
 @media (max-width: 767px){
 		.item img {
 			width: 100%;
