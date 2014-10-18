@@ -40,7 +40,7 @@
 	<div class="row">
 		<?php foreach($categories as $cat): ?>
 			<?php $pack = $this->db->where('ad_id', $cat->id)->get('package')->num_rows(); ?>
-			<div class="col-md-3">
+			<div class="col-md-6">
 				<div class="types">
 					<div class="types-title"><?php echo anchor('categories/'.$cat->id, $cat->name.'('.$pack.')'); ?></div>
 					<div class="types-ads">

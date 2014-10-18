@@ -400,16 +400,18 @@ html {
 .types{
 	display: block;
 	position: relative;
-	background: none repeat scroll 0% 0% rgba(124, 110, 110, 0.16);
+	background: none repeat scroll 0% 0% rgba(127, 164, 221, 0.16);
 	height: 165px;
 	margin: 10px;
 	text-align: center;
-	border: 2px solid #929292;
+	/* border: 2px solid #FFFFFF; */
 	border-radius: 3px;
 }
 
 .types-title{
-	background: #4f5367;
+	background: #4F5367 !important;
+	border-bottom: 2px solid rgb(186, 182, 182);
+	border-radius: 5px 5px 0px 0px;
 }
 
 .types-title a{
@@ -424,6 +426,10 @@ html {
 	position: relative;
 	left: 10px;
 	margin: 5px 0px 5px 0px;
+	background: rgb(110, 177, 218);
+	color: white;
+	padding: 4px 8px;
+	border-radius: 4px;
 }
 
 @media (max-width: 767px){
