@@ -20,12 +20,13 @@
 		<div class="col-md-9">
 			<table class="table table-font">
 			  <tr>
-			  	<td>Name:</td>
 			  	<td><?php echo anchor("ad/$row->id", $row->name); ?></td>
 			  </tr>
 			  <tr>
-			  	<td>Info:</td>
 			  	<td><?php echo $row->info; ?></td>
+			  </tr>
+			  <tr>
+			  	<td><?php echo word_limiter($row->description, 20); ?></td>
 			  </tr>
 			</table>
 			<div>

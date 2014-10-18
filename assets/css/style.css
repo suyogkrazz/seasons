@@ -365,11 +365,9 @@ html {
 	border-radius: 3px;
 	margin-bottom:10px;
 }
-.below{
-	/* background: white; */
+.below{ 
 	padding: 4px 10px;
-	/* border: 3px solid white; */
-	color: rgb(0, 0, 0);
+	color: rgb(222, 222, 222);
 	margin-right: 4px;
 }
 
@@ -391,6 +389,41 @@ html {
 	font-size: 34px;
 	text-transform: uppercase;
 	color: rgb(216, 72, 72);
+}
+
+.categories {
+	display: block;
+	position: relative;
+	padding: 40px;
+}
+
+.types{
+	display: block;
+	position: relative;
+	background: none repeat scroll 0% 0% rgba(124, 110, 110, 0.16);
+	height: 165px;
+	margin: 10px;
+	text-align: center;
+	border: 2px solid #929292;
+	border-radius: 3px;
+}
+
+.types-title{
+	background: #4f5367;
+}
+
+.types-title a{
+	font-size: 23px;
+	color: #fff;
+	padding: 5px;
+	display: block;
+}
+
+.ads-name a{
+	float: left;
+	position: relative;
+	left: 10px;
+	margin: 5px 0px 5px 0px;
 }
 
 @media (max-width: 767px){
