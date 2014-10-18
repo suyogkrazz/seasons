@@ -35,7 +35,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
+<div id="search_results">
 <div class="container categories">
 	<div class="row">
 		<?php foreach($categories as $cat): ?>
@@ -54,5 +54,5 @@
 		<?php endforeach; ?>
 	</div>
 </div>
-
+</div>
 <?php $this->load->view('users/includes/footer'); ?>
