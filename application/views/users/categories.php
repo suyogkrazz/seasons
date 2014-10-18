@@ -1,3 +1,4 @@
+<?php $this->load->view('users/includes/header') ?>
 <nav class="navbar navbar-default" role="navigation">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -35,17 +36,23 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<div class="container links">
-    <ul class="go-quickly">
-      <li>Go Quickly To<span class="glyphicon gly glyphicon-forward"></span></li>
-      <?php $categories = $this->db->limit(9)->order_by('id', 'desc')->get('categories')->result(); ?>
-      <?php foreach($categories as $cat): ?>
-        <?php $pack = $this->db->where('ad_id', $cat->id)->get('package')->num_rows(); ?>
-        <li><?php echo anchor('categories/'.$cat->id, $cat->name.'('.$pack.')'); ?></li>
-      <?php endforeach; ?>
-        <li><?php echo anchor('categories', "More<span class='glyphicon gly glyphicon-forward'>") ?></li>
-    </ul>
+<div class="container categories">
+	<div class="row">
+		<?php foreach($categories as $cat): ?>
+			<?php $pack = $this->db->where('ad_id', $cat->id)->get('package')->num_rows(); ?>
+			<div class="col-md-3">
+				<div class="types">
+					<div class="types-title"><?php echo anchor('categories/'.$cat->id, $cat->name.'('.$pack.')'); ?></div>
+					<div class="types-ads">
+						<?php $ads = $this->db->where('ad_id', $cat->id)->order_by('id', 'desc')->limit(3)->get('package')->result(); ?>
+						<?php foreach($ads as $ad): ?>
+							<div class="row ads-name"><?php echo anchor('ad/'.$ad->id, $ad->name); ?></div>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			</div>
+		<?php endforeach; ?>
+	</div>
 </div>
-<?php echo $this->session->flashdata('msg'); ?>
 
-<div id="search_results">
+<?php $this->load->view('users/includes/footer'); ?>

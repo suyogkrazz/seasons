@@ -192,4 +192,13 @@ class Home extends CI_Controller {
 		$this->load->view('users/includes/template', $data);
 	}
 
+	function categories(){
+		$data = array(
+			'title' => 'categories',
+			'categories' => $this->db->order_by('id', 'desc')->get('categories')->result()
+		);
+
+		$this->load->view('users/categories', $data);
+	}
+
 }

@@ -47,6 +47,7 @@ $route['contact-us'] = 'home/contact';
 $route['send-message'] = 'home/contact_post';
 $route['ad/(:any)'] = 'home/ads';
 $route['categories/(:any)'] = 'home/category';
+$route['categories'] = 'home/categories';
 $route['search-content']= 'home/search_content';
 $route['search-error'] = 'home/search_error';
 
