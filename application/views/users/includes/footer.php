@@ -67,8 +67,7 @@ $(function($) {
 		        }
 		    });
 
-		    // now you can use plain old POST requests like always
-		    $.post('site.com/controller/method', { name : 'Jerel' });
+	
 		});
 
     </script>
