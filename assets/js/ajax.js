@@ -12,7 +12,12 @@ $.ajax({
 				},
 				dataType: 'json',
 				success:function(data){
+
 					$('#search_results').html("");
+					if(data[0].uname=='emptysetfound'){
+						$('#search_results').html("<div class='container not-found'> Content Not Found</div>");
+					}
+					else{
 					$('#search_results').append("<div class='faq-header'>"+
 							"<div class='container'>"+
 								"<h1>Search result"+data[0].suff+" for "+data[0].item+
@@ -40,12 +45,13 @@ $.ajax({
 								"</div>"+
 						"</div>"+
 				"</div>");
+				}
 		};
 
 	$('#search_results').append("</div>");
 
 				}, beforeSend : function (){
-					          $('#search_results').html("");
+					  
                  $('#search_results').html("<img id='fix' src='"+base_url+"/assets/ajax_load.gif'>");
 
             },

@@ -119,6 +119,15 @@ class Home extends CI_Controller {
 				}
 				print_r(json_encode($res));
 				}
+				else{
+						$res= array();
+					$data = array(
+					'uname'=> 'emptysetfound',
+					);
+					array_push($res, $data);
+						print_r(json_encode($res));
+				}
+
 				
 	}
 	function search_error(){
