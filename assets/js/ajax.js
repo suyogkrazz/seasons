@@ -1,4 +1,14 @@
 $(document).ready(function(){
+$(function($) {
+
+		    $.ajaxSetup({
+		        data: {
+		            csrf_test_name: $.cookie('csrf_cookie_name')
+		        }
+		    });
+
+	
+		});
 
 $('#search').keyup(function(){
 var base_url= $('#base_url').val();
@@ -32,11 +42,10 @@ $.ajax({
 					"<div class='col-md-9'>"+
 								"<table class='table table-font'>"+
 								  "<tr>"+
-								  	"<td>Name:</td>"+
+								
 								  	"<td><a href='"+base_url+"ad/"+data[i].id+"'>"+data[i].name+"</a></td>"+
 								 " </tr>"+
 								  "<tr>"+
-								  	"<td>Info:</td>"+
 								  	"<td>"+data[i].description+"</td>"+
 								  "</tr>"+
 								"</table>"+

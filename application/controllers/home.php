@@ -102,6 +102,7 @@ class Home extends CI_Controller {
 				if ($search_content!=null) {
 					$result=$this->users_model->search_content($search_content);
 				$result_count=$this->users_model->search_content_num($search_content);
+					if ($result_count!=0) {
 				$suffix=($result_count != 1 )?'s':'';
 				$res= array();
 				foreach ($result as $key ) {
@@ -118,6 +119,15 @@ class Home extends CI_Controller {
 
 				}
 				print_r(json_encode($res));
+			}
+			else{
+				$res= array();
+					$data = array(
+					'uname'=> 'emptysetfound',
+					);
+					array_push($res, $data);
+						print_r(json_encode($res));
+			}
 				}
 				else{
 						$res= array();
